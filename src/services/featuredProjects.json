@@ -1,0 +1,20 @@
+[
+  {
+    "featured": true,
+    "name": "Intro to Web Accessibility (PPT)",
+    "image": "intro-to-accessibility-ppt.png",
+    "file": "../assets/downloads/Intro to Web Accessibility.pptx"
+  },
+  {
+    "featured": true,
+    "name": "Kia Sterling Hair (Site)",
+    "image": "kia-sterling-site.png",
+    "link": "https://kia-sterling.webflow.io/"
+  },
+  {
+    "featured": true,
+    "name": "AccessU 2023 Conference Presentation",
+    "image": "accessibility-lnl.png",
+    "link": "https://github.com/Jamalfox85/AccessUPresentation"
+  }
+]
