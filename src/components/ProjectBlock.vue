@@ -4,17 +4,17 @@
       <div class="block-left">
         <p class="project-title">{{ project.title }}</p>
         <div class="project-buttons">
-          <n-button class="project-block-buttons" v-if="project.demo">
+          <n-button type="primary" class="project-block-buttons" v-if="project.demo">
             <a :href="project.demo" target="_blank">Demo</a>
           </n-button>
-          <n-button class="project-block-buttons details-button" @click="setCurrentProject(project.projectId)">Details</n-button>
-          <n-button class="project-block-buttons" v-if="project.github">
+          <n-button type="primary" class="project-block-buttons details-button" @click="setCurrentProject(project.projectId)">Details</n-button>
+          <n-button type="primary" class="project-block-buttons" v-if="project.github">
             <a :href="project.github" target="_blank">Github</a>
           </n-button>
         </div>
       </div>
       <div class="block-right">
-        <img class="block-img" :src="require(`../assets/images/${project.ss[0]}.png`)" />
+        <img class="block-img" :src="`../../src/assets/images/${project.ss[0]}.png`" />
       </div>
     </div>
   </div>

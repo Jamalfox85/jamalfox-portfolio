@@ -1,5 +1,5 @@
 <template lang="">
-  <div class="side_panel_wrapper">
+  <div class="sidepanel_wrapper">
     <div class="panel-header">
       <p class="panel-header-text">Skills</p>
       <div class="panel-header-icons">
@@ -12,7 +12,7 @@
     <div class="panel-main">
       <div class="skill-block" v-for="skill in skills">
         <div class="skill-img">
-          <img :src="require(`../assets/skill-icons/${skill.img}.svg`)" />
+          <img :src="`../../src/assets/skill-icons/${skill.img}.svg`" />
         </div>
         <div class="skill-info">
           <p class="skill-name">{{ skill.name }}</p>
@@ -50,16 +50,11 @@
 </template>
 <script>
 import ContactModal from "./Modals/ContactModal.vue";
-import { useModal } from "../composables/useModal.ts";
 import { markRaw } from "vue";
 
 export default {
   /* Skill Type isn't currently being used. May be able to delete all those props' */
   components: { ContactModal },
-  setup() {
-    const modal = useModal();
-    return { modal };
-  },
   data() {
     return {
       skills: [
@@ -153,7 +148,7 @@ export default {
 };
 </script>
 <style lang="scss">
-.side_panel_wrapper {
+.sidepanel_wrapper {
   width: 250px;
   margin-left: auto;
   color: rgb(170, 160, 140);
@@ -286,7 +281,7 @@ export default {
 }
 
 @media screen and (max-width: 900px) {
-  .side_panel_wrapper {
+  .sidepanel_wrapper {
     min-height: calc(100% - 90px) !important;
     height: auto;
     .panel-main {
@@ -295,7 +290,7 @@ export default {
   }
 }
 @media screen and (max-width: 800px) {
-  .side_panel_wrapper {
+  .sidepanel_wrapper {
     display: none;
   }
 }

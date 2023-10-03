@@ -1,50 +1,56 @@
 <template lang="">
-  <div class="body_wrapper">
-    <div class="body-content">
-      <div class="main-body">
-        <div class="personal-info">
-          <h1 class="main-name">Jamal Fox</h1>
-          <h2 class="main-tags">Front End Developer</h2>
+  <div class="home_wrapper">
+    <!-- <top-bar /> -->
+    <div class="body_wrapper home-wrapper">
+      <div class="body-content">
+        <div class="main-body">
+          <div class="personal-info">
+            <h1 class="main-name">Jamal Fox</h1>
+            <h2 class="main-tags">Front End Developer</h2>
+          </div>
+          <div class="dividing-line"></div>
+          <p class="bio-text">Hello! I'm a front-end developer who crafts user-friendly and accessible websites with a passion for seamless digital experiences.</p>
         </div>
-        <div class="dividing-line"></div>
-        <p class="bio-text">Hello! I'm a front-end developer who crafts user-friendly and accessible websites with a passion for seamless digital experiences.</p>
+        <div class="body-panels">
+          <div class="panel" v-for="project in filteredFeaturedProjects">
+            <a :href="project.link || project.file" target="_blank" download>
+              <div class="panel-inner">
+                <img :src="`../../src/assets/images/project-ss/${project.image}`" />
+              </div>
+              <p class="item-name">{{ project.name }}</p>
+            </a>
+          </div>
+          <div class="panel">
+            <div class="panel-inner"></div>
+          </div>
+          <div class="panel">
+            <div class="panel-inner"></div>
+          </div>
+          <div class="panel smaller">
+            <a href="../assets/downloads/Jamal_Fox_Resume_July_2023.pdf" download>
+              <div class="panel-inner">
+                <img src="../assets/design-icons/download.svg" alt="download resume" />
+                <p>Resume</p>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="body-panels">
-        <!-- <div class="panel" v-for="project in filteredFeaturedProjects">
-          <a :href="project.link || project.file" target="_blank" download>
-            <div class="panel-inner">
-              <img :src="require(`../assets/images/project-ss/${project.image}`)" />
-            </div>
-            <p class="item-name">{{ project.name }}</p>
-          </a>
-        </div> -->
-        <!-- <div class="panel">
-          <div class="panel-inner"></div>
-        </div>
-        <div class="panel">
-          <div class="panel-inner"></div>
-        </div> -->
-        <div class="panel smaller">
-          <a href="../assets/downloads/Jamal_Fox_Resume_July_2023.pdf" download>
-            <div class="panel-inner">
-              <img src="../assets/design-icons/download.svg" alt="download resume" />
-              <p>Resume</p>
-            </div>
-          </a>
-        </div>
-      </div>
+      <div class="body-overlay"></div>
     </div>
-    <div class="body-overlay"></div>
   </div>
 </template>
+
 <script>
 import featuredProjects from "../services/featuredProjects.json";
+import TopBar from "../components/TopBar.vue";
+import SidePanel from "../components/SidePanel.vue";
+
 export default {
+  components: { TopBar, SidePanel },
   setup() {
     let filteredFeaturedProjects = featuredProjects.filter((item) => item.featured);
-    return {
-      filteredFeaturedProjects,
-    };
+    return { filteredFeaturedProjects };
   },
   data() {
     return {
@@ -87,17 +93,36 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
+.home_wrapper {
+  flex-grow: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .home-wrapper {
+    // height: 100%;
+    background: url("../assets/images/nami-splash.jpeg");
+    background-size: cover;
+    position: relative;
+    color: rgb(240, 230, 210);
+    // width: 100%;
+    flex-grow: 1;
+  }
+}
+
 .body_wrapper {
   height: 100%;
-  .body-overlay {
-    height: 100%;
-    width: 100%;
-    background: rgba(255, 255, 255, 1);
-    background: radial-gradient(at right top, rgba(255, 255, 255, 0), rgba(1, 1, 1, 0.75) 40%, rgba(1, 1, 1, 1) 100%);
-    position: absolute;
-    top: 0;
-  }
+  display: flex;
+  // .body-overlay {
+  //   height: 100%;
+  //   width: 100%;
+  //   background: rgba(255, 255, 255, 1);
+  //   background: radial-gradient(at right top, rgba(255, 255, 255, 0), rgba(1, 1, 1, 0.75) 40%, rgba(1, 1, 1, 1) 100%);
+  //   position: absolute;
+  //   top: 0;
+  // }
   .body-content {
     position: relative;
     z-index: 2;
