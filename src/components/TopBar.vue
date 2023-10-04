@@ -1,4 +1,3 @@
-<!-- TO DO: ADD CONTACT MODAL -->
 <!-- TO DO: MOBILE RESPONSIVENESS -->
 <template lang="">
   <div class="header_wrapper">
@@ -14,6 +13,7 @@
       <div class="nav-links">
         <div class="nav-link-container" :class="{ activeLink: currentPath === '/' }"><RouterLink to="/" class="nav-link">Home</RouterLink></div>
         <div class="nav-link-container" :class="{ activeLink: currentPath === '/projects' }"><RouterLink to="/projects" class="nav-link">Portfolio</RouterLink></div>
+        <!-- <div class="nav-link-container" :class="{ activeLink: currentPath === '/extras' }"><RouterLink to="/extras" class="nav-link">Extras</RouterLink></div> -->
       </div>
     </nav>
 
@@ -73,7 +73,7 @@
         <p class="name"><b>Jamal Fox</b></p>
         <div class="status">
           <div class="status-bubble"></div>
-          <p class="status-text">Front End Developer</p>
+          <p class="status-text">Full Stack Developer</p>
         </div>
       </div>
 
@@ -145,7 +145,7 @@ export default {
         padding: 2px;
         position: relative;
         right: 2em;
-        cursor: pointer;
+        cursor: url("../assets/link.cur"), pointer;
         .inside-border {
           height: 100%;
           width: 100%;
@@ -163,6 +163,7 @@ export default {
     }
     .nav-links {
       display: flex;
+
       .nav-link-container {
         padding: 1em;
         position: relative;
@@ -173,7 +174,7 @@ export default {
         }
         &.activeLink,
         &:hover {
-          cursor: pointer;
+          cursor: url("../assets/link.cur"), pointer;
           transition: 0.1s ease-in-out;
           .nav-link {
             color: rgb(240, 230, 210);
@@ -187,7 +188,7 @@ export default {
         }
         &.activeLink::after {
           content: "";
-          height: 100%;
+          height: 90%;
           width: 100%;
           position: absolute;
           background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(255, 255, 255, 0.2) 90%);
@@ -200,6 +201,7 @@ export default {
           display: flex;
           position: relative;
           z-index: 2;
+          cursor: url("../assets/link.cur"), pointer;
         }
       }
     }
@@ -223,7 +225,7 @@ export default {
         height: 120%;
         color: RGB(200, 170, 110);
         &:hover {
-          cursor: pointer;
+          cursor: url("../assets/link.cur"), pointer;
           color: rgb(240, 230, 210);
           transition: 0.1s ease-in-out;
           background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(255, 255, 255, 0.2) 90%);
@@ -232,7 +234,7 @@ export default {
         .social-link-tag:visited {
           color: RGB(200, 170, 110);
           &:hover {
-            cursor: pointer;
+            cursor: url("../assets/link.cur"), pointer;
             color: rgb(240, 230, 210);
             transition: 0.1s ease-in-out;
           }
@@ -241,10 +243,11 @@ export default {
     }
     .dividing-line {
       height: inherit;
-      width: 2px;
+      width: 1px;
       margin: 4px 1em;
-      background: rgb(156, 134, 97);
-      background: radial-gradient(circle, rgba(156, 134, 97, 1) 9%, rgba(2, 0, 36, 1) 100%);
+      border-width: 1px;
+      border-style: solid;
+      border-image: linear-gradient(300deg, rgba(0, 0, 0, 1) 0%, rgba(200, 155, 60, 1) 48%, rgba(0, 0, 0, 1) 100%) 1;
     }
     .riot-points-wrapper {
       display: flex;
@@ -326,7 +329,7 @@ export default {
         &:hover {
           color: rgb(240, 230, 210);
           transition: 0.1s ease-in-out;
-          cursor: pointer;
+          cursor: url("../assets/link.cur"), pointer;
         }
       }
     }

@@ -1,42 +1,47 @@
 <template lang="">
   <div class="home_wrapper">
-    <!-- <top-bar /> -->
-    <div class="body_wrapper home-wrapper">
-      <div class="body-content">
-        <div class="main-body">
-          <div class="personal-info">
-            <h1 class="main-name">Jamal Fox</h1>
-            <h2 class="main-tags">Front End Developer</h2>
-          </div>
-          <div class="dividing-line"></div>
-          <p class="bio-text">Hello! I'm a front-end developer who crafts user-friendly and accessible websites with a passion for seamless digital experiences.</p>
+    <div class="home-top-panel">
+      <p class="home-top-panel-link" :class="{ active: mode == -1 }" @click="loadAboutView">ABOUT</p>
+      <p class="home-top-panel-link" :class="{ active: mode == 0 }" @click="loadOverviewView">OVERVIEW</p>
+      <p class="home-top-panel-link" :class="{ active: mode == 1 }" @click="loadExperienceView">EXPERIENCE</p>
+      <n-button class="home-top-panel-button" color="#C89B3C" ghost>
+        <a class="home-top-panel-link" href="../../src/assets/downloads/Jamal_Fox_Resume_Sept_2023.pdf" download> <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a>
+      </n-button>
+    </div>
+    <div class="home-main-panel">
+      <div class="home-text" ref="homeMainLeft">
+        <p>Full-Stack Developer</p>
+        <h1>Jamal Fox</h1>
+        <p>Welcome to my portfolio! Take a look around!</p>
+      </div>
+      <div class="home-video" ref="homeMainRight">
+        <!-- <iframe v-if="mode == 0" class="iframe" src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe> -->
+        <div v-if="mode == -1" class="about-wrapper">
+          <h2>Hello!</h2>
+          <p>Hello, I'm Jamal Fox, a passionate Front End Developer with a knack for crafting visually stunning and highly functional web experiences. With a background in Information Systems and a proven track record in the industry, I thrive on translating creative ideas into digital reality.</p>
+          <p>I find immense joy in the art of web development, combining my technical prowess in Vue.js, React, and PHP with a keen eye for design. My journey in the ever-evolving world of front-end development has equipped me with an array of skills, including expertise in HTML, CSS, JavaScript, and more. From harnessing the power of Vue.js to implementing responsive design principles, I'm committed to delivering user-friendly, accessible, and performance-optimized web solutions.</p>
+          <p>My professional journey has been enriched by diverse experiences, from leading front-end development initiatives at American Reading Company to connecting with clients as a Technical Sales Agent at Rebillia. Through these roles, I've honed my ability to seamlessly collaborate with cross-functional teams, ensuring that design concepts come to life with pixel-perfect precision.</p>
+          <p>Beyond the code, I'm a firm believer in the importance of web accessibility. I take pride in adhering to WCAG guidelines, ensuring that digital experiences are inclusive and reach a wide audience.</p>
+          <p>Feel free to reach out at Fox.Jamal@outlook.com or give me a call at (678) 522-8843. I'm always up for a chat about web development, accessibility, or the latest tech trends.</p>
         </div>
-        <div class="body-panels">
-          <div class="panel" v-for="project in filteredFeaturedProjects">
-            <a :href="project.link || project.file" target="_blank" download>
-              <div class="panel-inner">
-                <img :src="`../../src/assets/images/project-ss/${project.image}`" />
-              </div>
-              <p class="item-name">{{ project.name }}</p>
-            </a>
-          </div>
-          <div class="panel">
-            <div class="panel-inner"></div>
-          </div>
-          <div class="panel">
-            <div class="panel-inner"></div>
-          </div>
-          <div class="panel smaller">
-            <a href="../assets/downloads/Jamal_Fox_Resume_July_2023.pdf" download>
-              <div class="panel-inner">
-                <img src="../assets/design-icons/download.svg" alt="download resume" />
-                <p>Resume</p>
-              </div>
-            </a>
-          </div>
+        <div v-if="mode == 1" class="timeline-wrapper">
+          <n-timeline>
+            <n-timeline-item type="success" title="Freelance" content="Freelance Web Developer" time="June 2023 - " />
+            <n-timeline-item type="success" title="American Reading Company" content="Front End Developer" time="March 2022 - " />
+            <n-timeline-item type="success" title="Rebillia" content="Technical Sales Associate" time="February 2021 - March 2022 " />
+          </n-timeline>
         </div>
       </div>
-      <div class="body-overlay"></div>
+    </div>
+    <div v-if="mode == 0" class="home-bottom-panel" ref="homeMainBottom">
+      <div v-for="project in featuredProjects" class="item" :style="{ flexGrow: project.portion }">
+        <div class="image">
+          <img :src="`../../src/assets/project-photos/${project.img}`" />
+          <a v-if="project.demoLink" :href="project.demoLink" target="_blank"></a>
+          <a v-if="project.downloadLink" :href="project.downloadLink" class="download-link" download></a>
+        </div>
+        <p>{{ project.title }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -45,41 +50,48 @@
 import featuredProjects from "../services/featuredProjects.json";
 import TopBar from "../components/TopBar.vue";
 import SidePanel from "../components/SidePanel.vue";
+import { NButton, NTimeline, NTimelineItem } from "naive-ui";
 
 export default {
-  components: { TopBar, SidePanel },
+  components: { TopBar, SidePanel, NButton, NTimeline, NTimelineItem },
   setup() {
     let filteredFeaturedProjects = featuredProjects.filter((item) => item.featured);
     return { filteredFeaturedProjects };
   },
   data() {
     return {
-      figmaDesigns: [
+      mode: 0,
+      featuredProjects: [
         {
-          name: "Mystic Fox Marketing",
-          subtitle: "Marketing Agency Website",
-          img1: "mfm-hero.png",
-          img2: "mfm-benefits.png",
-          link: "https://www.figma.com/file/QUe3RMzq9S1AHWABfCL6E8/Mystic-Fox-Marketing?node-id=0%3A1&t=snogOdCpbqvlPwmO-1",
+          title: "Apollo Appointment Scheduler",
+          portion: 2,
+          img: "Apollo/dashboard.png",
+          demoLink: "https://apollo-appointment-scheduler-evptp4uhp-jamalfox85.vercel.app/login",
         },
         {
-          name: "Kia Sterling Portfolio",
-          subtitle: "Modeling Portfolio Website",
-          img1: "kia-hero.png",
-          link: "https://www.figma.com/file/OslVemYr4Z32RJL6AsQVtX/Kia-Sterling?node-id=11%3A2&t=ijNmE8YuJqjdTVNa-1",
+          title: "Intro to Web Accessibility PPT",
+          portion: 2,
+          img: "intro-to-a11y.png",
+          downloadLink: "../../src/assets/downloads/intro-to-web-accessibility.pptx",
         },
         {
-          name: "MODUS.AI",
-          subtitle: "Pre-launch Email Collection Page",
-          img1: "modus-email.png",
-          link: "https://www.figma.com/file/eIB0SgPTycUD5buStDe38V/Email-Collection?node-id=0%3A1&t=vfD356Oxi4mS4Jty-1",
+          title: "Accessibility Testing PPT",
+          portion: 2,
+          img: "a11y-testing.png",
+          downloadLink: "../../src/assets/downloads/accessibility-testing.pptx",
         },
-        {
-          name: "Grocery App",
-          subtitle: "Login Page for Grocery Shopping App",
-          img1: "grocery-login.png",
-          link: "https://www.figma.com/file/uExd8naVUWvtqkEQ6UMlN2/Grocery-App?node-id=1%3A2&t=TM3lHfZ7sCK3KnZ8-1",
-        },
+        // {
+        //   title: "Blog Post #1",
+        //   portion: 1,
+        //   img: "modus-email.png",
+        //   link: "https://www.figma.com/file/eIB0SgPTycUD5buStDe38V/Email-Collection?node-id=0%3A1&t=vfD356Oxi4mS4Jty-1",
+        // },
+        // {
+        //   title: "Blog Post #2",
+        //   portion: 1,
+        //   img: "grocery-login.png",
+        //   link: "https://www.figma.com/file/uExd8naVUWvtqkEQ6UMlN2/Grocery-App?node-id=1%3A2&t=TM3lHfZ7sCK3KnZ8-1",
+        // },
       ],
     };
   },
@@ -89,6 +101,21 @@ export default {
     },
     openLink(link) {
       window.open(link);
+    },
+    loadAboutView() {
+      this.mode = -1;
+      this.$refs.homeMainLeft.classList.add("about-view");
+      this.$refs.homeMainLeft.classList.remove("experience-view");
+    },
+    loadOverviewView() {
+      this.mode = 0;
+      this.$refs.homeMainLeft.classList.remove("about-view");
+      this.$refs.homeMainLeft.classList.remove("experience-view");
+    },
+    loadExperienceView() {
+      this.mode = 1;
+      this.$refs.homeMainLeft.classList.remove("about-view");
+      this.$refs.homeMainLeft.classList.add("experience-view");
     },
   },
 };
@@ -100,204 +127,134 @@ export default {
   color: white;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  .home-wrapper {
-    // height: 100%;
-    background: url("../assets/images/nami-splash.jpeg");
-    background-size: cover;
-    position: relative;
-    color: rgb(240, 230, 210);
-    // width: 100%;
-    flex-grow: 1;
-  }
-}
-
-.body_wrapper {
-  height: 100%;
+  // height: 70%;
   display: flex;
-  // .body-overlay {
-  //   height: 100%;
-  //   width: 100%;
-  //   background: rgba(255, 255, 255, 1);
-  //   background: radial-gradient(at right top, rgba(255, 255, 255, 0), rgba(1, 1, 1, 0.75) 40%, rgba(1, 1, 1, 1) 100%);
-  //   position: absolute;
-  //   top: 0;
-  // }
-  .body-content {
-    position: relative;
-    z-index: 2;
-    padding: 2em 1em;
-    width: inherit;
-    height: 100%;
+  flex-direction: column;
+  .home-top-panel {
     display: flex;
-    flex-direction: column;
-    .skills-section-toggle {
-      color: RGB(200, 170, 110);
-      font-size: 1.25em;
-      background-color: transparent;
-      border: none;
+    align-items: center;
+    padding: 4px 16px;
+    .home-top-panel-link {
+      margin: 0 1.5em;
+      color: #a09b8c;
+      text-decoration: none;
+      &.active {
+        border-width: 0;
+        border-bottom: 1px;
+        border-style: solid;
+        border-image: linear-gradient(300deg, rgba(0, 0, 0, 1) 0%, rgba(200, 155, 60, 1) 48%, rgba(0, 0, 0, 1) 100%) 1;
+        color: #f0e6d2;
+      }
+      &:hover {
+        color: #f0e6d2;
+        cursor: url("../assets/link.cur"), pointer;
+      }
+    }
+    .home-top-panel-button {
       margin-left: auto;
+      &:hover {
+        background-color: #091428;
+      }
     }
-    .main-body {
-      padding: 1em;
+  }
+  .home-main-panel {
+    flex-grow: 1;
+    display: flex;
+    padding: 1em;
+    .home-text {
       display: flex;
-      margin: 1em;
-      &::-webkit-scrollbar {
-        width: 4px;
+      flex-direction: column;
+      justify-content: center;
+      flex-grow: 1;
+      margin: 0 1em 2em 2em;
+      h1 {
+        color: #f0e6d2;
+        font-size: 4em;
+        line-height: normal;
       }
-      &::-webkit-scrollbar-track {
-        background: #32281e;
+      p {
+        font-size: 1.15em;
+        color: #a09b8c;
       }
-      &::-webkit-scrollbar-thumb {
-        background: #c89b3c;
+      &.about-view {
+        justify-content: flex-start;
+      }
+      &.experience-view {
+        justify-content: flex-end;
+      }
+    }
+    .home-video {
+      width: 60%;
+      display: flex;
+      margin-left: auto;
+      // margin: 1em 1em 1em auto;
+      .iframe {
+        flex-grow: 1;
+      }
+      .about-wrapper {
+        border: solid 2px #785a28;
         border-radius: 4px;
-      }
-      &::-webkit-scrollbar-thumb:hover {
-        background: #785a28;
-      }
-      .personal-info {
-        width: fit-content;
-        text-align: center;
-        .main-name {
-          font-size: 64px;
-          margin-bottom: 8px;
-          color: rgb(240, 230, 210);
-          text-shadow: -1px 1px 2px #c89b3c, 1px 1px 2px #c89b3c, 1px -1px 0 #c89b3c, -1px -1px 0 #c89b3c;
-        }
-        .main-tags {
-          opacity: 0.75;
-          font-size: 24px;
-          text-shadow: -1px 1px 2px #c89b3c, 1px 1px 2px #c89b3c, 1px -1px 0 #c89b3c, -1px -1px 0 #c89b3c;
+        margin-left: auto;
+        background-color: #091428;
+        padding: 1em;
+        overflow-y: scroll;
+        h2,
+        p {
+          margin-bottom: 1em;
         }
       }
-      .dividing-line {
-        height: inherit;
-        width: 4px;
-        margin: 4px 32px;
-        background: rgb(156, 134, 97);
-        background: radial-gradient(circle, rgba(156, 134, 97, 1) 9%, rgba(2, 0, 36, 1) 100%);
-      }
-      .bio-text {
-        font-size: 20px;
-        width: 200px;
-        align-self: center;
+      .timeline-wrapper {
+        flex-grow: 1;
+        margin-top: 2em;
+        .n-timeline-item-content {
+          .n-timeline-item-content__title {
+            color: #c8aa6e;
+            font-size: 1.1em;
+          }
+          .n-timeline-item-content__content {
+            color: #f0e6d2;
+            font-size: 1.5em;
+          }
+          .n-timeline-item-content__time {
+            color: #a09b8c;
+            font-size: 1.5em;
+          }
+        }
       }
     }
-    .body-panels {
-      height: fit-content;
-      width: 100%;
+  }
+  .home-bottom-panel {
+    display: flex;
+    margin-top: auto;
+    padding: 0 2em;
+    .item {
+      height: 150px;
+      max-width: 225px;
+      margin: 12px 6px;
       display: flex;
-      margin-top: auto;
-      align-items: flex-start;
-      .panel {
+      flex-direction: column;
+      .image {
         height: 100%;
-        flex-grow: 2;
-        padding: 8px;
-        flex-direction: column;
-        margin: 0 0.5em;
-        width: 25%;
+        width: 100%;
+        display: flex;
+        overflow: hidden;
         position: relative;
-        top: 0;
-        &.smaller {
-          height: 75%;
-          width: 10%;
-          position: relative;
-          font-size: 24px;
-          color: rgb(240, 230, 210);
-          text-shadow: -1px 1px 2px #c89b3c, 1px 1px 2px #c89b3c, 1px -1px 0 #c89b3c, -1px -1px 0 #c89b3c;
-          a {
-            color: rgb(240, 230, 210);
-            .panel-inner {
-              height: 100%;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              padding: 1em 0.5em;
-              border-radius: 8px;
-              overflow: hidden;
-              img {
-                width: 25%;
-                margin-bottom: 1em;
-              }
-            }
-          }
-          &:hover {
-            .panel-inner {
-              background-color: #c89c3cdd;
-              transition: 0.1s ease-in;
-            }
-          }
-        }
-        &:hover {
-          top: -0.35em;
-          transition: 0.2s ease-in;
-          .item-name {
-            color: #c89b3c;
-          }
-        }
-        .panel-inner {
-          height: 75%;
-          display: flex;
-          box-shadow: 0.3px 0.5px 0.5px hsl(var(208deg 74% 2%) / 0.51), 0.5px 1px 0.9px -0.6px hsl(var(208deg 74% 2%) / 0.45), 1.1px 2.1px 2px -1.3px hsl(var(208deg 74% 2%) / 0.4), 2.3px 4.6px 4.2px -1.9px hsl(var(208deg 74% 2%) / 0.34), 4.6px 9.1px 8.4px -2.6px hsl(var(208deg 74% 2%) / 0.28), 8.2px 16.4px 15.1px -3.2px hsl(var(208deg 74% 2%) / 0.23), 13.7px 27.3px 25.2px -3.9px hsl(var(208deg 74% 2%) / 0.17), 21.3px 42.5px 39.2px -4.5px hsl(var(208deg 74% 2%) / 0.11);
-          img {
-            width: 100%;
-          }
+        img {
+          border: solid 1px #5b5a56;
+          width: 100%;
         }
         a {
-          text-decoration: none;
-          .item-name {
-            color: #f0e6d2;
-            font-size: 1.25em;
-            margin: 0.5em;
-          }
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          z-index: 2;
+          cursor: url("../assets/link.cur"), pointer;
         }
+      }
+      p {
+        margin: 4px;
       }
     }
-  }
-}
-// @media screen and (max-width: 1000px) {
-//   .main-name,
-//   .main-tags {
-//     text-align: center;
-//   }g
-// }
-// @media screen and (max-width: 700px) {
-//   .main-name {
-//     font-size: 72px !important;
-//   }
-// }
-
-@media screen and (max-width: 850px) {
-  .body_wrapper {
-    // max-width: 100%;
-    height: auto;
-    .body-content {
-      max-height: 725px;
-      .body-nav {
-        .skills-section-toggle {
-          display: block;
-        }
-      }
-      .main-body {
-        .main-name,
-        .main-tags {
-          text-align: center;
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 800px) {
-  .body_wrapper {
-    max-width: 100% !important;
-  }
-}
-@media screen and (max-width: 600px) {
-  .body_wrapper {
-    height: auto !important;
-  }
-  .main-name {
-    font-size: 4em !important;
   }
 }
 </style>

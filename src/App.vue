@@ -36,6 +36,10 @@ export default {
 </script>
 
 <style lang="scss">
+@font-face {
+  font-family: Beaufort;
+  src: url("./assets/fonts/beaufort-for-lol_woff/BeaufortforLOL-Regular.woff");
+}
 * {
   margin: 0;
   padding: 0;
@@ -74,6 +78,9 @@ export default {
     box-shadow: 0px 1px 2px rgba(239, 234, 234, 0.1), 0px 2px 4px rgba(240, 230, 210, 0.15), 0px 4px 8px rgba(240, 230, 210, 0.15), 0px 8px 16px rgba(240, 230, 210, 0.15);
     opacity: 1;
     animation: loadClient 0.4s forwards;
+    cursor: url("./assets/normal.cur"), pointer;
+    font-family: Beaufort;
+    background-image: url("./assets/images/gameflow-background.jpeg");
     .client-header {
       width: 100%;
       border-bottom: solid 2px rgb(67, 68, 69);
@@ -86,7 +93,7 @@ export default {
       display: flex;
       position: relative;
       margin-top: auto;
-      height: 100%;
+      flex-grow: 1;
     }
     &::-webkit-scrollbar {
       width: 4px;

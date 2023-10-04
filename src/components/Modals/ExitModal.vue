@@ -96,7 +96,7 @@ export default {
       .close-button {
         font-size: 1.5em;
         align-self: flex-start;
-        cursor: pointer;
+        cursor: url("../assets/link.cur"), pointer;
       }
     }
     .modal-main {
@@ -145,7 +145,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
+        cursor: url("../assets/link.cur"), pointer;
         margin-right: 0.5em;
         border-radius: 2px;
         // margin: auto;

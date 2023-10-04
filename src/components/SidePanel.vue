@@ -65,6 +65,12 @@ export default {
           status: "Online",
         },
         {
+          name: "React",
+          type: "Technical",
+          img: "react",
+          status: "Online",
+        },
+        {
           name: "Vue",
           type: "Technical",
           img: "vue",
@@ -77,21 +83,21 @@ export default {
           status: "Online",
         },
         {
-          name: "React",
-          type: "Technical",
-          img: "react",
-          status: "Online",
-        },
-        {
           name: "PHP",
           type: "Technical",
           img: "php",
           status: "Online",
         },
         {
-          name: "SQL",
+          name: "Laravel",
           type: "Technical",
-          img: "sql",
+          img: "laravel",
+          status: "Online",
+        },
+        {
+          name: "Web Accessibility",
+          type: "Technical",
+          img: "w3c",
           status: "Online",
         },
         {
@@ -107,12 +113,6 @@ export default {
           status: "Online",
         },
         {
-          name: "Bootstrap",
-          type: "Technical",
-          img: "bootstrap",
-          status: "Online",
-        },
-        {
           name: "Sass",
           type: "Technical",
           img: "sass",
@@ -125,15 +125,27 @@ export default {
           status: "Online",
         },
         {
-          name: "Figma",
+          name: "SQL",
           type: "Technical",
-          img: "figma",
+          img: "sql",
           status: "Online",
         },
         {
           name: "Git",
           type: "Technical",
           img: "git",
+          status: "Online",
+        },
+        {
+          name: "Figma",
+          type: "Technical",
+          img: "figma",
+          status: "Online",
+        },
+        {
+          name: "Bootstrap",
+          type: "Technical",
+          img: "bootstrap",
           status: "Online",
         },
       ],
@@ -162,7 +174,7 @@ export default {
     display: flex;
     width: 100%;
     // margin-bottom: 1em;
-    padding: 16px;
+    padding: 8px 16px;
     .panel-header-icons {
       margin-left: auto;
       color: RGB(200, 170, 110);
@@ -174,7 +186,10 @@ export default {
   }
   .panel-main {
     // flex: 1;
-    // max-height: calc(100% - 80px);
+    height: 0px; /* Hacky solution. No matter what, if height is set at an absolute value, 
+                  the container will grow to fill the space with flex-grow: 1. 
+                  But if I set height at any relative value (0%, 100%, auto, inherit, etc), 
+                  this section grows outside of parent containers */
     padding: 1em 0;
     overflow-y: scroll;
     flex-grow: 1;
@@ -197,8 +212,10 @@ export default {
       align-items: center;
       padding: 0.5em;
       margin-bottom: 0.25em;
+      // border: solid 2px lime;
       .skill-img {
         width: 2.5em;
+        aspect-ratio: 1;
         display: flex;
         border: solid 1px #c89b3c;
         border-radius: 50%;
@@ -273,7 +290,6 @@ export default {
         margin-left: auto;
       }
       &:hover {
-        cursor: pointer;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 5%, rgba(255, 255, 255, 0.2) 90%);
       }
     }

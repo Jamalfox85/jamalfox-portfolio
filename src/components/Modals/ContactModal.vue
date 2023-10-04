@@ -5,12 +5,14 @@
         <template #header-extra></template>
         <div class="modal-main">
           <n-form ref="contactForm" :model="formValue" :rules="rules">
-            <n-form-item path="name" label="Name">
-              <n-input v-model:value="formValue.name" type="text" placeholder="Taylor Swift" />
-            </n-form-item>
-            <n-form-item path="email" label="Email">
-              <n-input v-model:value="formValue.email" type="text" placeholder="taylorswift@gmail.com" />
-            </n-form-item>
+            <n-space justify="space-around">
+              <n-form-item path="name" label="Name">
+                <n-input v-model:value="formValue.name" type="text" placeholder="Taylor Swift" />
+              </n-form-item>
+              <n-form-item path="email" label="Email">
+                <n-input v-model:value="formValue.email" type="text" placeholder="taylorswift@gmail.com" />
+              </n-form-item>
+            </n-space>
             <n-form-item path="phone" label="Phone">
               <n-input v-model:value="formValue.phone" type="text" placeholder="444-444-4444" />
             </n-form-item>
@@ -28,12 +30,12 @@
   </div>
 </template>
 <script>
-import { NModal, NCard, NButton, NForm, NFormItem, NInput } from "naive-ui";
+import { NModal, NCard, NButton, NForm, NFormItem, NInput, NSpace } from "naive-ui";
 import emailjs from "@emailjs/browser";
 
 export default {
   props: ["isOpen"],
-  components: { NModal, NCard, NButton, NForm, NFormItem, NInput },
+  components: { NModal, NCard, NButton, NForm, NFormItem, NInput, NSpace },
   data() {
     return {
       showModal: this.isOpen,
@@ -103,7 +105,32 @@ export default {
 };
 </script>
 <style lang="scss">
-.modal-main {
+.n-modal {
+  background-color: #0a1428 !important;
+  border: solid 1px #785a28;
+}
+.n-card-header__main {
+  text-align: center;
+  color: #f0e6d2 !important;
+  font-size: 1.4em;
+}
+.n-form-item-label__text {
+  color: #a09b8c !important;
+}
+.n-input .n-input--resizable .n-input--stateful {
+  border: solid 2px #785a28 !important;
+}
+.n-input,
+.n-input--focus,
+.n-input--stateful {
+  background-color: #0a1428 !important;
+  border: solid 2px #785a28 !important;
+}
+.n-input__input-el {
+  color: #f0e6d2 !important;
+}
+.n-input__placeholder {
+  color: #3c3c41 !important;
 }
 .n-card__footer {
   display: flex;
