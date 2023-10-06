@@ -12,7 +12,7 @@
     <div class="panel-main">
       <div class="skill-block" v-for="skill in skills">
         <div class="skill-img">
-          <img :src="`../../src/assets/skill-icons/${skill.img}.svg`" />
+          <img :src="`./images/skill-icons/${skill.img}.svg`" />
         </div>
         <div class="skill-info">
           <p class="skill-name">{{ skill.name }}</p>

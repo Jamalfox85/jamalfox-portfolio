@@ -3,7 +3,7 @@
     "featured": true,
     "name": "Intro to Web Accessibility (PPT)",
     "image": "intro-to-accessibility-ppt.png",
-    "file": "../assets/downloads/Intro to Web Accessibility.pptx"
+    "file": "./downloads/Intro to Web Accessibility.pptx"
   },
   {
     "featured": true,

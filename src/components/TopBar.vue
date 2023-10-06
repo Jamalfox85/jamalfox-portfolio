@@ -12,42 +12,39 @@
       </div>
       <div class="nav-links">
         <div class="nav-link-container" :class="{ activeLink: currentPath === '/' }"><RouterLink to="/" class="nav-link">Home</RouterLink></div>
-        <div class="nav-link-container" :class="{ activeLink: currentPath === '/projects' }"><RouterLink to="/projects" class="nav-link">Portfolio</RouterLink></div>
+        <div class="nav-link-container" :class="{ activeLink: currentPath === '/projects' }"><RouterLink to="/projects" class="nav-link">Projects</RouterLink></div>
         <!-- <div class="nav-link-container" :class="{ activeLink: currentPath === '/extras' }"><RouterLink to="/extras" class="nav-link">Extras</RouterLink></div> -->
       </div>
     </nav>
+    <div class="heading-icons">
+      <div class="heading-icon">
+        <a class="social-link-tag" href="https://www.linkedin.com/in/jamalfox1/" target="_blank">
+          <font-awesome-icon :icon="['fab', 'linkedin']" />
+        </a>
+      </div>
+      <div class="heading-icon">
+        <a class="social-link-tag" href="https://github.com/Jamalfox85" target="_blank">
+          <font-awesome-icon :icon="['fab', 'github']" />
+        </a>
+      </div>
+      <div class="heading-icon">
+        <a class="social-link-tag" href="https://www.instagram.com/jamalfoxdesigns/" target="_blank">
+          <font-awesome-icon :icon="['fab', 'instagram']" />
+        </a>
+      </div>
+      <div class="heading-icon">
+        <a class="social-link-tag" href="https://twitter.com/JamalFoxDesigns" target="_blank">
+          <font-awesome-icon :icon="['fab', 'twitter']" />
+        </a>
+      </div>
+      <div class="heading-icon">
+        <a class="social-link-tag" href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity" target="_blank">
+          <font-awesome-icon :icon="['fas', 'envelope']" />
+        </a>
+      </div>
+    </div>
 
     <div class="header-right">
-      <div class="heading-icons">
-        <div class="heading-icon">
-          <a class="social-link-tag" href="https://www.linkedin.com/in/jamalfox1/" target="_blank">
-            <font-awesome-icon :icon="['fab', 'linkedin']" />
-          </a>
-        </div>
-        <div class="heading-icon">
-          <a class="social-link-tag" href="https://github.com/Jamalfox85" target="_blank">
-            <font-awesome-icon :icon="['fab', 'github']" />
-          </a>
-        </div>
-        <div class="heading-icon">
-          <a class="social-link-tag" href="https://www.instagram.com/jamalfoxdesigns/" target="_blank">
-            <font-awesome-icon :icon="['fab', 'instagram']" />
-          </a>
-        </div>
-        <div class="heading-icon">
-          <a class="social-link-tag" href="https://twitter.com/JamalFoxDesigns" target="_blank">
-            <font-awesome-icon :icon="['fab', 'twitter']" />
-          </a>
-        </div>
-        <div class="heading-icon">
-          <a class="social-link-tag" href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity" target="_blank">
-            <font-awesome-icon :icon="['fas', 'envelope']" />
-          </a>
-        </div>
-      </div>
-
-      <div class="dividing-line"></div>
-
       <div class="riot-points-wrapper">
         <div class="point-group">
           <img class="point-img" src="../assets/design-icons/RP_icon.webp" />
@@ -128,11 +125,14 @@ export default {
 <style lang="scss">
 .header_wrapper {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   padding: 4px 0.5em 0 1em;
   .header-left {
     display: flex;
     align-items: center;
     margin-right: auto;
+    margin-bottom: 1em;
     .contact-button-group {
       display: flex;
       align-items: center;
@@ -206,49 +206,50 @@ export default {
       }
     }
   }
+  .heading-icons {
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    color: rgb(240, 230, 210);
+    display: flex;
+    position: relative;
+    border-width: 0;
+    // border-right: 1px;
+    border-style: solid;
+    border-image: linear-gradient(rgba(0, 0, 0, 1) 0%, rgba(200, 155, 60, 1) 48%, rgba(0, 0, 0, 1) 100%) 1;
+    margin: 0 1em 0 auto;
+    padding-right: 1em;
+    // flex-grow: 1;
+    .heading-icon {
+      display: flex;
+      align-items: center;
+      padding: 0.5em;
+      height: 120%;
+      color: RGB(200, 170, 110);
+      &:hover {
+        cursor: url("../assets/link.cur"), pointer;
+        color: rgb(240, 230, 210);
+        transition: 0.1s ease-in-out;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(255, 255, 255, 0.2) 90%);
+      }
+      .social-link-tag,
+      .social-link-tag:visited {
+        color: RGB(200, 170, 110);
+        &:hover {
+          cursor: url("../assets/link.cur"), pointer;
+          color: rgb(240, 230, 210);
+          transition: 0.1s ease-in-out;
+        }
+      }
+    }
+  }
+
   .header-right {
     font-size: 1em;
     color: rgb(240, 230, 210);
     display: flex;
     position: relative;
 
-    .heading-icons {
-      font-size: 1.5em;
-      display: flex;
-      align-items: center;
-      color: rgb(178, 132, 72);
-
-      .heading-icon {
-        display: flex;
-        align-items: center;
-        padding: 0.5em;
-        height: 120%;
-        color: RGB(200, 170, 110);
-        &:hover {
-          cursor: url("../assets/link.cur"), pointer;
-          color: rgb(240, 230, 210);
-          transition: 0.1s ease-in-out;
-          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(255, 255, 255, 0.2) 90%);
-        }
-        .social-link-tag,
-        .social-link-tag:visited {
-          color: RGB(200, 170, 110);
-          &:hover {
-            cursor: url("../assets/link.cur"), pointer;
-            color: rgb(240, 230, 210);
-            transition: 0.1s ease-in-out;
-          }
-        }
-      }
-    }
-    .dividing-line {
-      height: inherit;
-      width: 1px;
-      margin: 4px 1em;
-      border-width: 1px;
-      border-style: solid;
-      border-image: linear-gradient(300deg, rgba(0, 0, 0, 1) 0%, rgba(200, 155, 60, 1) 48%, rgba(0, 0, 0, 1) 100%) 1;
-    }
     .riot-points-wrapper {
       display: flex;
       flex-direction: column;
@@ -359,6 +360,25 @@ export default {
           color: rgb(9, 166, 70);
         }
       }
+    }
+  }
+}
+@media screen and (max-width: 660px) {
+  .header_wrapper {
+    flex-direction: column-reverse;
+    & > * {
+      margin: auto !important;
+      overflow: hidden;
+      width: 100%;
+    }
+    .header-left {
+      .activeLink::before {
+        top: -50% !important;
+        transform: scale(0.6) !important;
+      }
+    }
+    .heading-icons {
+      justify-content: space-evenly;
     }
   }
 }

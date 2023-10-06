@@ -5,7 +5,7 @@
       <p class="home-top-panel-link" :class="{ active: mode == 0 }" @click="loadOverviewView">OVERVIEW</p>
       <p class="home-top-panel-link" :class="{ active: mode == 1 }" @click="loadExperienceView">EXPERIENCE</p>
       <n-button class="home-top-panel-button" color="#C89B3C" ghost>
-        <a class="home-top-panel-link" href="../../src/assets/downloads/Jamal_Fox_Resume_Sept_2023.pdf" download> <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a>
+        <a class="home-top-panel-link" href="./downloads/Jamal_Fox_Resume_Sept_2023.pdf" download> <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a>
       </n-button>
     </div>
     <div class="home-main-panel">
@@ -36,7 +36,7 @@
     <div v-if="mode == 0" class="home-bottom-panel" ref="homeMainBottom">
       <div v-for="project in featuredProjects" class="item" :style="{ flexGrow: project.portion }">
         <div class="image">
-          <img :src="`../../src/assets/project-photos/${project.img}`" />
+          <img :src="`./project-photos/${project.img}`" />
           <a v-if="project.demoLink" :href="project.demoLink" target="_blank"></a>
           <a v-if="project.downloadLink" :href="project.downloadLink" class="download-link" download></a>
         </div>
@@ -72,13 +72,13 @@ export default {
           title: "Intro to Web Accessibility PPT",
           portion: 2,
           img: "intro-to-a11y.png",
-          downloadLink: "../../src/assets/downloads/intro-to-web-accessibility.pptx",
+          downloadLink: "./downloads/intro-to-web-accessibility.pptx",
         },
         {
           title: "Accessibility Testing PPT",
           portion: 2,
           img: "a11y-testing.png",
-          downloadLink: "../../src/assets/downloads/accessibility-testing.pptx",
+          downloadLink: "./downloads/accessibility-testing.pptx",
         },
         // {
         //   title: "Blog Post #1",
