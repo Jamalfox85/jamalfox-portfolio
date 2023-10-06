@@ -9,7 +9,7 @@
       <div class="projects-wrapper" v-if="mode == 0">
         <div v-for="project in projectData" class="project-group" :class="{ active: activeProject.mode == project.mode }" @click="activeProject = project">
           <div class="icon-wrapper">
-            <font-awesome-icon :icon="['fas', 'calendar']" />
+            <font-awesome-icon :icon="project.icon" />
           </div>
           <div class="project-text-wrapper">
             <p>{{ project.class }}</p>
@@ -230,6 +230,74 @@ export default {
       &:hover {
         cursor: url("../assets/link.cur"), pointer;
         background-color: #67676b;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .projects-wrapper {
+    display: block !important;
+    // flex-direction: column !important;
+    // width: 100%;
+    padding: 1em;
+    overflow-y: auto;
+    height: 300px;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #32281e;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #c89b3c;
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #785a28;
+    }
+    .project-group {
+      width: 100% !important;
+      flex-grow: 1 !important;
+      margin: 0 0 1em 0 !important;
+      flex-direction: row !important;
+      height: 200px !important;
+      .icon-wrapper {
+        width: 50px !important;
+        margin-right: 1em;
+        svg {
+          font-size: 3em !important;
+        }
+      }
+      .project-text-wrapper {
+        min-width: 200px !important;
+        p {
+          font-size: 1em !important;
+          width: fit-content !important;
+        }
+        h2 {
+          font-size: 1.5em !important;
+          width: 75%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .projects_wrapper {
+    max-width: 100% !important;
+    .project-group {
+      flex-direction: column !important;
+      position: relative;
+      .icon-wrapper {
+        position: absolute;
+        top: 1em;
+        right: 1em;
+      }
+      .project-text-wrapper {
+        min-height: initial !important;
+        padding-bottom: 8px;
       }
     }
   }

@@ -7,6 +7,31 @@
         <font-awesome-icon :icon="['fas', 'folder-plus']" />
         <font-awesome-icon :icon="['fas', 'list']" />
         <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
+        <div class="sidebar-social-media-icon">
+          <a class="social-link-tag" href="https://www.linkedin.com/in/jamalfox1/" target="_blank">
+            <font-awesome-icon :icon="['fab', 'linkedin']" />
+          </a>
+        </div>
+        <div class="sidebar-social-media-icon">
+          <a class="social-link-tag" href="https://github.com/Jamalfox85" target="_blank">
+            <font-awesome-icon :icon="['fab', 'github']" />
+          </a>
+        </div>
+        <!-- <div class="sidebar-social-media-icon">
+          <a class="social-link-tag" href="https://www.instagram.com/jamalfoxdesigns/" target="_blank">
+            <font-awesome-icon :icon="['fab', 'instagram']" />
+          </a>
+        </div>
+        <div class="sidebar-social-media-icon">
+          <a class="social-link-tag" href="https://twitter.com/JamalFoxDesigns" target="_blank">
+            <font-awesome-icon :icon="['fab', 'twitter']" />
+          </a>
+        </div> -->
+        <div class="sidebar-social-media-icon">
+          <a class="social-link-tag" href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity" target="_blank">
+            <font-awesome-icon :icon="['fas', 'envelope']" />
+          </a>
+        </div>
       </div>
     </div>
     <div class="panel-main">
@@ -182,6 +207,9 @@ export default {
         height: 1em;
         margin-right: 1em;
       }
+      .sidebar-social-media-icon {
+        display: none;
+      }
     }
   }
   .panel-main {
@@ -263,7 +291,6 @@ export default {
     }
   }
   .panel-footer {
-    // height: 40px;
     width: 100%;
     margin-top: auto;
     display: flex;
@@ -361,6 +388,32 @@ export default {
     &#version,
     &#bug {
       display: none !important;
+    }
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .panel-header-icons {
+    & > * {
+      display: none !important;
+    }
+    .sidebar-social-media-icon {
+      display: flex !important;
+      &:hover {
+        cursor: url("../assets/link.cur"), pointer;
+        color: rgb(240, 230, 210);
+        transition: 0.1s ease-in-out;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(255, 255, 255, 0.2) 90%);
+      }
+      .social-link-tag,
+      .social-link-tag:visited {
+        color: RGB(200, 170, 110);
+        &:hover {
+          cursor: url("../assets/link.cur"), pointer;
+          color: rgb(240, 230, 210);
+          transition: 0.1s ease-in-out;
+        }
+      }
     }
   }
 }

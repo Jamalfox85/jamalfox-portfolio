@@ -2,6 +2,7 @@ export const projects = [
   {
     mode: 0,
     class: "Scheduling Web App",
+    icon: ["fas", "calendar"],
     title: "Apollo Appointment Scheduler",
     description: "Apollo is a full stack web app to book and track appointments with clients.",
     demoLink: "https://apollo-appointment-scheduler-evptp4uhp-jamalfox85.vercel.app/login",
@@ -11,6 +12,7 @@ export const projects = [
   {
     mode: 1,
     class: "Finance Web App",
+    icon: ["fas", "money-bill"],
     title: "Tauro Finance",
     description: "Tauro Finance is a full stack web app to manage and track finances including bills, credit score details, debt, and savings goals.",
     demoLink: "https://lustrous-scone-98a9c1.netlify.app/",
@@ -21,6 +23,7 @@ export const projects = [
   {
     mode: 2,
     class: "Web",
+    icon: ["fas", "computer"],
     title: "Fast Box",
     description: "This project is a landing page for a food delivery company. The design is based off a mockup found on dribbble from ",
     demoLink: "https://63d07cea8aa02a6000e23911--adorable-eclair-87951b.netlify.app/",

@@ -27,7 +27,7 @@
           <font-awesome-icon :icon="['fab', 'github']" />
         </a>
       </div>
-      <div class="heading-icon">
+      <!-- <div class="heading-icon">
         <a class="social-link-tag" href="https://www.instagram.com/jamalfoxdesigns/" target="_blank">
           <font-awesome-icon :icon="['fab', 'instagram']" />
         </a>
@@ -36,7 +36,7 @@
         <a class="social-link-tag" href="https://twitter.com/JamalFoxDesigns" target="_blank">
           <font-awesome-icon :icon="['fab', 'twitter']" />
         </a>
-      </div>
+      </div> -->
       <div class="heading-icon">
         <a class="social-link-tag" href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity" target="_blank">
           <font-awesome-icon :icon="['fas', 'envelope']" />
@@ -379,6 +379,7 @@ export default {
       }
     }
     .heading-icons {
+      display: none;
       justify-content: space-evenly;
     }
   }

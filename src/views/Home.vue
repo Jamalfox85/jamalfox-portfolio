@@ -189,7 +189,6 @@ export default {
       width: 60%;
       display: flex;
       margin-left: auto;
-      // margin: 1em 1em 1em auto;
       .iframe {
         flex-grow: 1;
       }
@@ -262,10 +261,6 @@ export default {
 
 @media screen and (max-width: 1100px) {
   .home-main-panel {
-    // flex-direction: column;
-    // & > * {
-    //   margin: auto !important;
-    // }
     .home-video {
       max-height: 500px;
       .iframe {
