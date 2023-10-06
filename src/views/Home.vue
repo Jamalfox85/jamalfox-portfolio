@@ -15,7 +15,7 @@
         <p>Welcome to my portfolio! Take a look around!</p>
       </div>
       <div class="home-video" ref="homeMainRight">
-        <!-- <iframe v-if="mode == 0" class="iframe" src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe> -->
+        <iframe v-if="mode == 0" class="iframe" src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
         <div v-if="mode == -1" class="about-wrapper">
           <h2>Hello!</h2>
           <p>Hello, I'm Jamal Fox, a passionate Front End Developer with a knack for crafting visually stunning and highly functional web experiences. With a background in Information Systems and a proven track record in the industry, I thrive on translating creative ideas into digital reality.</p>
@@ -28,6 +28,8 @@
           <n-timeline>
             <n-timeline-item type="success" title="Freelance" content="Freelance Web Developer" time="June 2023 - " />
             <n-timeline-item type="success" title="American Reading Company" content="Front End Developer" time="March 2022 - " />
+            <n-timeline-item type="success" title="Rebillia" content="Technical Sales Associate" time="February 2021 - March 2022 " />
+            <n-timeline-item type="success" title="Rebillia" content="Technical Sales Associate" time="February 2021 - March 2022 " />
             <n-timeline-item type="success" title="Rebillia" content="Technical Sales Associate" time="February 2021 - March 2022 " />
           </n-timeline>
         </div>
@@ -254,6 +256,76 @@ export default {
       p {
         margin: 4px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .home-main-panel {
+    // flex-direction: column;
+    // & > * {
+    //   margin: auto !important;
+    // }
+    .home-video {
+      max-height: 500px;
+      .iframe {
+        flex-grow: initial !important;
+        width: 300px !important;
+        height: 200px;
+        margin: auto;
+      }
+      .about-wrapper,
+      .timeline-wrapper {
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+          width: 4px;
+        }
+        &::-webkit-scrollbar-track {
+          background: #32281e;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #c89b3c;
+          border-radius: 4px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          background: #785a28;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .home-top-panel {
+      justify-content: space-around;
+      & > * {
+        font-size: 12px;
+      }
+      .home-top-panel-link {
+        margin: 0 0.5em !important;
+      }
+    }
+    .home-text {
+      margin: 0 !important;
+      flex-grow: unset !important;
+    }
+    .home-video {
+      max-height: 225px !important;
+    }
+    .home-main-panel {
+      flex-direction: column;
+      align-items: center;
+      & > * {
+        margin: auto;
+        width: 100% !important;
+      }
+      .home-video {
+        .iframe {
+          width: 75% !important;
+        }
+      }
+    }
+    .home-bottom-panel {
+      display: none !important;
     }
   }
 }

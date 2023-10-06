@@ -128,6 +128,7 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   padding: 4px 0.5em 0 1em;
+  background-color: rgb(21, 30, 36);
   .header-left {
     display: flex;
     align-items: center;

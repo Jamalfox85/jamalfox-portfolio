@@ -121,4 +121,10 @@ export default {
     margin: auto auto;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .client-main {
+    flex-direction: column;
+  }
+}
 </style>

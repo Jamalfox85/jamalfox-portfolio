@@ -42,7 +42,7 @@
       <div class="footer-block" id="version">
         <p>V.2</p>
       </div>
-      <div class="footer-block" id="last-footer-block">
+      <div class="footer-block" id="bug">
         <font-awesome-icon :icon="['fas', 'bug']" />
       </div>
     </div>
@@ -286,7 +286,7 @@ export default {
         border: none;
         pointer-events: none;
       }
-      &#last-footer-block {
+      &#bug {
         margin-left: auto;
       }
       &:hover {
@@ -298,16 +298,70 @@ export default {
 
 @media screen and (max-width: 900px) {
   .sidepanel_wrapper {
-    min-height: calc(100% - 90px) !important;
-    height: auto;
+    width: 100%;
+    height: 100px;
+    flex-direction: row;
+    & > * {
+      width: auto;
+      height: 100%;
+    }
+    .panel-header {
+      flex-direction: column;
+      align-items: center;
+      width: 50px;
+      .panel-header-text {
+        display: none;
+      }
+      .panel-header-icons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: space-around;
+        margin-left: initial;
+        & > * {
+          margin-right: auto;
+        }
+      }
+    }
     .panel-main {
-      max-height: auto;
+      height: 100%;
+      display: flex;
+      overflow-y: hidden;
+      &::-webkit-scrollbar {
+        height: 8px;
+      }
+    }
+    .panel-footer {
+      flex-direction: column;
+      justify-content: space-around;
+      width: 40px;
+      .footer-block {
+        height: auto;
+        width: auto;
+        border: none;
+        &#version {
+          flex: initial;
+        }
+        &#bug {
+          margin-left: initial;
+        }
+      }
     }
   }
 }
-@media screen and (max-width: 800px) {
-  .sidepanel_wrapper {
-    display: none;
+
+@media screen and (max-width: 700px) {
+  .skill-block {
+    .skill-info {
+      display: none !important;
+    }
+  }
+  .footer-block {
+    &#version,
+    &#bug {
+      display: none !important;
+    }
   }
 }
 </style>
