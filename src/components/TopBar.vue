@@ -374,8 +374,8 @@ export default {
     }
     .header-left {
       .activeLink::before {
-        top: -50% !important;
-        transform: scale(0.6) !important;
+        top: 50% !important;
+        transform: scale(0.6) rotate(180deg) !important;
       }
     }
     .heading-icons {
