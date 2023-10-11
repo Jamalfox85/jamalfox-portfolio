@@ -37,7 +37,7 @@
       </div>
     </div>
     <div v-if="mode == 0" class="home-bottom-panel" ref="homeMainBottom">
-      <div v-for="project in featuredProjects" class="item" :style="{ flexGrow: project.portion }">
+      <div v-for="project in featuredProjects" class="item" :style="{ flexGrow: project.portion, maxWidth: project.portion === 1 ? '125px' : 'auto' }">
         <div class="image">
           <img :src="`./project-photos/${project.img}`" />
           <a v-if="project.demoLink" :href="project.demoLink" target="_blank"></a>
@@ -233,6 +233,7 @@ export default {
     display: flex;
     margin-top: auto;
     padding: 0 2em;
+    justify-content: space-evenly;
     .item {
       height: 150px;
       max-width: 225px;
