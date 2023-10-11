@@ -5,7 +5,8 @@
       <p class="home-top-panel-link" :class="{ active: mode == 0 }" @click="loadOverviewView">OVERVIEW</p>
       <p class="home-top-panel-link" :class="{ active: mode == 1 }" @click="loadExperienceView">EXPERIENCE</p>
       <n-button class="home-top-panel-button" color="#C89B3C" ghost>
-        <a class="home-top-panel-link" href="./downloads/Jamal_Fox_Resume_Sept_2023.pdf" download> <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a>
+        <!-- This is the React Resume / Resume with react skills first -->
+        <a class="home-top-panel-link" href="./downloads/Jamal_Fox_Resume.pdf" download> <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a>
       </n-button>
     </div>
     <div class="home-main-panel">
@@ -65,35 +66,35 @@ export default {
       mode: 0,
       featuredProjects: [
         {
-          title: "Apollo Appointment Scheduler",
+          title: "[App] Apollo Appointment Scheduler",
           portion: 2,
           img: "Apollo/dashboard.png",
           demoLink: "https://apollo-appointment-scheduler-evptp4uhp-jamalfox85.vercel.app/login",
         },
         {
-          title: "Intro to Web Accessibility PPT",
+          title: "[PPT] Intro to Web Accessibility",
           portion: 2,
           img: "intro-to-a11y.png",
           downloadLink: "./downloads/intro-to-web-accessibility.pptx",
         },
         {
-          title: "Accessibility Testing PPT",
+          title: "[PPT] Accessibility Testing",
           portion: 2,
           img: "a11y-testing.png",
           downloadLink: "./downloads/accessibility-testing.pptx",
         },
-        // {
-        //   title: "Blog Post #1",
-        //   portion: 1,
-        //   img: "modus-email.png",
-        //   link: "https://www.figma.com/file/eIB0SgPTycUD5buStDe38V/Email-Collection?node-id=0%3A1&t=vfD356Oxi4mS4Jty-1",
-        // },
-        // {
-        //   title: "Blog Post #2",
-        //   portion: 1,
-        //   img: "grocery-login.png",
-        //   link: "https://www.figma.com/file/uExd8naVUWvtqkEQ6UMlN2/Grocery-App?node-id=1%3A2&t=TM3lHfZ7sCK3KnZ8-1",
-        // },
+        {
+          title: "Vue Variables in CSS",
+          portion: 1,
+          img: "blog-vue-var-in-css.png",
+          demoLink: "https://blog.stackademic.com/global-vue-variables-in-css-only-4-steps-6495921dcd31?sk=74434db7c8d442937879e6bd5ceaf643",
+        },
+        {
+          title: "Vue Fontawesome",
+          portion: 1,
+          img: "vue-fontawesome.png",
+          demoLink: "https://medium.com/@fox.jamal/vue-fontawesome-components-made-simple-06c221efb9b6?sk=f5af261929e60a946166623d5fbd3ea7",
+        },
       ],
     };
   },
@@ -148,7 +149,7 @@ export default {
         color: #f0e6d2;
       }
       &:hover {
-        color: #f0e6d2;
+        color: #f0e6d2 !important;
         cursor: url("../assets/link.cur"), pointer;
       }
     }
@@ -156,6 +157,10 @@ export default {
       margin-left: auto;
       &:hover {
         background-color: #091428;
+        cursor: url("../assets/link.cur"), pointer;
+        .home-top-panel-link {
+          color: #f0e6d2 !important;
+        }
       }
     }
   }
@@ -234,12 +239,14 @@ export default {
       margin: 12px 6px;
       display: flex;
       flex-direction: column;
+      position: relative;
       .image {
         height: 100%;
         width: 100%;
         display: flex;
         overflow: hidden;
         position: relative;
+        bottom: 0;
         img {
           border: solid 1px #5b5a56;
           width: 100%;
@@ -254,6 +261,10 @@ export default {
       }
       p {
         margin: 4px;
+      }
+      &:hover {
+        bottom: 8px;
+        transition: 0.2s ease-in !important;
       }
     }
   }

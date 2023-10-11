@@ -133,7 +133,7 @@ export default {
     display: flex;
     align-items: center;
     margin-right: auto;
-    margin-bottom: 1em;
+    // margin-bottom: 1em;
     .contact-button-group {
       display: flex;
       align-items: center;

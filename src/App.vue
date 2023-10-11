@@ -81,6 +81,8 @@ export default {
     cursor: url("./assets/normal.cur"), pointer;
     font-family: Beaufort;
     background-image: url("./assets/images/gameflow-background.jpeg");
+    background-size: cover;
+
     .client-header {
       width: 100%;
       border-bottom: solid 2px rgb(67, 68, 69);
