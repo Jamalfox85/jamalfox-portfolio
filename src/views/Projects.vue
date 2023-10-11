@@ -84,7 +84,7 @@ export default {
       mode: 0,
       activeProject: {
         mode: 0,
-        demoLink: "https://apollo-appointment-scheduler-evptp4uhp-jamalfox85.vercel.app/login" /* Set to first project link */,
+        demoLink: "https://apollo-appointment-scheduler.vercel.app/login" /* Set to first project link */,
         githubLink: "https://github.com/Jamalfox85/Apollo_Appointment_Scheduler",
       },
     };

@@ -5,7 +5,7 @@ export const projects = [
     icon: ["fas", "calendar"],
     title: "Apollo Appointment Scheduler",
     description: "Apollo is a full stack web app to book and track appointments with clients.",
-    demoLink: "https://apollo-appointment-scheduler-evptp4uhp-jamalfox85.vercel.app/login",
+    demoLink: "https://apollo-appointment-scheduler.vercel.app/login",
     githubLink: "https://github.com/Jamalfox85/Apollo_Appointment_Scheduler",
     skills: ["Vue", "HTML", "CSS", "Sass", "Bootstrap", "PHP"],
   },
