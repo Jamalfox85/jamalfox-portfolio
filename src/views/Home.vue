@@ -16,7 +16,8 @@
         <p>Welcome to my portfolio! Take a look around!</p>
       </div>
       <div class="home-video" ref="homeMainRight">
-        <iframe v-if="mode == 0" class="iframe" src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
+        <!-- <iframe v-if="mode == 0" class="iframe" src="https://youtu.be/RIch8f194ek" allowfullscreen allowtransparency allow="autoplay"></iframe> -->
+        <iframe v-if="mode == 0" class="iframe" src="https://www.youtube.com/embed/RIch8f194ek?si=ui5gBf8pHtRPg6y-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <div v-if="mode == -1" class="about-wrapper">
           <h2>Hello!</h2>
           <p>Hello, I'm Jamal Fox, a passionate Front End Developer with a knack for crafting visually stunning and highly functional web experiences. With a background in Information Systems and a proven track record in the industry, I thrive on translating creative ideas into digital reality.</p>
