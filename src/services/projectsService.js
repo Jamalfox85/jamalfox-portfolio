@@ -1,5 +1,45 @@
 export const projects = [
   {
+    mode: 2,
+    class: "AI Travel Planner",
+    icon: ["fas", "plane"],
+    title: "Wander Wise",
+    description: 'AI Powered travel itinerary builder. Users can create full schedules for upcoming trips by entering a location. The app then returns a list of potential activities according to a user\'s preferences, as well as popular restaurants in the area. Users can then save these recommendations and add them to a calendar that will organize them down by day and time. Alternatively, users can use the " Plan My Day " feature to enter a city and receive a full schedule for the day with 4-5 activities and their recommended times. ',
+    demoLink: "https://main.dvik35ukst94c.amplifyapp.com/login",
+    githubLink: "https://github.com/Jamalfox85/itinerary-planner",
+    githubLink2: "https://github.com/Jamalfox85/Itinerary-Planner_api",
+    login: true,
+    skills: [
+      /* Skills are listed as array of objects so bg color can be specified when necessary */
+      {
+        img: "javascript",
+      },
+      {
+        img: "vue",
+      },
+      {
+        img: "node",
+      },
+      {
+        img: "express",
+        bg: "#fff",
+      },
+      {
+        img: "mongodb",
+      },
+      {
+        img: "html",
+      },
+      {
+        img: "css",
+      },
+      {
+        img: "sass",
+        bg: "#fff",
+      },
+    ],
+  },
+  {
     mode: 0,
     class: "Scheduling Web App",
     icon: ["fas", "calendar"],
@@ -7,7 +47,35 @@ export const projects = [
     description: "Apollo is a full stack web app to book and track appointments with clients.",
     demoLink: "https://apollo-appointment-scheduler.vercel.app/login",
     githubLink: "https://github.com/Jamalfox85/Apollo_Appointment_Scheduler",
-    skills: ["Vue", "HTML", "CSS", "Sass", "Bootstrap", "PHP"],
+    skills: [
+      /* Skills are listed as array of objects so bg color can be specified when necessary */
+      {
+        img: "javascript",
+      },
+      {
+        img: "vue",
+      },
+      {
+        img: "node",
+      },
+      {
+        img: "express",
+        bg: "#fff",
+      },
+      {
+        img: "supabase",
+      },
+      {
+        img: "html",
+      },
+      {
+        img: "css",
+      },
+      {
+        img: "sass",
+        bg: "#fff",
+      },
+    ],
   },
   {
     mode: 1,
@@ -17,17 +85,31 @@ export const projects = [
     description: "Tauro Finance is a full stack web app to manage and track finances including bills, credit score details, debt, and savings goals.",
     demoLink: "https://lustrous-scone-98a9c1.netlify.app/",
     githubLink: "https://github.com/Jamalfox85/financial-dashboard",
-    skills: ["Vue", "HTML", "CSS", "Sass", "Tailwind", "Supabase"],
     login: true,
-  },
-  {
-    mode: 2,
-    class: "Web",
-    icon: ["fas", "computer"],
-    title: "Fast Box",
-    description: "This project is a landing page for a food delivery company. The design is based off a mockup found on dribbble from ",
-    demoLink: "https://63d07cea8aa02a6000e23911--adorable-eclair-87951b.netlify.app/",
-    githubLink: "https://github.com/Jamalfox85/fast-box",
-    skills: ["Vue", "Nuxt", "HTML", "CSS", "Sass"],
+    skills: [
+      /* Skills are listed as array of objects so bg color can be specified when necessary */
+      {
+        img: "javascript",
+      },
+      {
+        img: "vue",
+      },
+      {
+        img: "supabase",
+      },
+      {
+        img: "html",
+      },
+      {
+        img: "css",
+      },
+      {
+        img: "sass",
+        bg: "#fff",
+      },
+      {
+        img: "tailwind",
+      },
+    ],
   },
 ];

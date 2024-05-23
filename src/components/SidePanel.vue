@@ -36,7 +36,7 @@
     </div>
     <div class="panel-main">
       <div class="skill-block" v-for="skill in skills">
-        <div class="skill-img">
+        <div class="skill-img" :style="{ background: skill.bg }">
           <img :src="`./images/skill-icons/${skill.img}.svg`" />
         </div>
         <div class="skill-info">
@@ -120,6 +120,31 @@ export default {
           status: "Online",
         },
         {
+          name: "Node.js",
+          type: "Technical",
+          img: "node",
+          status: "Online",
+        },
+        {
+          name: "Express",
+          type: "Technical",
+          img: "express",
+          status: "Online",
+          bg: "white",
+        },
+        {
+          name: "MongoDB",
+          type: "Technical",
+          img: "mongodb",
+          status: "Online",
+        },
+        {
+          name: "Supabase",
+          type: "Technical",
+          img: "supabase",
+          status: "Online",
+        },
+        {
           name: "Web Accessibility",
           type: "Technical",
           img: "w3c",
@@ -150,7 +175,7 @@ export default {
           status: "Online",
         },
         {
-          name: "SQL",
+          name: "MySQL",
           type: "Technical",
           img: "sql",
           status: "Online",

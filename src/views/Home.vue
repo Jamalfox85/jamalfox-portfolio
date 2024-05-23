@@ -16,22 +16,19 @@
         <p>Welcome to my portfolio! Take a look around!</p>
       </div>
       <div class="home-video" ref="homeMainRight">
-        <!-- <iframe v-if="mode == 0" class="iframe" src="https://youtu.be/RIch8f194ek" allowfullscreen allowtransparency allow="autoplay"></iframe> -->
         <iframe v-if="mode == 0" class="iframe" src="https://www.youtube.com/embed/RIch8f194ek?si=ui5gBf8pHtRPg6y-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <div v-if="mode == -1" class="about-wrapper">
-          <h2>Hello!</h2>
-          <p>Hello, I'm Jamal Fox, a passionate Front End Developer with a knack for crafting visually stunning and highly functional web experiences. With a background in Information Systems and a proven track record in the industry, I thrive on translating creative ideas into digital reality.</p>
-          <p>I find immense joy in the art of web development, combining my technical prowess in Vue.js, React, and PHP with a keen eye for design. My journey in the ever-evolving world of front-end development has equipped me with an array of skills, including expertise in HTML, CSS, JavaScript, and more. From harnessing the power of Vue.js to implementing responsive design principles, I'm committed to delivering user-friendly, accessible, and performance-optimized web solutions.</p>
-          <p>My professional journey has been enriched by diverse experiences, from leading front-end development initiatives at American Reading Company to connecting with clients as a Technical Sales Agent at Rebillia. Through these roles, I've honed my ability to seamlessly collaborate with cross-functional teams, ensuring that design concepts come to life with pixel-perfect precision.</p>
+          <h2>Hello! &#129299;</h2>
+          <p>Hello, I'm Jamal Fox, a passionate Full-Stack Developer with a knack for crafting visually stunning and highly functional web experiences. With a background in Information Systems and a proven track record in the industry, I thrive on translating creative ideas into digital reality. &#129303;</p>
+          <p>I find personal fulfillment in the art of web development, combining my technical prowess in Vue.js, React, and PHP with a keen eye for design. My journey in the ever-evolving world of software development has equipped me with an array of skills, including expertise in Vue, React, PHP, Node, MySQL and MongoDB.</p>
+          <p>My professional journey has been enriched by diverse experiences, from leading front-end development and accessibility initiatives to connecting with clients as a Technical Sales Agent at Rebillia. Through these roles, I've honed my ability to seamlessly collaborate with cross-functional teams, ensuring that design concepts come to life with pixel-perfect precision.</p>
           <p>Beyond the code, I'm a firm believer in the importance of web accessibility. I take pride in adhering to WCAG guidelines, ensuring that digital experiences are inclusive and reach a wide audience.</p>
-          <p>Feel free to reach out at Fox.Jamal@outlook.com or give me a call at (678) 522-8843. I'm always up for a chat about web development, accessibility, or the latest tech trends.</p>
+          <p>Feel free to reach out at Fox.Jamal@outlook.com or give me a call at (678) 522-8843. I'd love to hear from you. &#128513;</p>
         </div>
         <div v-if="mode == 1" class="timeline-wrapper">
           <n-timeline>
             <n-timeline-item type="success" title="Freelance" content="Freelance Web Developer" time="June 2023 - " />
             <n-timeline-item type="success" title="American Reading Company" content="Front End Developer" time="March 2022 - " />
-            <n-timeline-item type="success" title="Rebillia" content="Technical Sales Associate" time="February 2021 - March 2022 " />
-            <n-timeline-item type="success" title="Rebillia" content="Technical Sales Associate" time="February 2021 - March 2022 " />
             <n-timeline-item type="success" title="Rebillia" content="Technical Sales Associate" time="February 2021 - March 2022 " />
           </n-timeline>
         </div>
