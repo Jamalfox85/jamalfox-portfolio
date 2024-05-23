@@ -159,6 +159,7 @@ export default {
           border-image: linear-gradient(300deg, rgba(160, 155, 140, 0.1) 0%, rgba(240, 230, 210, 1) 48%, rgba(160, 155, 140, 0.1) 100%) 1;
           border-style: solid;
           padding: 1em;
+          width: 100%;
           .text-block {
             margin-top: 1.5em;
             width: 100%;
