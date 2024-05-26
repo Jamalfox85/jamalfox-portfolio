@@ -15,34 +15,35 @@
               <p class="section-header">Description</p>
               <p>{{ project.description }}</p>
             </div>
-            <div class="project-main-block-2">
-              <div class="text-block" v-if="project.login">
-                <p class="section-header">Login Details</p>
-                <p>User: jamalfoxdevportfoliotesting@gmail.com</p>
-                <p>Pass: pass1234</p>
-              </div>
-              <!-- <div class="text-block">
-                <p class="section-header">Sample Photos</p>
-                <div class="project-images">
-                  project img #1
-                  project img #2
-                  project img #3
-                  project img #4
+            <div class="project-main-row">
+              <div class="project-main-row-left">
+                <div class="project-main-block-2">
+                  <div class="text-block" v-if="project.login">
+                    <p class="section-header">Login Details</p>
+                    <p>User: jamalfoxdevportfoliotesting@gmail.com</p>
+                    <p>Pass: pass1234</p>
+                  </div>
                 </div>
-              </div> -->
-            </div>
-            <div class="text-block">
-              <p class="section-header">Links</p>
-              <div class="projects-bottombar">
-                <n-button class="projects-bottom-panel-bttn" color="#C89B3C" ghost>
-                  <p @click="openLink(project.githubLink)">View Github</p>
-                </n-button>
-                <n-button v-if="project?.githubLink2" class="projects-bottom-panel-bttn" color="#C89B3C" ghost>
-                  <p @click="openLink(project.githubLink2)">View Github (API)</p>
-                </n-button>
-                <n-button class="projects-bottom-panel-bttn" color="#0397ab" ghost>
-                  <p @click="openLink(project.demoLink)">Demo Project</p>
-                </n-button>
+                <div class="text-block">
+                  <p class="section-header">Links</p>
+                  <div class="projects-bottombar">
+                    <n-button class="projects-bottom-panel-bttn" color="#C89B3C" ghost>
+                      <p @click="openLink(project.githubLink)">View Github</p>
+                    </n-button>
+                    <n-button v-if="project?.githubLink2" class="projects-bottom-panel-bttn" color="#C89B3C" ghost>
+                      <p @click="openLink(project.githubLink2)">View Github (API)</p>
+                    </n-button>
+                    <n-button class="projects-bottom-panel-bttn" color="#0397ab" ghost>
+                      <p @click="openLink(project.demoLink)">Demo Project</p>
+                    </n-button>
+                  </div>
+                </div>
+              </div>
+              <div class="project-main-row-right">
+                <div class="text-block">
+                  <p class="section-header">Demo</p>
+                  <iframe class="iframe" src="https://www.youtube.com/embed/RIch8f194ek?si=ui5gBf8pHtRPg6y-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
               </div>
             </div>
           </div>
@@ -160,6 +161,13 @@ export default {
           border-style: solid;
           padding: 1em;
           width: 100%;
+          .project-main-row {
+            display: flex;
+            .project-main-row-left,
+            .project-main-row-right {
+              width: 50%;
+            }
+          }
           .text-block {
             margin-top: 1.5em;
             width: 100%;
@@ -169,12 +177,15 @@ export default {
               color: #f0e6d2;
               text-shadow: 1px 1px 0 rgba(200, 155, 60, 0.5), -1px -1px 0 rgba(200, 155, 60, 0.5), 1px -1px 0 rgba(200, 155, 60, 0.5), -1px 1px 0 rgba(200, 155, 60, 0.5), 1px 1px 0 rgba(200, 155, 60, 0.5);
             }
+            .iframe {
+            }
             .projects-bottombar {
               width: 100%;
               display: flex;
+              flex-wrap: wrap;
               .projects-bottom-panel-bttn {
                 width: 175px;
-                margin: 0.5em 1em 1em 0;
+                margin: 0.25em;
                 background-color: #3c3c41;
                 p {
                   font-weight: 1.25em !important;

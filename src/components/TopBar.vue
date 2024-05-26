@@ -48,11 +48,11 @@
       <div class="riot-points-wrapper">
         <div class="point-group">
           <img class="point-img" src="../assets/design-icons/RP_icon.webp" />
-          <p class="points">0926</p>
+          <p class="points">0526</p>
         </div>
         <div class="point-group">
           <img class="point-img" id="blue-essence-img" src="../assets/design-icons/blue_essence.webp" />
-          <p class="points">2023</p>
+          <p class="points">2024</p>
         </div>
       </div>
 
