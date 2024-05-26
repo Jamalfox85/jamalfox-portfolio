@@ -8,6 +8,7 @@ export const projects = [
     demoLink: "https://main.dvik35ukst94c.amplifyapp.com/login",
     githubLink: "https://github.com/Jamalfox85/itinerary-planner",
     githubLink2: "https://github.com/Jamalfox85/Itinerary-Planner_api",
+    youtubeDemoLink: "https://youtu.be/78gab1P637k",
     login: true,
     skills: [
       /* Skills are listed as array of objects so bg color can be specified when necessary */

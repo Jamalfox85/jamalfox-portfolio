@@ -40,9 +40,9 @@
                 </div>
               </div>
               <div class="project-main-row-right">
-                <div class="text-block">
+                <div class="text-block" v-if="project.youtubeDemoLink">
                   <p class="section-header">Demo</p>
-                  <iframe class="iframe" src="https://www.youtube.com/embed/RIch8f194ek?si=ui5gBf8pHtRPg6y-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <iframe class="iframe" :src="project.youtubeDemoLink" :title="project.title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
               </div>
             </div>
@@ -153,13 +153,13 @@ export default {
         }
         .project-main {
           flex-grow: 1;
-          margin-bottom: 1em;
+          margin-bottom: 12px;
           border-width: 0;
           border-top: 1px;
           border-bottom: 1px;
           border-image: linear-gradient(300deg, rgba(160, 155, 140, 0.1) 0%, rgba(240, 230, 210, 1) 48%, rgba(160, 155, 140, 0.1) 100%) 1;
           border-style: solid;
-          padding: 1em;
+          padding: 0.5em;
           width: 100%;
           .project-main-row {
             display: flex;
@@ -169,7 +169,7 @@ export default {
             }
           }
           .text-block {
-            margin-top: 1.5em;
+            margin-top: 1em;
             width: 100%;
             .section-header {
               font-weight: bold;
