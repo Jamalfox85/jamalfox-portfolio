@@ -1,0 +1,114 @@
+{
+  "categories": [
+    {
+      "name": "Languages",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "type": "Technical",
+          "img": "javascript",
+          "status": "Online"
+        },
+        {
+          "name": "PHP",
+          "type": "Technical",
+          "img": "php",
+          "status": "Online"
+        },
+        {
+          "name": "Go",
+          "type": "Technical",
+          "img": "golang",
+          "status": "Online"
+        },
+        {
+          "name": "MySQL",
+          "type": "Technical",
+          "img": "mysql",
+          "status": "Online"
+        }
+      ]
+    },
+    {
+      "name": "Frameworks",
+      "skills": [
+        {
+          "name": "Vue",
+          "type": "Technical",
+          "img": "vue",
+          "status": "Online"
+        },
+        {
+          "name": "Nuxt",
+          "type": "Technical",
+          "img": "nuxt",
+          "status": "Online"
+        },
+        {
+          "name": "Laravel",
+          "type": "Technical",
+          "img": "laravel",
+          "status": "Online"
+        },
+        {
+          "name": "Sass",
+          "type": "Technical",
+          "img": "sass",
+          "status": "Online"
+        },
+        {
+          "name": "Tailwind",
+          "type": "Technical",
+          "img": "tailwind",
+          "status": "Online"
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "skills": [
+        {
+          "name": "MongoDB",
+          "type": "Technical",
+          "img": "mongodb",
+          "status": "Online"
+        },
+        {
+          "name": "Git",
+          "type": "Technical",
+          "img": "git",
+          "status": "Online"
+        },
+        {
+          "name": "Figma",
+          "type": "Technical",
+          "img": "figma",
+          "status": "Online"
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "skills": [
+        {
+          "name": "Web Accessibility",
+          "type": "Technical",
+          "img": "w3c",
+          "status": "Online"
+        },
+        {
+          "name": "HTML",
+          "type": "Technical",
+          "img": "html",
+          "status": "Online"
+        },
+        {
+          "name": "CSS",
+          "type": "Technical",
+          "img": "css",
+          "status": "Online"
+        }
+      ]
+    }
+  ]
+}

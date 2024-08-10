@@ -17,16 +17,6 @@
             <font-awesome-icon :icon="['fab', 'github']" />
           </a>
         </div>
-        <!-- <div class="sidebar-social-media-icon custom-cursor-active">
-          <a class="social-link-tag" href="https://www.instagram.com/jamalfoxdesigns/" target="_blank">
-            <font-awesome-icon :icon="['fab', 'instagram']" />
-          </a>
-        </div>
-        <div class="sidebar-social-media-icon custom-cursor-active">
-          <a class="social-link-tag" href="https://twitter.com/JamalFoxDesigns" target="_blank">
-            <font-awesome-icon :icon="['fab', 'twitter']" />
-          </a>
-        </div> -->
         <div class="sidebar-social-media-icon custom-cursor-active">
           <a class="social-link-tag" href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity" target="_blank">
             <font-awesome-icon :icon="['fas', 'envelope']" />
@@ -35,27 +25,10 @@
       </div>
     </div>
     <div class="panel-main">
-      <div class="skill-block" v-for="skill in skills">
-        <div class="skill-img" :style="{ background: skill.bg }">
-          <img :src="`./images/skill-icons/${skill.img}.svg`" />
-        </div>
-        <div class="skill-info">
-          <p class="skill-name">{{ skill.name }}</p>
-          <div
-            class="skill-type"
-            :class="{
-              online: skill.status === 'Online',
-              loading: skill.status === 'Loading...',
-            }"
-          >
-            <div class="skill-type-bubble"></div>
-            <p>{{ skill.status }}</p>
-          </div>
-        </div>
-      </div>
+      <side-panel-skills />
     </div>
     <div class="panel-footer">
-      <div class="footer-block" @click="openContactModal">
+      <div class="footer-block">
         <font-awesome-icon :icon="['fas', 'message']" />
       </div>
       <div class="footer-block">
@@ -74,139 +47,10 @@
   </div>
 </template>
 <script>
-import ContactModal from "./Modals/ContactModal.vue";
-import { markRaw } from "vue";
+import SidePanelSkills from "./SidePanelSkills.vue";
 
 export default {
-  /* Skill Type isn't currently being used. May be able to delete all those props' */
-  components: { ContactModal },
-  data() {
-    return {
-      skills: [
-        {
-          name: "JavaScript",
-          type: "Technical",
-          img: "javascript",
-          status: "Online",
-        },
-        {
-          name: "React",
-          type: "Technical",
-          img: "react",
-          status: "Online",
-        },
-        {
-          name: "Vue",
-          type: "Technical",
-          img: "vue",
-          status: "Online",
-        },
-        {
-          name: "Nuxt",
-          type: "Technical",
-          img: "nuxt",
-          status: "Online",
-        },
-        {
-          name: "PHP",
-          type: "Technical",
-          img: "php",
-          status: "Online",
-        },
-        {
-          name: "Laravel",
-          type: "Technical",
-          img: "laravel",
-          status: "Online",
-        },
-        {
-          name: "Node.js",
-          type: "Technical",
-          img: "node",
-          status: "Online",
-        },
-        {
-          name: "Express",
-          type: "Technical",
-          img: "express",
-          status: "Online",
-          bg: "white",
-        },
-        {
-          name: "MongoDB",
-          type: "Technical",
-          img: "mongodb",
-          status: "Online",
-        },
-        {
-          name: "Supabase",
-          type: "Technical",
-          img: "supabase",
-          status: "Online",
-        },
-        {
-          name: "Web Accessibility",
-          type: "Technical",
-          img: "w3c",
-          status: "Online",
-        },
-        {
-          name: "HTML",
-          type: "Technical",
-          img: "html",
-          status: "Online",
-        },
-        {
-          name: "CSS",
-          type: "Technical",
-          img: "css",
-          status: "Online",
-        },
-        {
-          name: "Sass",
-          type: "Technical",
-          img: "sass",
-          status: "Online",
-        },
-        {
-          name: "Tailwind",
-          type: "Technical",
-          img: "tailwind",
-          status: "Online",
-        },
-        {
-          name: "MySQL",
-          type: "Technical",
-          img: "sql",
-          status: "Online",
-        },
-        {
-          name: "Git",
-          type: "Technical",
-          img: "git",
-          status: "Online",
-        },
-        {
-          name: "Figma",
-          type: "Technical",
-          img: "figma",
-          status: "Online",
-        },
-        {
-          name: "Bootstrap",
-          type: "Technical",
-          img: "bootstrap",
-          status: "Online",
-        },
-      ],
-    };
-  },
-  methods: {
-    openContactModal() {
-      this.modal.component.value = markRaw(ContactModal);
-      this.modal.showModal();
-    },
-  },
+  components: { SidePanelSkills },
 };
 </script>
 <style lang="scss">
@@ -258,61 +102,6 @@ export default {
     }
     &::-webkit-scrollbar-thumb:hover {
       background: #785a28;
-    }
-    .skill-block {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      padding: 0.5em;
-      margin-bottom: 0.25em;
-      // border: solid 2px lime;
-      .skill-img {
-        width: 2.5em;
-        aspect-ratio: 1;
-        display: flex;
-        border: solid 1px #c89b3c;
-        border-radius: 50%;
-        margin-right: 1em;
-        overflow: hidden;
-        align-items: center;
-        justify-content: center;
-        img {
-          width: 100%;
-        }
-      }
-      .skill-info {
-        display: flex;
-        flex-direction: column;
-        .skill-name {
-          font-size: 1.1em;
-        }
-        .skill-type {
-          font-size: 0.75em;
-          display: flex;
-          align-items: center;
-          &.online {
-            color: rgb(9, 166, 70);
-            .skill-type-bubble {
-              background: rgb(9, 166, 70);
-              border: solid 2px rgb(102, 248, 160);
-            }
-          }
-          &.loading {
-            color: #0ac8b9;
-            .skill-type-bubble {
-              background: #005a82;
-              border: solid 2px #0ac8b9;
-            }
-          }
-          .skill-type-bubble {
-            height: 10px;
-            width: 10px;
-            border-radius: 50%;
-
-            margin-right: 0.5em;
-          }
-        }
-      }
     }
   }
   .panel-footer {

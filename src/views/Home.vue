@@ -19,11 +19,10 @@
         <iframe v-if="mode == 0" class="iframe" src="https://www.youtube.com/embed/RIch8f194ek?si=ui5gBf8pHtRPg6y-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <div v-if="mode == -1" class="about-wrapper">
           <h2>Hello! &#129299;</h2>
-          <p>Hello, I'm Jamal Fox, a passionate Full-Stack Developer with a knack for crafting visually stunning and highly functional web experiences. With a background in Information Systems and a proven track record in the industry, I thrive on translating creative ideas into digital reality. &#129303;</p>
-          <p>I find personal fulfillment in the art of web development, combining my technical prowess in Vue.js, React, and PHP with a keen eye for design. My journey in the ever-evolving world of software development has equipped me with an array of skills, including expertise in Vue, React, PHP, Node, MySQL and MongoDB.</p>
-          <p>My professional journey has been enriched by diverse experiences, from leading front-end development and accessibility initiatives to connecting with clients as a Technical Sales Agent at Rebillia. Through these roles, I've honed my ability to seamlessly collaborate with cross-functional teams, ensuring that design concepts come to life with pixel-perfect precision.</p>
-          <p>Beyond the code, I'm a firm believer in the importance of web accessibility. I take pride in adhering to WCAG guidelines, ensuring that digital experiences are inclusive and reach a wide audience.</p>
-          <p>Feel free to reach out at Fox.Jamal@outlook.com or give me a call at (678) 522-8843. I'd love to hear from you. &#128513;</p>
+          <p>I'm Jamal Fox, a dedicated Full-Stack Developer with a passion for creating visually stunning and highly functional web applications. With a solid background in Information Systems and a proven track record in the tech industry, I excel at bringing creative ideas to life through code. &#129303;</p>
+          <p>Throughout my career, I've had the opportunity to lead front-end development initiatives, enhance accessibility, and engage directly with clients as a Technical Sales Agent at Rebillia. These experiences have sharpened my ability to collaborate effectively with cross-functional teams, ensuring that every project meets the highest standards of precision and functionality.</p>
+          <p>I’m also a strong advocate for web accessibility, adhering to WCAG guidelines to ensure that the digital experiences I create are inclusive and accessible to all users.</p>
+          <p>Feel free to reach out at <a style="color: #f0e6d2; text-decoration: underline" href="mailto:fox.jamal@outlook.com">Fox.Jamal@outlook.com</a> or give me a call at (678) 522-8843. I’d love to connect and explore how we can work together. &#128513;</p>
         </div>
         <div v-if="mode == 1" class="timeline-wrapper">
           <n-timeline>
@@ -164,12 +163,15 @@ export default {
     flex-grow: 1;
     display: flex;
     padding: 1em;
+    position: relative;
     .home-text {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       flex-grow: 1;
       margin: 0 1em 2em 2em;
+      transition: 0.3s ease-in;
+      position: relative;
+      top: 40%;
       h1 {
         color: #f0e6d2;
         font-size: 4em;
@@ -180,10 +182,10 @@ export default {
         color: #a09b8c;
       }
       &.about-view {
-        justify-content: flex-start;
+        top: 0%;
       }
       &.experience-view {
-        justify-content: flex-end;
+        top: 80%;
       }
     }
     .home-video {
