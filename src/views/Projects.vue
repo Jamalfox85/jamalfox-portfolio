@@ -2,7 +2,7 @@
   <div class="projects_wrapper">
     <div class="projects-main">
       <div class="projects-wrapper">
-        <div v-for="(project, index) in projectData" class="project-group" :class="{ active: index == activeProjectIndex }" @click="activeProjectIndex = index">
+        <div v-for="(project, index) in projectData" class="project-group custom-cursor-active" :class="{ active: index == activeProjectIndex }" @click="activeProjectIndex = index">
           <div class="project-header">
             <div class="project-header-text">
               <p>{{ project.class }}</p>
@@ -27,13 +27,13 @@
                 <div class="text-block">
                   <p class="section-header">Links</p>
                   <div class="projects-bottombar">
-                    <n-button class="projects-bottom-panel-bttn" color="#C89B3C" ghost>
+                    <n-button class="projects-bottom-panel-bttn custom-cursor-active" color="#C89B3C" ghost>
                       <p @click="openLink(project.githubLink)">View Github</p>
                     </n-button>
-                    <n-button v-if="project?.githubLink2" class="projects-bottom-panel-bttn" color="#C89B3C" ghost>
+                    <n-button v-if="project?.githubLink2" class="projects-bottom-panel-bttn custom-cursor-active" color="#C89B3C" ghost>
                       <p @click="openLink(project.githubLink2)">View Github (API)</p>
                     </n-button>
-                    <n-button class="projects-bottom-panel-bttn" color="#0397ab" ghost>
+                    <n-button class="projects-bottom-panel-bttn custom-cursor-active" color="#0397ab" ghost>
                       <p @click="openLink(project.demoLink)">Demo Project</p>
                     </n-button>
                   </div>
@@ -128,7 +128,6 @@ export default {
         &:hover {
           background-color: rgba(255, 255, 255, 0.1);
           transition: 0.1s ease-in;
-          cursor: url("../assets/link.cur"), pointer;
         }
         .project-header {
           width: 100%;
@@ -191,7 +190,6 @@ export default {
                   font-weight: 1.25em !important;
                 }
                 &:hover {
-                  cursor: url("../assets/link.cur"), pointer;
                   background-color: #67676b;
                 }
               }

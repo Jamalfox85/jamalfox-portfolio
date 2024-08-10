@@ -2,8 +2,8 @@
   <div class="body_wrapper">
     <div class="body-content">
       <div class="body-nav">
-        <p class="body-link" :class="{ active: currentProject === 0 }" @click="setCurrentProject(0)">All Projects</p>
-        <p class="body-link" :class="{ active: currentProject === project.projectId }" v-for="project in projectData" @click="setCurrentProject(project.projectId)">
+        <p class="body-link custom-cursor-active" :class="{ active: currentProject === 0 }" @click="setCurrentProject(0)">All Projects</p>
+        <p class="body-link custom-cursor-active" :class="{ active: currentProject === project.projectId }" v-for="project in projectData" @click="setCurrentProject(project.projectId)">
           {{ project.title }}
         </p>
       </div>
@@ -113,7 +113,6 @@ export default {
         &.active,
         &:hover,
         a:hover {
-          cursor: url("../assets/link.cur"), pointer;
           color: rgb(240, 230, 210);
           transition: 0.1s ease-in-out;
           background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(255, 255, 255, 0.2) 90%);
@@ -214,7 +213,6 @@ export default {
           font-size: 0.8em;
           font-weight: bold;
           border: none;
-          cursor: url("../assets/link.cur"), pointer;
           border: solid 1px #c89b3c;
           background-color: rgb(7, 11, 19);
           color: #fff;

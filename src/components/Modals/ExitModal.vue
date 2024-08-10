@@ -27,12 +27,12 @@
       </div>
       <hr />
       <div class="modal-footer">
-        <div @click="closeModal" class="close-bttn" role="button">
+        <div @click="closeModal" class="close-bttn custom-cursor-active" role="button">
           <div class="inside-border">
             <p>Exit</p>
           </div>
         </div>
-        <div @click="submitContactForm" class="close-bttn" role="button">
+        <div @click="submitContactForm" class="close-bttn custom-cursor-active" role="button">
           <div class="inside-border">
             <p>Send</p>
           </div>
@@ -96,7 +96,6 @@ export default {
       .close-button {
         font-size: 1.5em;
         align-self: flex-start;
-        cursor: url("../assets/link.cur"), pointer;
       }
     }
     .modal-main {
@@ -145,7 +144,6 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: url("../assets/link.cur"), pointer;
         margin-right: 0.5em;
         border-radius: 2px;
         // margin: auto;

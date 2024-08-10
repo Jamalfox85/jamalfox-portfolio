@@ -1,12 +1,12 @@
 <template lang="">
   <div class="home_wrapper">
     <div class="home-top-panel">
-      <p class="home-top-panel-link" :class="{ active: mode == -1 }" @click="loadAboutView">ABOUT</p>
-      <p class="home-top-panel-link" :class="{ active: mode == 0 }" @click="loadOverviewView">OVERVIEW</p>
-      <p class="home-top-panel-link" :class="{ active: mode == 1 }" @click="loadExperienceView">EXPERIENCE</p>
-      <n-button class="home-top-panel-button" color="#C89B3C" ghost>
+      <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == -1 }" @click="loadAboutView">ABOUT</p>
+      <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == 0 }" @click="loadOverviewView">OVERVIEW</p>
+      <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == 1 }" @click="loadExperienceView">EXPERIENCE</p>
+      <n-button class="home-top-panel-button custom-cursor-active" color="#C89B3C" ghost>
         <!-- This is the React Resume / Resume with react skills first -->
-        <a class="home-top-panel-link" href="./downloads/Jamal_Fox_Resume.pdf" download> <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a>
+        <a class="home-top-panel-link custom-cursor-active" href="./downloads/Jamal_Fox_Resume.pdf" download> <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a>
       </n-button>
     </div>
     <div class="home-main-panel">
@@ -38,8 +38,8 @@
       <div v-for="project in featuredProjects" class="item" :style="{ flexGrow: project.portion, maxWidth: project.portion === 1 ? '125px' : 'auto' }">
         <div class="image">
           <img :src="`./project-photos/${project.img}`" />
-          <a v-if="project.demoLink" :href="project.demoLink" target="_blank"></a>
-          <a v-if="project.downloadLink" :href="project.downloadLink" class="download-link" download></a>
+          <a v-if="project.demoLink" :href="project.demoLink" target="_blank" class="custom-cursor-active"></a>
+          <a v-if="project.downloadLink" :href="project.downloadLink" class="download-link custom-cursor-active" download></a>
         </div>
         <p>{{ project.title }}</p>
       </div>
@@ -148,14 +148,12 @@ export default {
       }
       &:hover {
         color: #f0e6d2 !important;
-        cursor: url("../assets/link.cur"), pointer;
       }
     }
     .home-top-panel-button {
       margin-left: auto;
       &:hover {
         background-color: #091428;
-        cursor: url("../assets/link.cur"), pointer;
         .home-top-panel-link {
           color: #f0e6d2 !important;
         }
@@ -255,7 +253,6 @@ export default {
           height: 100%;
           width: 100%;
           z-index: 2;
-          cursor: url("../assets/link.cur"), pointer;
         }
       }
       p {

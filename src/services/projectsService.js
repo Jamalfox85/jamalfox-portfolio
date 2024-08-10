@@ -1,6 +1,73 @@
 export const projects = [
   {
-    mode: 2,
+    class: "Project Idea Manager",
+    icon: ["fas", "code"],
+    title: "Ixie AI - Code Reviewer",
+    description: "Ixie AI is a code review tool that uses GPT-4o to analyze code quality and provide feedback to developers. The app is built with a Vue.js frontend and a Supabase database.",
+    demoLink: "https://ixieai.com/",
+    githubLink: "https://github.com/Jamalfox85/CodeReview",
+    login: true,
+    skills: [
+      /* Skills are listed as array of objects so bg color can be specified when necessary */
+      {
+        img: "javascript",
+      },
+      {
+        img: "vue",
+      },
+      {
+        img: "supabase",
+      },
+      {
+        img: "html",
+      },
+      {
+        img: "css",
+      },
+      {
+        img: "sass",
+        bg: "#fff",
+      },
+      {
+        img: "tailwind",
+      },
+    ],
+  },
+  {
+    class: "Code Review Web App",
+    icon: ["fas", "code"],
+    title: "Ixie AI - Code Reviewer",
+    description: "Ixie AI is a code review tool that uses GPT-4o to analyze code quality and provide feedback to developers. The app is built with a Vue.js frontend and a Supabase database.",
+    demoLink: "https://ixieai.com/",
+    githubLink: "https://github.com/Jamalfox85/CodeReview",
+    login: true,
+    skills: [
+      /* Skills are listed as array of objects so bg color can be specified when necessary */
+      {
+        img: "javascript",
+      },
+      {
+        img: "vue",
+      },
+      {
+        img: "supabase",
+      },
+      {
+        img: "html",
+      },
+      {
+        img: "css",
+      },
+      {
+        img: "sass",
+        bg: "#fff",
+      },
+      {
+        img: "tailwind",
+      },
+    ],
+  },
+  {
     class: "AI Travel Planner",
     icon: ["fas", "plane"],
     title: "Wander Wise",
@@ -8,10 +75,9 @@ export const projects = [
     demoLink: "https://main.dvik35ukst94c.amplifyapp.com/login",
     githubLink: "https://github.com/Jamalfox85/itinerary-planner",
     githubLink2: "https://github.com/Jamalfox85/Itinerary-Planner_api",
-    youtubeDemoLink: "https://youtu.be/78gab1P637k",
+    // youtubeDemoLink: "https://youtu.be/78gab1P637k",
     login: true,
     skills: [
-      /* Skills are listed as array of objects so bg color can be specified when necessary */
       {
         img: "javascript",
       },
@@ -40,77 +106,41 @@ export const projects = [
       },
     ],
   },
-  {
-    mode: 0,
-    class: "Scheduling Web App",
-    icon: ["fas", "calendar"],
-    title: "Apollo Appointment Scheduler",
-    description: "Apollo is a full stack web app to book and track appointments with clients.",
-    demoLink: "https://apollo-appointment-scheduler.vercel.app/login",
-    githubLink: "https://github.com/Jamalfox85/Apollo_Appointment_Scheduler",
-    skills: [
-      /* Skills are listed as array of objects so bg color can be specified when necessary */
-      {
-        img: "javascript",
-      },
-      {
-        img: "vue",
-      },
-      {
-        img: "node",
-      },
-      {
-        img: "express",
-        bg: "#fff",
-      },
-      {
-        img: "supabase",
-      },
-      {
-        img: "html",
-      },
-      {
-        img: "css",
-      },
-      {
-        img: "sass",
-        bg: "#fff",
-      },
-    ],
-  },
-  {
-    mode: 1,
-    class: "Finance Web App",
-    icon: ["fas", "money-bill"],
-    title: "Tauro Finance",
-    description: "Tauro Finance is a full stack web app to manage and track finances including bills, credit score details, debt, and savings goals.",
-    demoLink: "https://lustrous-scone-98a9c1.netlify.app/",
-    githubLink: "https://github.com/Jamalfox85/financial-dashboard",
-    login: true,
-    skills: [
-      /* Skills are listed as array of objects so bg color can be specified when necessary */
-      {
-        img: "javascript",
-      },
-      {
-        img: "vue",
-      },
-      {
-        img: "supabase",
-      },
-      {
-        img: "html",
-      },
-      {
-        img: "css",
-      },
-      {
-        img: "sass",
-        bg: "#fff",
-      },
-      {
-        img: "tailwind",
-      },
-    ],
-  },
+  // {
+  //   class: "Scheduling Web App",
+  //   icon: ["fas", "calendar"],
+  //   title: "Apollo Appointment Scheduler",
+  //   description: "Apollo is a full stack web app to book and track appointments with clients.",
+  //   demoLink: "https://apollo-appointment-scheduler.vercel.app/login",
+  //   githubLink: "https://github.com/Jamalfox85/Apollo_Appointment_Scheduler",
+  //   skills: [
+  //     /* Skills are listed as array of objects so bg color can be specified when necessary */
+  //     {
+  //       img: "javascript",
+  //     },
+  //     {
+  //       img: "vue",
+  //     },
+  //     {
+  //       img: "node",
+  //     },
+  //     {
+  //       img: "express",
+  //       bg: "#fff",
+  //     },
+  //     {
+  //       img: "supabase",
+  //     },
+  //     {
+  //       img: "html",
+  //     },
+  //     {
+  //       img: "css",
+  //     },
+  //     {
+  //       img: "sass",
+  //       bg: "#fff",
+  //     },
+  //   ],
+  // },
 ];

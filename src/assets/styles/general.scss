@@ -1,0 +1,8 @@
+.custom-cursor {
+  cursor: url("@/assets/normal.cur"), pointer;
+}
+.custom-cursor-active {
+  :hover {
+    cursor: url("@/assets/link.cur"), pointer;
+  }
+}

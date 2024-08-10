@@ -3,7 +3,7 @@
     <div class="desktop_wrapper">
       <desktop-view />
     </div>
-    <div class="client_wrapper" v-if="clientOpen">
+    <div class="client_wrapper custom-cursor" v-if="clientOpen">
       <top-bar />
       <div class="client-main">
         <RouterView />
@@ -50,7 +50,7 @@ export default {
   width: 100vw;
   display: flex;
   background-color: black;
-  background-image: url("./assets/images/default-mac-bg.jpeg");
+  background-image: url("@/assets/images/default-mac-bg.jpeg");
   background-size: cover;
   position: relative;
   align-items: center;
@@ -78,7 +78,6 @@ export default {
     box-shadow: 0px 1px 2px rgba(239, 234, 234, 0.1), 0px 2px 4px rgba(240, 230, 210, 0.15), 0px 4px 8px rgba(240, 230, 210, 0.15), 0px 8px 16px rgba(240, 230, 210, 0.15);
     opacity: 1;
     animation: loadClient 0.4s forwards;
-    cursor: url("./assets/normal.cur"), pointer;
     font-family: Beaufort;
     background-image: url("./assets/images/gameflow-background.jpeg");
     background-size: cover;

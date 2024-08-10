@@ -4,15 +4,15 @@
     <nav class="header-left">
       <div class="contact-button-group">
         <img class="lol-header-icon" src="../assets/images/desktop-icons/league-icon.png" alt="League of Legends Icon" />
-        <div @click="toggleContactModal(true)" class="contact-bttn" role="button">
+        <div @click="toggleContactModal(true)" class="contact-bttn custom-cursor-active" role="button">
           <div class="inside-border">
             <p>Contact</p>
           </div>
         </div>
       </div>
       <div class="nav-links">
-        <div class="nav-link-container" :class="{ activeLink: currentPath === '/' }"><RouterLink to="/" class="nav-link">Home</RouterLink></div>
-        <div class="nav-link-container" :class="{ activeLink: currentPath === '/projects' }"><RouterLink to="/projects" class="nav-link">Projects</RouterLink></div>
+        <div class="nav-link-container custom-cursor-active" :class="{ activeLink: currentPath === '/' }"><RouterLink to="/" class="nav-link">Home</RouterLink></div>
+        <div class="nav-link-container custom-cursor-active" :class="{ activeLink: currentPath === '/projects' }"><RouterLink to="/projects" class="nav-link">Projects</RouterLink></div>
         <!-- <div class="nav-link-container" :class="{ activeLink: currentPath === '/extras' }"><RouterLink to="/extras" class="nav-link">Extras</RouterLink></div> -->
       </div>
     </nav>
@@ -146,7 +146,6 @@ export default {
         padding: 2px;
         position: relative;
         right: 2em;
-        cursor: url("../assets/link.cur"), pointer;
         .inside-border {
           height: 100%;
           width: 100%;
