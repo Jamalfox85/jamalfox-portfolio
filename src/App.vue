@@ -50,7 +50,7 @@ export default {
   width: 100vw;
   display: flex;
   background-color: black;
-  background-image: url("/images/default-mac-bg.jpeg");
+  background-image: url("images/default-mac-bg.jpeg");
   background-size: cover;
   position: relative;
   align-items: center;
