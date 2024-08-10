@@ -37,7 +37,7 @@
     <div v-if="mode == 0" class="home-bottom-panel" ref="homeMainBottom">
       <div v-for="project in featuredProjects" class="item" :style="{ flexGrow: project.portion, maxWidth: project.portion === 1 ? '125px' : 'auto' }">
         <div class="image">
-          <img :src="`@images/project-photos/${project.img}`" />
+          <img :src="`images/project-photos/${project.img}`" />
           <a v-if="project.demoLink" :href="project.demoLink" target="_blank" class="custom-cursor-active"></a>
           <a v-if="project.downloadLink" :href="project.downloadLink" class="download-link custom-cursor-active" download></a>
         </div>

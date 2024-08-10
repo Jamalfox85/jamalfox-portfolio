@@ -19,7 +19,7 @@
             <h1>{{ project.title }}</h1>
             <p>{{ project.description }}</p>
             <div class="project-images">
-              <img v-for="image in project.ss" class="project-details-img" :src="`@images/${image}.png`" />
+              <img v-for="image in project.ss" class="project-details-img" :src="`images/${image}.png`" />
             </div>
           </div>
           <div class="project-details-right">
@@ -80,7 +80,7 @@ export default {
 .body_wrapper {
   flex: 1 1 auto;
   max-width: calc(100% - 250px);
-  background: url("@images/body-bg.jpeg");
+  background: url("images/body-bg.jpeg");
   background-size: cover;
   position: relative;
   color: rgb(240, 230, 210);
