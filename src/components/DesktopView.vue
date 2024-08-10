@@ -1,7 +1,7 @@
 <template lang="">
   <div>
     <div class="top-panel">
-      <img class="top-panel-icon" src="../assets/images/apple-icon.png" alt="" />
+      <img class="top-panel-icon" src="@images/apple-icon.png" alt="" />
       <p class="active-app">Finder</p>
       <p>File</p>
       <p>Edit</p>
@@ -12,35 +12,35 @@
     </div>
     <div class="desktop-icons">
       <div class="desktop-icon" :class="{ active: iconClicked }">
-        <img src="../assets/images/desktop-icons/league-icon.png" alt="" />
+        <img src="@images/desktop-icons/league-icon.png" alt="" />
         <span>League of Legends</span>
       </div>
       <div class="desktop-icon">
-        <img src="../assets/images/desktop-icons/figma-icon.png" alt="" />
+        <img src="@images/desktop-icons/figma-icon.png" alt="" />
         Figma
       </div>
       <div class="desktop-icon">
-        <img src="../assets/images/desktop-icons/vs-code.png" alt="" />
+        <img src="@images/desktop-icons/vs-code.png" alt="" />
         VS Code
       </div>
       <div class="desktop-icon">
-        <img src="../assets/images/desktop-icons/teams.png" alt="" />
+        <img src="@images/desktop-icons/teams.png" alt="" />
         Teams
       </div>
       <div class="desktop-icon">
-        <img src="../assets/images/desktop-icons/chrome.png" alt="" />
+        <img src="@images/desktop-icons/chrome.png" alt="" />
         Chrome
       </div>
       <div class="desktop-icon">
-        <img src="../assets/images/desktop-icons/notion.png" alt="" />
+        <img src="@images/desktop-icons/notion.png" alt="" />
         Notion
       </div>
       <div class="desktop-icon">
-        <img src="../assets/images/desktop-icons/capcut.png" alt="" />
+        <img src="@images/desktop-icons/capcut.png" alt="" />
         Capcut
       </div>
       <div class="desktop-icon">
-        <img src="../assets/images/desktop-icons/appstore.png" alt="" />
+        <img src="@images/desktop-icons/appstore.png" alt="" />
         App Store
       </div>
     </div>

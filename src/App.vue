@@ -79,7 +79,7 @@ export default {
     opacity: 1;
     animation: loadClient 0.4s forwards;
     font-family: Beaufort;
-    background-image: url("./assets/images/gameflow-background.jpeg");
+    background-image: url("@images/gameflow-background.jpeg");
     background-size: cover;
 
     .client-header {
