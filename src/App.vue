@@ -50,7 +50,7 @@ export default {
   width: 100vw;
   display: flex;
   background-color: black;
-  background-image: url("images/default-mac-bg.jpeg");
+  background-image: url("@images/default-mac-bg.jpeg");
   background-size: cover;
   position: relative;
   align-items: center;
@@ -79,7 +79,7 @@ export default {
     opacity: 1;
     animation: loadClient 0.4s forwards;
     font-family: Beaufort;
-    background-image: url("images/gameflow-background.jpeg");
+    background-image: url("@images/gameflow-background.jpeg");
     background-size: cover;
 
     .client-header {

@@ -174,14 +174,14 @@ export default {
         }
         &.activeLink,
         &:hover {
-          cursor: url("../assets/link.cur"), pointer;
+          cursor: url("@/assets/link.cur"), pointer;
           transition: 0.1s ease-in-out;
           .nav-link {
             color: rgb(240, 230, 210);
           }
         }
         &.activeLink::before {
-          content: url("../assets/design-icons/active-link-arrow.svg");
+          content: url("@images/design-icons/active-link-arrow.svg");
           position: absolute;
           top: -75%;
           transform: scale(0.8);
@@ -201,7 +201,7 @@ export default {
           display: flex;
           position: relative;
           z-index: 2;
-          cursor: url("../assets/link.cur"), pointer;
+          cursor: url("@/assets/link.cur"), pointer;
         }
       }
     }
@@ -227,7 +227,7 @@ export default {
       height: 120%;
       color: RGB(200, 170, 110);
       &:hover {
-        cursor: url("../assets/link.cur"), pointer;
+        cursor: url("@/assets/link.cur"), pointer;
         color: rgb(240, 230, 210);
         transition: 0.1s ease-in-out;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(255, 255, 255, 0.2) 90%);
@@ -236,7 +236,7 @@ export default {
       .social-link-tag:visited {
         color: RGB(200, 170, 110);
         &:hover {
-          cursor: url("../assets/link.cur"), pointer;
+          cursor: url("@/assets/link.cur"), pointer;
           color: rgb(240, 230, 210);
           transition: 0.1s ease-in-out;
         }
@@ -330,7 +330,7 @@ export default {
         &:hover {
           color: rgb(240, 230, 210);
           transition: 0.1s ease-in-out;
-          cursor: url("../assets/link.cur"), pointer;
+          cursor: url("@/assets/link.cur"), pointer;
         }
       }
     }
