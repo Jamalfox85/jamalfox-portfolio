@@ -3,7 +3,7 @@
   <div class="header_wrapper">
     <nav class="header-left">
       <div class="contact-button-group">
-        <img class="lol-header-icon" src="images/desktop-icons/league-icon.png" alt="League of Legends Icon" />
+        <img class="lol-header-icon" src="@images/desktop-icons/league-icon.png" alt="League of Legends Icon" />
         <div @click="toggleContactModal(true)" class="contact-bttn custom-cursor-active" role="button">
           <div class="inside-border">
             <p>Contact</p>
@@ -47,21 +47,21 @@
     <div class="header-right">
       <div class="riot-points-wrapper">
         <div class="point-group">
-          <img class="point-img" src="images/design-icons/RP_icon.webp" />
+          <img class="point-img" src="@images/design-icons/RP_icon.webp" />
           <p class="points">0526</p>
         </div>
         <div class="point-group">
-          <img class="point-img" id="blue-essence-img" src="images/design-icons/blue_essence.webp" />
+          <img class="point-img" id="blue-essence-img" src="@images/design-icons/blue_essence.webp" />
           <p class="points">2024</p>
         </div>
       </div>
 
       <div class="profile-image-wrapper">
         <div class="inside-img">
-          <img src="images/bitmoji-avatar.png" alt="profile" />
+          <img src="@images/bitmoji-avatar.png" alt="profile" />
         </div>
         <div class="level-group">
-          <img src="images/profile-level.svg" alt="profile-level" class="profile-level" />
+          <img src="@images/profile-level.svg" alt="profile-level" class="profile-level" />
           <p class="level-text">444</p>
         </div>
       </div>
