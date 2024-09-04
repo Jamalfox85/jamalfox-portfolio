@@ -106,41 +106,4 @@ export const projects = [
       },
     ],
   },
-  // {
-  //   class: "Scheduling Web App",
-  //   icon: ["fas", "calendar"],
-  //   title: "Apollo Appointment Scheduler",
-  //   description: "Apollo is a full stack web app to book and track appointments with clients.",
-  //   demoLink: "https://apollo-appointment-scheduler.vercel.app/login",
-  //   githubLink: "https://github.com/Jamalfox85/Apollo_Appointment_Scheduler",
-  //   skills: [
-  //     /* Skills are listed as array of objects so bg color can be specified when necessary */
-  //     {
-  //       img: "javascript",
-  //     },
-  //     {
-  //       img: "vue",
-  //     },
-  //     {
-  //       img: "node",
-  //     },
-  //     {
-  //       img: "express",
-  //       bg: "#fff",
-  //     },
-  //     {
-  //       img: "supabase",
-  //     },
-  //     {
-  //       img: "html",
-  //     },
-  //     {
-  //       img: "css",
-  //     },
-  //     {
-  //       img: "sass",
-  //       bg: "#fff",
-  //     },
-  //   ],
-  // },
 ];

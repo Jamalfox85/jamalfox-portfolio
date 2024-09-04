@@ -2,7 +2,7 @@
   <div>
     <div class="top-panel">
       <img class="top-panel-icon" src="@images/apple-icon.png" alt="" />
-      <p class="active-app">Finderr</p>
+      <p class="active-app">Finder</p>
       <p>File</p>
       <p>Edit</p>
       <p>View</p>

@@ -4,24 +4,28 @@
       "name": "Languages",
       "skills": [
         {
+          "id": 1,
           "name": "JavaScript",
           "type": "Technical",
           "img": "javascript",
           "status": "Online"
         },
         {
+          "id": 2,
           "name": "PHP",
           "type": "Technical",
           "img": "php",
           "status": "Online"
         },
         {
+          "id": 3,
           "name": "Go",
           "type": "Technical",
           "img": "golang",
           "status": "Online"
         },
         {
+          "id": 4,
           "name": "MySQL",
           "type": "Technical",
           "img": "mysql",
@@ -33,33 +37,45 @@
       "name": "Frameworks",
       "skills": [
         {
+          "id": 11,
           "name": "Vue",
           "type": "Technical",
           "img": "vue",
           "status": "Online"
         },
         {
+          "id": 12,
           "name": "Nuxt",
           "type": "Technical",
           "img": "nuxt",
           "status": "Online"
         },
         {
+          "id": 13,
           "name": "Laravel",
           "type": "Technical",
           "img": "laravel",
           "status": "Online"
         },
         {
+          "id": 14,
           "name": "Sass",
           "type": "Technical",
           "img": "sass",
           "status": "Online"
         },
         {
+          "id": 15,
           "name": "Tailwind",
           "type": "Technical",
           "img": "tailwind",
+          "status": "Online"
+        },
+        {
+          "id": 16,
+          "name": "Node.js",
+          "type": "Technical",
+          "img": "node",
           "status": "Online"
         }
       ]
@@ -68,18 +84,21 @@
       "name": "Tools",
       "skills": [
         {
+          "id": 21,
           "name": "MongoDB",
           "type": "Technical",
           "img": "mongodb",
           "status": "Online"
         },
         {
+          "id": 22,
           "name": "Git",
           "type": "Technical",
           "img": "git",
           "status": "Online"
         },
         {
+          "id": 23,
           "name": "Figma",
           "type": "Technical",
           "img": "figma",
@@ -91,18 +110,21 @@
       "name": "Other",
       "skills": [
         {
+          "id": 31,
           "name": "Web Accessibility",
           "type": "Technical",
           "img": "w3c",
           "status": "Online"
         },
         {
+          "id": 32,
           "name": "HTML",
           "type": "Technical",
           "img": "html",
           "status": "Online"
         },
         {
+          "id": 33,
           "name": "CSS",
           "type": "Technical",
           "img": "css",

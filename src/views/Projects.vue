@@ -1,88 +1,46 @@
 <template lang="">
   <div class="projects_wrapper">
     <div class="projects-main">
-      <div class="projects-wrapper">
-        <div v-for="(project, index) in projectData" class="project-group custom-cursor-active" :class="{ active: index == activeProjectIndex }" @click="activeProjectIndex = index">
-          <div class="project-header">
-            <div class="project-header-text">
-              <p>{{ project.class }}</p>
-              <h2>{{ project.title }}</h2>
-            </div>
-            <font-awesome-icon :icon="project.icon" class="icon" v-if="index == activeProjectIndex" />
-          </div>
-          <div class="project-main" v-if="index == activeProjectIndex">
-            <div class="text-block">
-              <p class="section-header">Description</p>
-              <p>{{ project.description }}</p>
-            </div>
-            <div class="project-main-row">
-              <div class="project-main-row-left">
-                <div class="project-main-block-2">
-                  <div class="text-block" v-if="project.login">
-                    <p class="section-header">Login Details</p>
-                    <p>User: jamalfoxdevportfoliotesting@gmail.com</p>
-                    <p>Pass: pass1234</p>
-                  </div>
-                </div>
-                <div class="text-block">
-                  <p class="section-header">Links</p>
-                  <div class="projects-bottombar">
-                    <n-button class="projects-bottom-panel-bttn custom-cursor-active" color="#C89B3C" ghost>
-                      <p @click="openLink(project.githubLink)">View Github</p>
-                    </n-button>
-                    <n-button v-if="project?.githubLink2" class="projects-bottom-panel-bttn custom-cursor-active" color="#C89B3C" ghost>
-                      <p @click="openLink(project.githubLink2)">View Github (API)</p>
-                    </n-button>
-                    <n-button class="projects-bottom-panel-bttn custom-cursor-active" color="#0397ab" ghost>
-                      <p @click="openLink(project.demoLink)">Demo Project</p>
-                    </n-button>
-                  </div>
-                </div>
-              </div>
-              <div class="project-main-row-right">
-                <div class="text-block" v-if="project.youtubeDemoLink">
-                  <p class="section-header">Demo</p>
-                  <iframe class="iframe" :src="project.youtubeDemoLink" :title="project.title" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-footer" v-if="index == activeProjectIndex">
-            <div class="skills-container">
-              <div class="skill-block" v-for="skill in project.skills">
-                <div class="skill-img" :style="{ background: skill.bg }">
-                  <img :src="`./images/skill-icons/${skill.img}.svg`" />
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="project-groups">
+        <div v-for="(project, index) in projectData" :ref="`project-${index}`" :key="index" class="project-group custom-cursor-active" :class="{ active: index == activeProjectIndex }" @click="setActiveProject(index)">
+          <project-block :project="project" />
         </div>
+      </div>
+    </div>
+    <div class="navigation-buttons">
+      <div class="carousel-nav" :class="{ disabled: activeProjectIndex == 0 }">
+        <img src="@images/design-icons/active-link-arrow.svg" alt="left" @click="setActiveProject(activeProjectIndex - 1)" />
+      </div>
+      <NButton v-for="(project, index) in projectData" class="nav-button" :class="{ active: activeProjectIndex === index }" size="small" @click="setActiveProject(index)"></NButton>
+      <div class="carousel-nav" :class="{ disabled: activeProjectIndex == projectData.length - 1 }">
+        <img src="@images/design-icons/active-link-arrow.svg" alt="left" @click="setActiveProject(activeProjectIndex + 1)" class="custom-cursor-pointer" />
       </div>
     </div>
   </div>
 </template>
 <script>
 import ProjectBlock from "../components/ProjectBlock.vue";
-import { projects } from "../services/projectsService";
+import { projects } from "../data/projects";
 import { NButton } from "naive-ui";
-import FsLightbox from "fslightbox-vue/v3";
 
 export default {
-  components: { ProjectBlock, NButton, FsLightbox },
+  components: { ProjectBlock, NButton },
   data() {
     return {
       toggler: false,
-      activeProjectIndex: 0,
+      activeProjectIndex: 1,
+      projectData: projects,
     };
   },
   methods: {
     openLink(link) {
       window.open(link);
     },
-  },
-  setup() {
-    let projectData = projects;
-    return { projectData };
+    setActiveProject(index) {
+      this.activeProjectIndex = index;
+      const targetSection = this.$refs[`project-${index}`][0];
+      targetSection.scrollIntoView({ behavior: "smooth", inline: "center" });
+    },
   },
 };
 </script>
@@ -92,205 +50,63 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
   .projects-main {
     display: flex;
     flex-grow: 1;
-    overflow: hidden;
-    .projects-wrapper {
+    width: 100%;
+    position: relative;
+    .project-groups {
+      overflow-y: scroll;
+      scroll-behavior: smooth;
       display: flex;
+      justify-content: space-between;
       width: 100%;
+      height: 100%;
+      position: absolute;
       .project-group {
-        transition: 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 1em;
-        border: solid 1px #c89b3c;
-        border-radius: 4px;
-        margin: 0.5em;
-        width: 200px;
+        min-width: 45%;
+        max-width: 45%;
+        border: solid 2px #c89b3c;
+        background-color: #a07e3a75;
+        border-radius: 8px;
+        margin: 2em;
+        opacity: 0.25;
+        transition: 0.35s;
         &.active {
-          flex-grow: 1;
-          background-color: rgba(255, 255, 255, 0.1);
-          background-image: linear-gradient(to top, #0ac8b985, #62d5e640, #aae0fc30, #e0ecff20, #ffffff05);
-          .project-header {
-            .project-header-text {
-              h2 {
-                text-shadow: 1px 1px 0 rgba(200, 155, 60, 0.5), -1px -1px 0 rgba(200, 155, 60, 0.5), 1px -1px 0 rgba(200, 155, 60, 0.5), -1px 1px 0 rgba(200, 155, 60, 0.5), 1px 1px 0 rgba(200, 155, 60, 0.5);
-                font-size: 2.5em;
-              }
-            }
-          }
-          svg {
-            color: #0ac8b9;
-          }
-        }
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.1);
-          transition: 0.1s ease-in;
-        }
-        .project-header {
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 1em;
-          .project-header-text {
-            p {
-              font-size: 1.25em;
-              color: #a09b8c;
-            }
-            h2 {
-              color: #f0e6d2;
-              font-size: 1.5em;
-              line-height: normal;
-            }
-          }
-          .icon {
-            font-size: 5em;
-          }
-        }
-        .project-main {
-          flex-grow: 1;
-          margin-bottom: 12px;
-          border-width: 0;
-          border-top: 1px;
-          border-bottom: 1px;
-          border-image: linear-gradient(300deg, rgba(160, 155, 140, 0.1) 0%, rgba(240, 230, 210, 1) 48%, rgba(160, 155, 140, 0.1) 100%) 1;
-          border-style: solid;
-          padding: 0.5em;
-          width: 100%;
-          .project-main-row {
-            display: flex;
-            .project-main-row-left,
-            .project-main-row-right {
-              width: 50%;
-            }
-          }
-          .text-block {
-            margin-top: 1em;
-            width: 100%;
-            .section-header {
-              font-weight: bold;
-              font-size: 1.5em;
-              color: #f0e6d2;
-              text-shadow: 1px 1px 0 rgba(200, 155, 60, 0.5), -1px -1px 0 rgba(200, 155, 60, 0.5), 1px -1px 0 rgba(200, 155, 60, 0.5), -1px 1px 0 rgba(200, 155, 60, 0.5), 1px 1px 0 rgba(200, 155, 60, 0.5);
-            }
-            .iframe {
-            }
-            .projects-bottombar {
-              width: 100%;
-              display: flex;
-              flex-wrap: wrap;
-              .projects-bottom-panel-bttn {
-                width: 175px;
-                margin: 0.25em;
-                background-color: #3c3c41;
-                p {
-                  font-weight: 1.25em !important;
-                }
-                &:hover {
-                  background-color: #67676b;
-                }
-              }
-            }
-          }
-          .project-main-block-2 {
-            display: flex;
-          }
-        }
-        .project-footer {
-          width: 100%;
-          padding: 0.5em;
-          display: flex;
-          .skills-container {
-            display: flex;
-            .skill-block {
-              width: 4em;
-              margin-right: 1em;
-              .skill-img {
-                aspect-ratio: 1;
-                display: flex;
-                border: solid 1px #c89b3c;
-                border-radius: 50%;
-                overflow: hidden;
-                align-items: center;
-                justify-content: center;
-                img {
-                  width: 100%;
-                }
-              }
-            }
-          }
+          opacity: 1;
         }
       }
     }
   }
-}
-
-@media screen and (max-width: 1100px) {
-  .projects-wrapper {
-    display: block !important;
-    // flex-direction: column !important;
-    // width: 100%;
-    padding: 1em;
-    overflow-y: auto;
-    height: 300px;
-    &::-webkit-scrollbar {
-      width: 4px;
-    }
-    &::-webkit-scrollbar-track {
-      background: #32281e;
-    }
-    &::-webkit-scrollbar-thumb {
-      background: #c89b3c;
-      border-radius: 4px;
-    }
-    &::-webkit-scrollbar-thumb:hover {
-      background: #785a28;
-    }
-    .project-group {
-      width: 100% !important;
-      flex-grow: 1 !important;
-      margin: 0 0 1em 0 !important;
-      flex-direction: row !important;
-      height: 200px !important;
-      .icon-wrapper {
-        width: 50px !important;
-        margin-right: 1em;
-        svg {
-          font-size: 3em !important;
-        }
+  .navigation-buttons {
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .carousel-nav {
+      margin: 0 1em;
+      transform: rotate(-90deg);
+      cursor: url("@/assets/link.cur"), pointer;
+      img {
+        width: 3em;
       }
-      .project-text-wrapper {
-        min-width: 200px !important;
-        p {
-          font-size: 1em !important;
-          width: fit-content !important;
-        }
-        h2 {
-          font-size: 1.5em !important;
-          width: 75%;
-        }
+      &:first-child {
+        transform: rotate(90deg);
+      }
+      &.disabled {
+        opacity: 0.4;
+        pointer-events: none;
       }
     }
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .projects_wrapper {
-    max-width: 100% !important;
-    .project-group {
-      flex-direction: column !important;
-      position: relative;
-      .icon-wrapper {
-        position: absolute;
-        top: 1em;
-        right: 1em;
-      }
-      .project-text-wrapper {
-        min-height: initial !important;
-        padding-bottom: 8px;
+    .nav-button {
+      margin: 0 1em;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      cursor: url("@/assets/link.cur"), pointer;
+      &.active {
+        background-color: #c0a267;
       }
     }
   }

@@ -1,66 +1,91 @@
 <template lang="">
-  <div>
-    <div class="project-block" v-for="project in projectData">
-      <div class="block-left">
-        <p class="project-title">{{ project.title }}</p>
-        <div class="project-buttons">
-          <n-button type="primary" class="project-block-buttons" v-if="project.demo">
-            <a :href="project.demo" target="_blank">Demo</a>
-          </n-button>
-          <n-button type="primary" class="project-block-buttons details-button" @click="setCurrentProject(project.projectId)">Details</n-button>
-          <n-button type="primary" class="project-block-buttons" v-if="project.github">
-            <a :href="project.github" target="_blank">Github</a>
-          </n-button>
-        </div>
+  <div class="project_block_wrapper">
+    <div class="block-header">
+      <h3 class="title">{{ project.title }}</h3>
+    </div>
+    <div class="block-main">
+      <div class="block-image"></div>
+      <p class="description">{{ project.description }}</p>
+      <div class="skills">
+        <span v-for="skill in projectSkills" :key="skill.id" class="skill">
+          <img :src="`./images/skill-icons/${skill.img}.svg`" />
+        </span>
       </div>
-      <div class="block-right">
-        <img class="block-img" :src="`../../src/assets/images/${project.ss[0]}.png`" />
-      </div>
+    </div>
+    <div class="block-footer">
+      <NButton size="small" class="project-button" @click="openLink(project.live_url)">View Project</NButton>
+      <NButton size="small" class="project-button" @click="openLink(project.github_url)">View Github</NButton>
     </div>
   </div>
 </template>
 <script>
-import { projects } from "../services/projectsService";
 import { NButton } from "naive-ui";
+import { categories } from "../data/skills";
 export default {
+  props: ["project"],
   components: { NButton },
   data() {
     return {};
   },
-  setup() {
-    let projectData = projects;
-    return { projectData };
+  computed: {
+    allSkills() {
+      let skills = [];
+      categories.forEach((category) => {
+        category.skills.forEach((skill) => {
+          skills.push(skill);
+        });
+      });
+      return skills;
+    },
+    projectSkills() {
+      return this.allSkills.filter((skill) => this.project.skills.includes(skill.id));
+    },
   },
 };
 </script>
 <style lang="scss">
-.project-block {
-  height: 250px;
-  width: 97.5%;
-  margin-bottom: 1em;
-  display: flex;
-  align-items: center;
-  position: relative;
-  border: solid 2px #c89b3c;
+.project_block_wrapper {
   padding: 1em;
-  border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.25);
-  .block-left {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    .project-title {
+  .block-header {
+    padding: 0.5em;
+    .title {
       font-size: 2em;
-      margin-bottom: 1em;
-    }
-    .project-buttons {
     }
   }
-  .block-right {
-    width: 50%;
-    display: flex;
-    img {
+  .block-main {
+    padding: 0.5em;
+    .block-image {
       width: 100%;
+      height: 200px;
+      background-color: rgb(240, 230, 210);
+      margin-bottom: 1em;
+    }
+    .description {
+      margin-bottom: 1em;
+    }
+    .skills {
+      margin-bottom: 1em;
+      .skill {
+        margin-right: 0.5em;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  .block-footer {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    .project-button {
+      margin: 0 0.5em;
+      padding: 1.25em 2em;
+      color: rgb(240, 230, 210);
+      border: solid 21x rgb(240, 230, 210);
+      &:hover {
+        background-color: rgb(240, 230, 210, 0.2);
+      }
     }
   }
 }

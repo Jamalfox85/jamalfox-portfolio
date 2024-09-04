@@ -27,3 +27,7 @@ npm run dev
 ```sh
 npm run build
 ```
+
+### Resources
+
+https://interfaceingame.com/games/league-of-legends/
