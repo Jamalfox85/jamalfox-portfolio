@@ -4,7 +4,9 @@
       <h3 class="title">{{ project.title }}</h3>
     </div>
     <div class="block-main">
-      <div class="block-image"></div>
+      <div class="block-image">
+        <iframe v-if="project.video_url" :src="project.video_url" title="Ixie AI Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
       <p class="description">{{ project.description }}</p>
       <div class="skills">
         <span v-for="skill in projectSkills" :key="skill.id" class="skill">
@@ -59,6 +61,10 @@ export default {
       height: 200px;
       background-color: rgb(240, 230, 210);
       margin-bottom: 1em;
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
     }
     .description {
       margin-bottom: 1em;
