@@ -13,7 +13,7 @@
       <div class="nav-links">
         <div class="nav-link-container custom-cursor-active" :class="{ activeLink: currentPath === '/' }"><RouterLink to="/" class="nav-link">Home</RouterLink></div>
         <div class="nav-link-container custom-cursor-active" :class="{ activeLink: currentPath === '/projects' }"><RouterLink to="/projects" class="nav-link">Projects</RouterLink></div>
-        <!-- <div class="nav-link-container" :class="{ activeLink: currentPath === '/extras' }"><RouterLink to="/extras" class="nav-link">Extras</RouterLink></div> -->
+        <div class="nav-link-container" :class="{ activeLink: currentPath === '/skills' }"><RouterLink to="/skills" class="nav-link">Skills</RouterLink></div>
       </div>
     </nav>
     <div class="heading-icons">
@@ -27,16 +27,6 @@
           <font-awesome-icon :icon="['fab', 'github']" />
         </a>
       </div>
-      <!-- <div class="heading-icon">
-        <a class="social-link-tag" href="https://www.instagram.com/jamalfoxdesigns/" target="_blank">
-          <font-awesome-icon :icon="['fab', 'instagram']" />
-        </a>
-      </div>
-      <div class="heading-icon">
-        <a class="social-link-tag" href="https://twitter.com/JamalFoxDesigns" target="_blank">
-          <font-awesome-icon :icon="['fab', 'twitter']" />
-        </a>
-      </div> -->
       <div class="heading-icon">
         <a class="social-link-tag" href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity" target="_blank">
           <font-awesome-icon :icon="['fas', 'envelope']" />
