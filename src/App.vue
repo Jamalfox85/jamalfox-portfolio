@@ -1,9 +1,9 @@
 <template>
-  <div class="main_wrapper">
+  <div class="main_wrapper" style="background-image: url('/images/default-mac-bg.jpeg')">
     <div class="desktop_wrapper">
       <desktop-view />
     </div>
-    <div class="client_wrapper custom-cursor" v-if="clientOpen">
+    <div class="client_wrapper custom-cursor" v-if="clientOpen" style="background-image: url('/images/gameflow-background.jpeg')">
       <top-bar />
       <div class="client-main">
         <RouterView />
@@ -50,7 +50,7 @@ export default {
   width: 100vw;
   display: flex;
   background-color: black;
-  background-image: url("./images/default-mac-bg.jpeg");
+  // background-image: url("./images/default-mac-bg.jpeg");
   background-size: cover;
   position: relative;
   align-items: center;
@@ -79,7 +79,7 @@ export default {
     opacity: 1;
     animation: loadClient 0.4s forwards;
     font-family: Beaufort;
-    background-image: url("../public/images/gameflow-background.jpeg");
+    // background-image: url("../public/images/gameflow-background.jpeg");
     background-size: cover;
 
     .client-header {
