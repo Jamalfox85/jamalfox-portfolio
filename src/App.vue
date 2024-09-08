@@ -1,6 +1,6 @@
 <template>
   <div class="main_wrapper">
-    <img class="bg" :src="'./images/default-mac-bg.jpeg'" alt="background" />
+    <img class="bg" :src="'/images/default-mac-bg.jpeg'" alt="background" />
     <div class="desktop_wrapper">
       <desktop-view />
     </div>
