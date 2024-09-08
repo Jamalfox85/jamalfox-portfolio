@@ -1,11 +1,11 @@
 <template>
   <div class="main_wrapper">
-    <img class="bg" src="./../public/images/fast-box-ss3.png" alt="background" />
+    <img class="bg" src="./../public/images/default-mac-bg.jpeg" alt="background" />
     <div class="desktop_wrapper">
       <desktop-view />
     </div>
     <div class="client_wrapper custom-cursor" v-if="clientOpen">
-      <img class="bg" :src="'./images/gameflow-background.jpeg'" alt="background" />
+      <img class="bg" src="./../public/images/gameflow-background.jpeg" alt="background" />
       <top-bar />
       <div class="client-main">
         <RouterView />
