@@ -3,7 +3,7 @@
     <div class="home-top-panel">
       <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == -1 }" @click="loadAboutView">ABOUT</p>
       <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == 0 }" @click="loadOverviewView">OVERVIEW</p>
-      <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == 1 }" @click="loadExperienceView">EXPERIENCE</p>
+      <!-- <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == 1 }" @click="loadExperienceView">EXPERIENCE</p> -->
       <n-button class="home-top-panel-button custom-cursor-active" color="#C89B3C" ghost>
         <!-- This is the React Resume / Resume with react skills first -->
         <a class="home-top-panel-link custom-cursor-active" href="./downloads/Jamal_Fox_Resume.pdf" download> <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a>

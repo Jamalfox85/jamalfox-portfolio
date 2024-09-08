@@ -13,7 +13,7 @@
       <div class="nav-links">
         <div class="nav-link-container custom-cursor-active" :class="{ activeLink: currentPath === '/' }"><RouterLink to="/" class="nav-link">Home</RouterLink></div>
         <div class="nav-link-container custom-cursor-active" :class="{ activeLink: currentPath === '/projects' }"><RouterLink to="/projects" class="nav-link">Projects</RouterLink></div>
-        <div class="nav-link-container" :class="{ activeLink: currentPath === '/skills' }"><RouterLink to="/skills" class="nav-link">Skills</RouterLink></div>
+        <!-- <div class="nav-link-container" :class="{ activeLink: currentPath === '/skills' }"><RouterLink to="/skills" class="nav-link">Skills</RouterLink></div> -->
       </div>
     </nav>
     <div class="heading-icons">
