@@ -1,9 +1,9 @@
 <template>
-  <div class="main_wrapper" style="background-image: url('/images/default-mac-bg.jpeg')">
+  <div class="main_wrapper" style="background-image: url('../public/images/default-mac-bg.jpeg')">
     <div class="desktop_wrapper">
       <desktop-view />
     </div>
-    <div class="client_wrapper custom-cursor" v-if="clientOpen" style="background-image: url('/images/gameflow-background.jpeg')">
+    <div class="client_wrapper custom-cursor" v-if="clientOpen" style="background-image: url('./images/gameflow-background.jpeg')">
       <top-bar />
       <div class="client-main">
         <RouterView />
