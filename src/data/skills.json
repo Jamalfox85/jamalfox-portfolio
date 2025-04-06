@@ -1,7 +1,7 @@
 {
   "categories": [
     {
-      "name": "Languages",
+      "name": "Front-End",
       "skills": [
         {
           "id": 1,
@@ -10,32 +10,6 @@
           "img": "javascript",
           "status": "Online"
         },
-        {
-          "id": 2,
-          "name": "PHP",
-          "type": "Technical",
-          "img": "php",
-          "status": "Online"
-        },
-        {
-          "id": 3,
-          "name": "Go",
-          "type": "Technical",
-          "img": "golang",
-          "status": "Online"
-        },
-        {
-          "id": 4,
-          "name": "MySQL",
-          "type": "Technical",
-          "img": "mysql",
-          "status": "Online"
-        }
-      ]
-    },
-    {
-      "name": "Frameworks",
-      "skills": [
         {
           "id": 11,
           "name": "Vue",
@@ -51,6 +25,39 @@
           "status": "Online"
         },
         {
+          "id": 12,
+          "name": "React",
+          "type": "Technical",
+          "img": "react",
+          "status": "Online"
+        },
+        {
+          "id": 12,
+          "name": "React Native",
+          "type": "Technical",
+          "img": "react",
+          "status": "Online"
+        },
+        {
+          "id": 12,
+          "name": "HTMx",
+          "type": "Technical",
+          "img": "htmx",
+          "status": "Online"
+        }
+      ]
+    },
+    {
+      "name": "Back-End",
+      "skills": [
+        {
+          "id": 2,
+          "name": "PHP",
+          "type": "Technical",
+          "img": "php",
+          "status": "Online"
+        },
+        {
           "id": 13,
           "name": "Laravel",
           "type": "Technical",
@@ -58,17 +65,10 @@
           "status": "Online"
         },
         {
-          "id": 14,
-          "name": "Sass",
+          "id": 3,
+          "name": "Go",
           "type": "Technical",
-          "img": "sass",
-          "status": "Online"
-        },
-        {
-          "id": 15,
-          "name": "Tailwind",
-          "type": "Technical",
-          "img": "tailwind",
+          "img": "golang",
           "status": "Online"
         },
         {
@@ -81,27 +81,20 @@
       ]
     },
     {
-      "name": "Tools",
+      "name": "Database",
       "skills": [
+        {
+          "id": 4,
+          "name": "MySQL",
+          "type": "Technical",
+          "img": "mysql",
+          "status": "Online"
+        },
         {
           "id": 21,
           "name": "MongoDB",
           "type": "Technical",
           "img": "mongodb",
-          "status": "Online"
-        },
-        {
-          "id": 22,
-          "name": "Git",
-          "type": "Technical",
-          "img": "git",
-          "status": "Online"
-        },
-        {
-          "id": 23,
-          "name": "Figma",
-          "type": "Technical",
-          "img": "figma",
           "status": "Online"
         }
       ]
@@ -128,6 +121,20 @@
           "name": "CSS",
           "type": "Technical",
           "img": "css",
+          "status": "Online"
+        },
+        {
+          "id": 22,
+          "name": "Git",
+          "type": "Technical",
+          "img": "git",
+          "status": "Online"
+        },
+        {
+          "id": 23,
+          "name": "Figma",
+          "type": "Technical",
+          "img": "figma",
           "status": "Online"
         }
       ]
