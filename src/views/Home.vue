@@ -1,44 +1,132 @@
 <template lang="">
   <div class="home_wrapper">
     <div class="home-top-panel">
-      <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == -1 }" @click="loadAboutView">ABOUT</p>
-      <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == 0 }" @click="loadOverviewView">OVERVIEW</p>
+      <p
+        class="home-top-panel-link custom-cursor-active"
+        :class="{ active: mode == -1 }"
+        @click="loadAboutView"
+      >
+        ABOUT
+      </p>
+      <p
+        class="home-top-panel-link custom-cursor-active"
+        :class="{ active: mode == 0 }"
+        @click="loadOverviewView"
+      >
+        OVERVIEW
+      </p>
       <!-- <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == 1 }" @click="loadExperienceView">EXPERIENCE</p> -->
-      <n-button class="home-top-panel-button custom-cursor-active" color="#C89B3C" ghost>
+      <n-button
+        class="home-top-panel-button custom-cursor-active"
+        color="#C89B3C"
+        ghost
+      >
         <!-- This is the React Resume / Resume with react skills first -->
-        <a class="home-top-panel-link custom-cursor-active" href="./downloads/Jamal_Fox_Resume.pdf" download> <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a>
+        <a
+          class="home-top-panel-link custom-cursor-active"
+          href="./downloads/Jamal_Fox_Resume.pdf"
+          download
+        >
+          <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a
+        >
       </n-button>
     </div>
     <div class="home-main-panel">
       <div class="home-text" ref="homeMainLeft">
-        <p>Full-Stack Developer</p>
+        <p>Full Stack Developer</p>
         <h1>Jamal Fox</h1>
         <p>Welcome to my portfolio! Take a look around!</p>
       </div>
       <div class="home-video" ref="homeMainRight">
-        <iframe v-if="mode == 0" class="iframe" src="https://www.youtube.com/embed/RIch8f194ek?si=ui5gBf8pHtRPg6y-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe
+          v-if="mode == 0"
+          class="iframe"
+          src="https://www.youtube.com/embed/RIch8f194ek?si=ui5gBf8pHtRPg6y-"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
         <div v-if="mode == -1" class="about-wrapper">
           <h2>Hello! &#129299;</h2>
-          <p>I'm Jamal Fox, a dedicated Full-Stack Developer with a passion for creating visually stunning and highly functional web applications. With a solid background in Information Systems and a proven track record in the tech industry, I excel at bringing creative ideas to life through code. &#129303;</p>
-          <p>Throughout my career, I've had the opportunity to lead front-end development initiatives, enhance accessibility, and engage directly with clients as a Technical Sales Agent at Rebillia. These experiences have sharpened my ability to collaborate effectively with cross-functional teams, ensuring that every project meets the highest standards of precision and functionality.</p>
-          <p>I’m also a strong advocate for web accessibility, adhering to WCAG guidelines to ensure that the digital experiences I create are inclusive and accessible to all users.</p>
-          <p>Feel free to reach out at <a style="color: #f0e6d2; text-decoration: underline" href="mailto:fox.jamal@outlook.com">Fox.Jamal@outlook.com</a> or give me a call at (678) 522-8843. I’d love to connect and explore how we can work together. &#128513;</p>
+          <p>
+            I'm Jamal Fox, a dedicated Full-Stack Developer with a passion for
+            creating visually stunning and highly functional web applications.
+            With a solid background in Information Systems and a proven track
+            record in the tech industry, I excel at bringing creative ideas to
+            life through code. &#129303;
+          </p>
+          <p>
+            Throughout my career, I've had the opportunity to lead front-end
+            development initiatives, enhance accessibility, and engage directly
+            with clients as a Technical Sales Agent at Rebillia. These
+            experiences have sharpened my ability to collaborate effectively
+            with cross-functional teams, ensuring that every project meets the
+            highest standards of precision and functionality.
+          </p>
+          <p>
+            I’m also a strong advocate for web accessibility, adhering to WCAG
+            guidelines to ensure that the digital experiences I create are
+            inclusive and accessible to all users.
+          </p>
+          <p>
+            Feel free to reach out at
+            <a
+              style="color: #f0e6d2; text-decoration: underline"
+              href="mailto:fox.jamal@outlook.com"
+              >Fox.Jamal@outlook.com</a
+            >
+            or give me a call at (678) 522-8843. I’d love to connect and explore
+            how we can work together. &#128513;
+          </p>
         </div>
         <div v-if="mode == 1" class="timeline-wrapper">
           <n-timeline>
-            <n-timeline-item type="success" title="Freelance" content="Freelance Web Developer" time="June 2023 - " />
-            <n-timeline-item type="success" title="American Reading Company" content="Front End Developer" time="March 2022 - " />
-            <n-timeline-item type="success" title="Rebillia" content="Technical Sales Associate" time="February 2021 - March 2022 " />
+            <n-timeline-item
+              type="success"
+              title="Freelance"
+              content="Freelance Web Developer"
+              time="June 2023 - "
+            />
+            <n-timeline-item
+              type="success"
+              title="American Reading Company"
+              content="Front End Developer"
+              time="March 2022 - "
+            />
+            <n-timeline-item
+              type="success"
+              title="Rebillia"
+              content="Technical Sales Associate"
+              time="February 2021 - March 2022 "
+            />
           </n-timeline>
         </div>
       </div>
     </div>
     <div v-if="mode == 0" class="home-bottom-panel" ref="homeMainBottom">
-      <div v-for="project in featuredProjects" class="item" :style="{ flexGrow: project.portion, maxWidth: project.portion === 1 ? '125px' : 'auto' }">
+      <div
+        v-for="project in featuredProjects"
+        class="item"
+        :style="{
+          flexGrow: project.portion,
+          maxWidth: project.portion === 1 ? '125px' : 'auto',
+        }"
+      >
         <div class="image">
           <img :src="`images/project-photos/${project.img}`" />
-          <a v-if="project.demoLink" :href="project.demoLink" target="_blank" class="custom-cursor-active"></a>
-          <a v-if="project.downloadLink" :href="project.downloadLink" class="download-link custom-cursor-active" download></a>
+          <a
+            v-if="project.demoLink"
+            :href="project.demoLink"
+            target="_blank"
+            class="custom-cursor-active"
+          ></a>
+          <a
+            v-if="project.downloadLink"
+            :href="project.downloadLink"
+            class="download-link custom-cursor-active"
+            download
+          ></a>
         </div>
         <p>{{ project.title }}</p>
       </div>
@@ -55,7 +143,9 @@ import { NButton, NTimeline, NTimelineItem } from "naive-ui";
 export default {
   components: { TopBar, SidePanel, NButton, NTimeline, NTimelineItem },
   setup() {
-    let filteredFeaturedProjects = featuredProjects.filter((item) => item.featured);
+    let filteredFeaturedProjects = featuredProjects.filter(
+      (item) => item.featured
+    );
     return { filteredFeaturedProjects };
   },
   data() {
@@ -66,7 +156,8 @@ export default {
           title: "[App] Apollo Appointment Scheduler",
           portion: 2,
           img: "Apollo/dashboard.png",
-          demoLink: "https://apollo-appointment-scheduler-evptp4uhp-jamalfox85.vercel.app/login",
+          demoLink:
+            "https://apollo-appointment-scheduler-evptp4uhp-jamalfox85.vercel.app/login",
         },
         {
           title: "[PPT] Intro to Web Accessibility",
@@ -84,13 +175,15 @@ export default {
           title: "Vue Variables in CSS",
           portion: 1,
           img: "blog-vue-var-in-css.png",
-          demoLink: "https://blog.stackademic.com/global-vue-variables-in-css-only-4-steps-6495921dcd31?sk=74434db7c8d442937879e6bd5ceaf643",
+          demoLink:
+            "https://blog.stackademic.com/global-vue-variables-in-css-only-4-steps-6495921dcd31?sk=74434db7c8d442937879e6bd5ceaf643",
         },
         {
           title: "Vue Fontawesome",
           portion: 1,
           img: "vue-fontawesome.png",
-          demoLink: "https://medium.com/@fox.jamal/vue-fontawesome-components-made-simple-06c221efb9b6?sk=f5af261929e60a946166623d5fbd3ea7",
+          demoLink:
+            "https://medium.com/@fox.jamal/vue-fontawesome-components-made-simple-06c221efb9b6?sk=f5af261929e60a946166623d5fbd3ea7",
         },
       ],
     };
@@ -142,7 +235,13 @@ export default {
         border-width: 0;
         border-bottom: 1px;
         border-style: solid;
-        border-image: linear-gradient(300deg, rgba(0, 0, 0, 1) 0%, rgba(200, 155, 60, 1) 48%, rgba(0, 0, 0, 1) 100%) 1;
+        border-image: linear-gradient(
+            300deg,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(200, 155, 60, 1) 48%,
+            rgba(0, 0, 0, 1) 100%
+          )
+          1;
         color: #f0e6d2;
       }
       &:hover {
