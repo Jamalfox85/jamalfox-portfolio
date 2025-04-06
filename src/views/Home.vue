@@ -21,10 +21,9 @@
         color="#C89B3C"
         ghost
       >
-        <!-- This is the React Resume / Resume with react skills first -->
         <a
           class="home-top-panel-link custom-cursor-active"
-          href="./downloads/Jamal_Fox_Resume.pdf"
+          href="/downloads/Jamal_Fox_Resume.pdf"
           download
         >
           <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a

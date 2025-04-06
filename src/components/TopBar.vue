@@ -3,32 +3,62 @@
   <div class="header_wrapper">
     <nav class="header-left">
       <div class="contact-button-group">
-        <img class="lol-header-icon" src="@images/desktop-icons/league-icon.png" alt="League of Legends Icon" />
-        <div @click="toggleContactModal(true)" class="contact-bttn custom-cursor-active" role="button">
+        <img
+          class="lol-header-icon"
+          src="@images/desktop-icons/league-icon.png"
+          alt="League of Legends Icon"
+        />
+        <div
+          @click="toggleContactModal(true)"
+          class="contact-bttn custom-cursor-active"
+          role="button"
+        >
           <div class="inside-border">
             <p>Contact</p>
           </div>
         </div>
       </div>
       <div class="nav-links">
-        <div class="nav-link-container custom-cursor-active" :class="{ activeLink: currentPath === '/' }"><RouterLink to="/" class="nav-link">Home</RouterLink></div>
-        <div class="nav-link-container custom-cursor-active" :class="{ activeLink: currentPath === '/projects' }"><RouterLink to="/projects" class="nav-link">Projects</RouterLink></div>
+        <div
+          class="nav-link-container custom-cursor-active"
+          :class="{ activeLink: currentPath === '/' }"
+        >
+          <RouterLink to="/" class="nav-link">Home</RouterLink>
+        </div>
+        <div
+          class="nav-link-container custom-cursor-active"
+          :class="{ activeLink: currentPath === '/projects' }"
+        >
+          <RouterLink to="/projects" class="nav-link">Projects</RouterLink>
+        </div>
         <!-- <div class="nav-link-container" :class="{ activeLink: currentPath === '/skills' }"><RouterLink to="/skills" class="nav-link">Skills</RouterLink></div> -->
       </div>
     </nav>
     <div class="heading-icons">
       <div class="heading-icon">
-        <a class="social-link-tag" href="https://www.linkedin.com/in/jamalfox1/" target="_blank">
+        <a
+          class="social-link-tag"
+          href="https://www.linkedin.com/in/jamalfox1/"
+          target="_blank"
+        >
           <font-awesome-icon :icon="['fab', 'linkedin']" />
         </a>
       </div>
       <div class="heading-icon">
-        <a class="social-link-tag" href="https://github.com/Jamalfox85" target="_blank">
+        <a
+          class="social-link-tag"
+          href="https://github.com/Jamalfox85"
+          target="_blank"
+        >
           <font-awesome-icon :icon="['fab', 'github']" />
         </a>
       </div>
       <div class="heading-icon">
-        <a class="social-link-tag" href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity" target="_blank">
+        <a
+          class="social-link-tag"
+          href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity"
+          target="_blank"
+        >
           <font-awesome-icon :icon="['fas', 'envelope']" />
         </a>
       </div>
@@ -37,11 +67,15 @@
     <div class="header-right">
       <div class="riot-points-wrapper">
         <div class="point-group">
-          <img class="point-img" src="@images/design-icons/RP_icon.webp" />
+          <img class="point-img" src="@images/design-icons/RP_icon.png" />
           <p class="points">0526</p>
         </div>
         <div class="point-group">
-          <img class="point-img" id="blue-essence-img" src="@images/design-icons/blue_essence.webp" />
+          <img
+            class="point-img"
+            id="blue-essence-img"
+            src="@images/design-icons/blue_essence.png"
+          />
           <p class="points">2024</p>
         </div>
       </div>
@@ -51,7 +85,11 @@
           <img src="@images/bitmoji-avatar.png" alt="profile" />
         </div>
         <div class="level-group">
-          <img src="@images/profile-level.svg" alt="profile-level" class="profile-level" />
+          <img
+            src="@images/profile-level.svg"
+            alt="profile-level"
+            class="profile-level"
+          />
           <p class="level-text">444</p>
         </div>
       </div>
@@ -68,11 +106,18 @@
         <font-awesome-icon :icon="['fas', 'question']" />
         <font-awesome-icon :icon="['fas', 'window-minimize']" />
         <font-awesome-icon :icon="['fas', 'gear']" />
-        <font-awesome-icon :icon="['fas', 'xmark']" @click="openExitModal" role="button" />
+        <font-awesome-icon
+          :icon="['fas', 'xmark']"
+          @click="openExitModal"
+          role="button"
+        />
       </div>
     </div>
 
-    <contact-modal :isOpen="showContactModal" @closeModal="toggleContactModal(false)" />
+    <contact-modal
+      :isOpen="showContactModal"
+      @closeModal="toggleContactModal(false)"
+    />
   </div>
 </template>
 <script>
@@ -181,7 +226,11 @@ export default {
           height: 90%;
           width: 100%;
           position: absolute;
-          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(255, 255, 255, 0.2) 90%);
+          background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.1) 45%,
+            rgba(255, 255, 255, 0.2) 90%
+          );
         }
         .nav-link {
           color: #c89b3c;
@@ -206,7 +255,12 @@ export default {
     border-width: 0;
     // border-right: 1px;
     border-style: solid;
-    border-image: linear-gradient(rgba(0, 0, 0, 1) 0%, rgba(200, 155, 60, 1) 48%, rgba(0, 0, 0, 1) 100%) 1;
+    border-image: linear-gradient(
+        rgba(0, 0, 0, 1) 0%,
+        rgba(200, 155, 60, 1) 48%,
+        rgba(0, 0, 0, 1) 100%
+      )
+      1;
     margin: 0 1em 0 auto;
     padding-right: 1em;
     // flex-grow: 1;
@@ -220,7 +274,11 @@ export default {
         cursor: url("@/assets/link.cur"), pointer;
         color: rgb(240, 230, 210);
         transition: 0.1s ease-in-out;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(255, 255, 255, 0.2) 90%);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 45%,
+          rgba(255, 255, 255, 0.2) 90%
+        );
       }
       .social-link-tag,
       .social-link-tag:visited {
@@ -268,7 +326,11 @@ export default {
       border-radius: 50%;
       border: solid 2px #c89b3c;
       background: rgb(0, 90, 130);
-      background: linear-gradient(339deg, rgba(0, 90, 130, 1) 0%, rgba(10, 200, 185, 1) 58%);
+      background: linear-gradient(
+        339deg,
+        rgba(0, 90, 130, 1) 0%,
+        rgba(10, 200, 185, 1) 58%
+      );
       margin: auto 1em auto 0;
       display: flex;
       align-items: center;

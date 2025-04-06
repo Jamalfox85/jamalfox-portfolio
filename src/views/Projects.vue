@@ -2,18 +2,43 @@
   <div class="projects_wrapper">
     <div class="projects-main">
       <div class="project-groups">
-        <div v-for="(project, index) in projectData" :ref="`project-${index}`" :key="index" class="project-group custom-cursor-active" :class="{ active: index == activeProjectIndex }" @click="setActiveProject(index)">
+        <div
+          v-for="(project, index) in projectData"
+          :ref="`project-${index}`"
+          :key="index"
+          class="project-group custom-cursor-active"
+          :class="{ active: index == activeProjectIndex }"
+          @click="setActiveProject(index)"
+        >
           <project-block :project="project" />
         </div>
       </div>
     </div>
     <div class="navigation-buttons">
       <div class="carousel-nav" :class="{ disabled: activeProjectIndex == 0 }">
-        <img src="@images/design-icons/active-link-arrow.svg" alt="left" @click="setActiveProject(activeProjectIndex - 1)" />
+        <img
+          src="@images/design-icons/active-link-arrow.svg"
+          alt="left"
+          @click="setActiveProject(activeProjectIndex - 1)"
+        />
       </div>
-      <NButton v-for="(project, index) in projectData" class="nav-button" :class="{ active: activeProjectIndex === index }" size="small" @click="setActiveProject(index)"></NButton>
-      <div class="carousel-nav" :class="{ disabled: activeProjectIndex == projectData.length - 1 }">
-        <img src="@images/design-icons/active-link-arrow.svg" alt="left" @click="setActiveProject(activeProjectIndex + 1)" class="custom-cursor-pointer" />
+      <NButton
+        v-for="(project, index) in projectData"
+        class="nav-button"
+        :class="{ active: activeProjectIndex === index }"
+        size="small"
+        @click="setActiveProject(index)"
+      ></NButton>
+      <div
+        class="carousel-nav"
+        :class="{ disabled: activeProjectIndex == projectData.length - 1 }"
+      >
+        <img
+          src="@images/design-icons/active-link-arrow.svg"
+          alt="left"
+          @click="setActiveProject(activeProjectIndex + 1)"
+          class="custom-cursor-pointer"
+        />
       </div>
     </div>
   </div>
@@ -28,7 +53,7 @@ export default {
   data() {
     return {
       toggler: false,
-      activeProjectIndex: 1,
+      activeProjectIndex: 0,
       projectData: projects,
     };
   },

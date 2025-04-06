@@ -5,7 +5,14 @@
     </div>
     <div class="block-main">
       <div class="block-image">
-        <iframe v-if="project.video_url" :src="project.video_url" title="Ixie AI Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe
+          v-if="project.video_url"
+          :src="project.video_url"
+          title="Ixie AI Demo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
       </div>
       <p class="description">{{ project.description }}</p>
       <div class="skills">
@@ -15,8 +22,19 @@
       </div>
     </div>
     <div class="block-footer">
-      <NButton size="small" class="project-button" @click="openLink(project.live_url)">View Project</NButton>
-      <NButton size="small" class="project-button" @click="openLink(project.github_url)">View Github</NButton>
+      <NButton
+        v-if="project.live_url"
+        size="small"
+        class="project-button"
+        @click="openLink(project.live_url)"
+        >View Project</NButton
+      >
+      <NButton
+        size="small"
+        class="project-button"
+        @click="openLink(project.github_url)"
+        >View Github</NButton
+      >
     </div>
   </div>
 </template>
@@ -40,7 +58,14 @@ export default {
       return skills;
     },
     projectSkills() {
-      return this.allSkills.filter((skill) => this.project.skills.includes(skill.id));
+      return this.allSkills.filter((skill) =>
+        this.project.skills.includes(skill.id)
+      );
+    },
+  },
+  methods: {
+    openLink(link) {
+      window.open(link);
     },
   },
 };
