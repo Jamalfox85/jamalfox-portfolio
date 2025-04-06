@@ -23,8 +23,8 @@
       >
         <a
           class="home-top-panel-link custom-cursor-active"
-          href="/downloads/Jamal_Fox_Resume_Test.pdf"
-          download
+          href="https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/Jamal_Fox_Resume.pdf"
+          target="_blank"
         >
           <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a
         >
