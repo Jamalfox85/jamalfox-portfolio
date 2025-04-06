@@ -91,10 +91,50 @@
           "status": "Online"
         },
         {
+          "id": 4,
+          "name": "Redis",
+          "type": "Technical",
+          "img": "redis",
+          "status": "Online"
+        },
+        {
+          "id": 4,
+          "name": "Supabase",
+          "type": "Technical",
+          "img": "supabase",
+          "status": "Online"
+        },
+        {
           "id": 21,
           "name": "MongoDB",
           "type": "Technical",
           "img": "mongodb",
+          "status": "Online"
+        }
+      ]
+    },
+    {
+      "name": "Tools",
+      "skills": [
+        {
+          "id": 31,
+          "name": "Docker",
+          "type": "Technical",
+          "img": "docker",
+          "status": "Online"
+        },
+        {
+          "id": 32,
+          "name": "Azure",
+          "type": "Technical",
+          "img": "azure",
+          "status": "Online"
+        },
+        {
+          "id": 33,
+          "name": "AWS",
+          "type": "Technical",
+          "img": "aws",
           "status": "Online"
         }
       ]

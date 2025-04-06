@@ -1,7 +1,19 @@
 <template lang="">
   <div class="sidepanel-skills-wrapper">
-    <n-collapse :default-expanded-names="['Languages', 'Frameworks', 'Tools', 'Other']">
-      <n-collapse-item v-for="category in skills.categories" :title="category.name" :name="category.name">
+    <n-collapse
+      :default-expanded-names="[
+        'Front-End',
+        'Back-End',
+        'Database',
+        'Tools',
+        'Other',
+      ]"
+    >
+      <n-collapse-item
+        v-for="category in skills.categories"
+        :title="category.name"
+        :name="category.name"
+      >
         <div class="skill-block" v-for="skill in category.skills">
           <div class="skill-img" :style="{ background: skill.bg }">
             <img :src="`./images/skill-icons/${skill.img}.svg`" />

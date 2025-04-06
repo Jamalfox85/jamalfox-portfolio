@@ -1,11 +1,11 @@
 <template>
   <div class="main_wrapper">
-    <img class="bg" src="./../public/images/default-mac-bg.jpg" alt="background" />
+    <img class="bg" src="/images/default-mac-bg.jpg" alt="background" />
     <div class="desktop_wrapper">
       <desktop-view />
     </div>
     <div class="client_wrapper custom-cursor" v-if="clientOpen">
-      <img class="bg" src="./../public/images/gameflow-background.jpg" alt="background" />
+      <img class="bg" src="/images/gameflow-background.jpg" alt="background" />
       <top-bar />
       <div class="client-main">
         <RouterView />
@@ -69,7 +69,9 @@ export default {
     display: flex;
     position: relative;
     flex-direction: column;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
   }
   .client_wrapper {
     display: flex;
@@ -83,7 +85,10 @@ export default {
     padding: 4px;
     overflow: hidden;
     border: solid 2px #c89b3c;
-    box-shadow: 0px 1px 2px rgba(239, 234, 234, 0.1), 0px 2px 4px rgba(240, 230, 210, 0.15), 0px 4px 8px rgba(240, 230, 210, 0.15), 0px 8px 16px rgba(240, 230, 210, 0.15);
+    box-shadow: 0px 1px 2px rgba(239, 234, 234, 0.1),
+      0px 2px 4px rgba(240, 230, 210, 0.15),
+      0px 4px 8px rgba(240, 230, 210, 0.15),
+      0px 8px 16px rgba(240, 230, 210, 0.15);
     opacity: 1;
     animation: loadClient 0.4s forwards;
     font-family: Beaufort;
