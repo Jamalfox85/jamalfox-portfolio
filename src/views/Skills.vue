@@ -1,78 +1,139 @@
 <template lang="">
   <div class="skills_wrapper">
-    <div class="left-panel"></div>
-    <div class="main-panel">
-      <div class="skill-grid">
-        <div v-for="skill in skills" class="skill-card">
-          <div class="skill-image">
+    <n-collapse
+      :default-expanded-names="[
+        'Front-End',
+        'Back-End',
+        'Database',
+        'Tools',
+        'Other',
+      ]"
+    >
+      <n-collapse-item
+        v-for="category in skills.categories"
+        :title="category.name"
+        :name="category.name"
+      >
+        <div class="skill-block" v-for="skill in category.skills">
+          <div class="skill-img" :style="{ background: skill.bg }">
             <img :src="`./images/skill-icons/${skill.img}.svg`" />
           </div>
           <div class="skill-info">
-            <p>{{ skill.name }}</p>
+            <p class="skill-name">{{ skill.name }}</p>
+            <div
+              class="skill-type"
+              :class="{
+                online: skill.status === 'Online',
+                loading: skill.status === 'Loading...',
+              }"
+            >
+              <div class="skill-type-bubble"></div>
+              <p>{{ skill.status }}</p>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </n-collapse-item>
+    </n-collapse>
   </div>
 </template>
 <script>
-import { categories } from "@/data/skills.json";
+import { NCollapse, NCollapseItem } from "naive-ui";
+import skills from "../data/skills.json";
+
 export default {
-  computed: {
-    skills() {
-      return categories.reduce((acc, category) => {
-        return [...acc, ...category.skills];
-      }, []);
-    },
+  components: {
+    NCollapse,
+    NCollapseItem,
+  },
+  data() {
+    return {
+      skills,
+    };
   },
 };
 </script>
 <style lang="scss">
 .skills_wrapper {
-  border: solid 2px red;
   width: 100%;
+  height: 75vh;
+  overflow: auto;
   display: flex;
-  .left-panel {
-    border: solid 2px cyan;
-    width: 20%;
-    min-width: 350px;
-    height: 100%;
+  &::-webkit-scrollbar {
+    width: 4px;
   }
-  .main-panel {
-    border: solid 4px green;
-    position: relative;
-    flex-grow: 1;
-    .skill-grid {
-      border: solid 2px blue;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
-      grid-gap: 12px;
-      padding: 20px;
-      overflow-y: scroll;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      .skill-card {
-        text-align: center;
-        height: 125px;
-        width: 125px;
+  &::-webkit-scrollbar-track {
+    background: #32281e;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c89b3c;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #785a28;
+  }
+  .n-collapse {
+    padding: 12px;
+    .n-collapse-item__header-main {
+      background-color: #c89b3c;
+      color: black;
+      font-weight: bold !important;
+    }
+    .n-collapse-item:not(:first-child) {
+      border-top: none;
+    }
+  }
+
+  .skill-block {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+    margin-bottom: 0.25em;
+    .skill-img {
+      width: 2.5em;
+      aspect-ratio: 1;
+      display: flex;
+      border: solid 1px #c89b3c;
+      border-radius: 50%;
+      margin-right: 1em;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+      }
+    }
+    .skill-info {
+      display: flex;
+      flex-direction: column;
+      .skill-name {
+        font-size: 1.1em;
+        color: rgb(170, 160, 140) !important;
+      }
+      .skill-type {
+        font-size: 0.75em;
         display: flex;
-        flex-direction: column;
-        .skill-image {
-          width: 75%;
-          min-height: 75%;
-          border: solid 1px #c89b3c;
-          background-color: #c89b3c25;
-          padding: 12px;
-          margin: auto;
-          display: flex;
-          img {
-            width: 100%;
+        align-items: center;
+        &.online {
+          color: rgb(9, 166, 70);
+          .skill-type-bubble {
+            background: rgb(9, 166, 70);
+            border: solid 2px rgb(102, 248, 160);
           }
         }
-        .skill-info {
-          color: rgb(240, 230, 210);
-          font-size: 16px;
+        &.loading {
+          color: #0ac8b9;
+          .skill-type-bubble {
+            background: #005a82;
+            border: solid 2px #0ac8b9;
+          }
+        }
+        .skill-type-bubble {
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+
+          margin-right: 0.5em;
         }
       }
     }

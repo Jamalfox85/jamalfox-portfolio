@@ -1,0 +1,27 @@
+.contact-button-group {
+  display: flex;
+  align-items: center;
+  .lol-header-icon {
+    height: 3.25em;
+    z-index: 2;
+  }
+  .contact-bttn {
+    border: solid 1px #c89b3c;
+    padding: 2px;
+    position: relative;
+    right: 2em;
+    .inside-border {
+      height: 100%;
+      width: 100%;
+      border: solid 1px #c89b3c;
+      display: flex;
+      padding: 0.25em 1.25em 0.25em 2em;
+      color: rgb(240, 230, 210);
+      font-size: 1.25em;
+      font-weight: bold;
+    }
+    &:hover {
+      background-color: rgb(67, 68, 69);
+    }
+  }
+}

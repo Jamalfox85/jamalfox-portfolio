@@ -8,17 +8,29 @@
         <font-awesome-icon :icon="['fas', 'list']" />
         <font-awesome-icon :icon="['fas', 'magnifying-glass']" />
         <div class="sidebar-social-media-icon custom-cursor-active">
-          <a class="social-link-tag" href="https://www.linkedin.com/in/jamalfox1/" target="_blank">
+          <a
+            class="social-link-tag"
+            href="https://www.linkedin.com/in/jamalfox1/"
+            target="_blank"
+          >
             <font-awesome-icon :icon="['fab', 'linkedin']" />
           </a>
         </div>
         <div class="sidebar-social-media-icon custom-cursor-active">
-          <a class="social-link-tag" href="https://github.com/Jamalfox85" target="_blank">
+          <a
+            class="social-link-tag"
+            href="https://github.com/Jamalfox85"
+            target="_blank"
+          >
             <font-awesome-icon :icon="['fab', 'github']" />
           </a>
         </div>
         <div class="sidebar-social-media-icon custom-cursor-active">
-          <a class="social-link-tag" href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity" target="_blank">
+          <a
+            class="social-link-tag"
+            href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity"
+            target="_blank"
+          >
             <font-awesome-icon :icon="['fas', 'envelope']" />
           </a>
         </div>
@@ -131,102 +143,19 @@ export default {
         margin-left: auto;
       }
       &:hover {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 5%, rgba(255, 255, 255, 0.2) 90%);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.1) 5%,
+          rgba(255, 255, 255, 0.2) 90%
+        );
       }
     }
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 400px) {
   .sidepanel_wrapper {
-    width: 100%;
-    height: 100px;
-    flex-direction: row;
-    & > * {
-      width: auto;
-      height: 100%;
-    }
-    .panel-header {
-      flex-direction: column;
-      align-items: center;
-      width: 50px;
-      .panel-header-text {
-        display: none;
-      }
-      .panel-header-icons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-        justify-content: space-around;
-        margin-left: initial;
-        & > * {
-          margin-right: auto;
-        }
-      }
-    }
-    .panel-main {
-      height: 100%;
-      display: flex;
-      overflow-y: hidden;
-      &::-webkit-scrollbar {
-        height: 8px;
-      }
-    }
-    .panel-footer {
-      flex-direction: column;
-      justify-content: space-around;
-      width: 40px;
-      .footer-block {
-        height: auto;
-        width: auto;
-        border: none;
-        &#version {
-          flex: initial;
-        }
-        &#bug {
-          margin-left: initial;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .skill-block {
-    .skill-info {
-      display: none !important;
-    }
-  }
-  .footer-block {
-    &#version,
-    &#bug {
-      display: none !important;
-    }
-  }
-}
-
-@media screen and (max-width: 660px) {
-  .panel-header-icons {
-    & > * {
-      display: none !important;
-    }
-    .sidebar-social-media-icon {
-      display: flex !important;
-      &:hover {
-        color: rgb(240, 230, 210);
-        transition: 0.1s ease-in-out;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 45%, rgba(255, 255, 255, 0.2) 90%);
-      }
-      .social-link-tag,
-      .social-link-tag:visited {
-        color: RGB(200, 170, 110);
-        &:hover {
-          color: rgb(240, 230, 210);
-          transition: 0.1s ease-in-out;
-        }
-      }
-    }
+    display: none;
   }
 }
 </style>

@@ -16,19 +16,25 @@
         OVERVIEW
       </p>
       <!-- <p class="home-top-panel-link custom-cursor-active" :class="{ active: mode == 1 }" @click="loadExperienceView">EXPERIENCE</p> -->
-      <n-button
-        class="home-top-panel-button custom-cursor-active"
-        color="#C89B3C"
-        ghost
-      >
-        <a
-          class="home-top-panel-link custom-cursor-active"
-          href="https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/Jamal_Fox_Resume.pdf"
-          target="_blank"
+      <div class="resume-button-group">
+        <n-button
+          class="home-top-panel-button custom-cursor-active"
+          color="#C89B3C"
+          ghost
         >
-          <font-awesome-icon :icon="['fas', 'download']" /> RESUME</a
-        >
-      </n-button>
+          <a
+            class="home-top-panel-link custom-cursor-active"
+            href="https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/Jamal_Fox_Resume.pdf"
+            target="_blank"
+          >
+            <font-awesome-icon
+              :icon="['fas', 'arrow-up-right-from-square']"
+              style="margin-right: 4px"
+            />
+            RESUME</a
+          >
+        </n-button>
+      </div>
     </div>
     <div class="home-main-panel">
       <div class="home-text" ref="homeMainLeft">
@@ -247,8 +253,11 @@ export default {
         color: #f0e6d2 !important;
       }
     }
-    .home-top-panel-button {
+    .resume-button-group {
       margin-left: auto;
+      width: fit-content;
+    }
+    .home-top-panel-button {
       &:hover {
         background-color: #091428;
         .home-top-panel-link {
@@ -429,6 +438,12 @@ export default {
     .home-bottom-panel {
       display: none !important;
     }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .resume-button-group {
+    display: none !important;
   }
 }
 </style>

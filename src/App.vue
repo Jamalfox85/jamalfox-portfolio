@@ -4,7 +4,11 @@
     <div class="desktop_wrapper">
       <desktop-view />
     </div>
-    <div class="client_wrapper custom-cursor" v-if="clientOpen">
+    <div
+      class="client_wrapper custom-cursor"
+      v-if="clientOpen"
+      id="main-app-container"
+    >
       <img class="bg" src="/images/gameflow-background.jpg" alt="background" />
       <top-bar />
       <div class="client-main">

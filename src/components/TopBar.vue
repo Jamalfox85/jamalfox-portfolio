@@ -1,4 +1,3 @@
-<!-- TO DO: MOBILE RESPONSIVENESS -->
 <template lang="">
   <div class="header_wrapper">
     <nav class="header-left">
@@ -68,7 +67,7 @@
       <div class="riot-points-wrapper">
         <div class="point-group">
           <img class="point-img" src="@images/design-icons/RP_icon.png" />
-          <p class="points">0526</p>
+          <p class="points">0407</p>
         </div>
         <div class="point-group">
           <img
@@ -76,7 +75,7 @@
             id="blue-essence-img"
             src="@images/design-icons/blue_essence.png"
           />
-          <p class="points">2024</p>
+          <p class="points">2025</p>
         </div>
       </div>
 
@@ -112,6 +111,18 @@
           role="button"
         />
       </div>
+      <!-- MOBILE ONLY -->
+      <div class="menu-icon-wrapper">
+        <font-awesome-icon
+          :icon="['fas', 'bars']"
+          class="menu-icon text-white"
+          @click="showMobileMenu = !showMobileMenu"
+        />
+        <mobile-menu-drawer
+          :show="showMobileMenu"
+          @close="showMobileMenu = false"
+        />
+      </div>
     </div>
 
     <contact-modal
@@ -125,12 +136,13 @@ import ContactModal from "../components/Modals/ContactModal.vue";
 import ExitModal from "../components/Modals/ExitModal.vue";
 import { markRaw } from "vue";
 import { RouterLink, RouterView } from "vue-router";
+import MobileMenuDrawer from "./Modals/MobileMenuDrawer.vue";
 
 export default {
-  components: { ContactModal, ExitModal },
+  components: { ContactModal, ExitModal, MobileMenuDrawer },
   data() {
     return {
-      mobileMenuOpen: false,
+      showMobileMenu: false,
       currentPath: null,
       showContactModal: false,
     };
@@ -144,9 +156,6 @@ export default {
     },
   },
   methods: {
-    toggleMobileMenu() {
-      this.mobileMenuOpen = !this.mobileMenuOpen;
-    },
     toggleContactModal(state) {
       this.showContactModal = state;
     },
@@ -169,33 +178,7 @@ export default {
     align-items: center;
     margin-right: auto;
     // margin-bottom: 1em;
-    .contact-button-group {
-      display: flex;
-      align-items: center;
-      .lol-header-icon {
-        height: 3.25em;
-        z-index: 2;
-      }
-      .contact-bttn {
-        border: solid 1px #c89b3c;
-        padding: 2px;
-        position: relative;
-        right: 2em;
-        .inside-border {
-          height: 100%;
-          width: 100%;
-          border: solid 1px #c89b3c;
-          display: flex;
-          padding: 0.25em 0.75em 0.25em 2em;
-          color: rgb(240, 230, 210);
-          font-size: 1.25em;
-          font-weight: bold;
-        }
-        &:hover {
-          background-color: rgb(67, 68, 69);
-        }
-      }
-    }
+
     .nav-links {
       display: flex;
 
@@ -413,11 +396,14 @@ export default {
         }
       }
     }
+    .menu-icon-wrapper {
+      display: none;
+    }
   }
 }
 @media screen and (max-width: 660px) {
   .header_wrapper {
-    flex-direction: column-reverse;
+    padding: 8px;
     & > * {
       margin: auto !important;
       overflow: hidden;
@@ -432,6 +418,27 @@ export default {
     .heading-icons {
       display: none;
       justify-content: space-evenly;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .header-left {
+    display: none !important;
+  }
+  .riot-points-wrapper {
+    display: none !important;
+  }
+  .header-right {
+    .client-controls-wrapper {
+      display: none !important;
+    }
+    .menu-icon-wrapper {
+      margin-left: auto;
+      padding: 8px;
+      display: block !important;
+      .menu-icon {
+        font-size: 2em;
+      }
     }
   }
 }
