@@ -1,5 +1,42 @@
 {
-  "projects": [
+  "projectData": [
+    {
+      "title": "Travel App",
+      "description": "React native and Go based mobile application for helping travelers plan vacations by offering a platform to organize their itinerary and receive ai recommendations using GPT-3.5. Users can organize multiple vacation dates, desired restaurants, interesting activities, and use helpful suggestions to plan their trip.",
+      "tags": ["Mobile App", "Travel App", "AI"],
+      "icon": "mobile-screen-button",
+      "image": null,
+      "video_url": "https://www.youtube.com/embed/ppR_QhxqgEE?si=JJzBV-tGC7HXIfzj",
+      "github_url": "https://github.com/Jamalfox85/travel-app-mobile",
+      "live_url": null,
+      "skills": [5, 1, 13, 21, 33, 44],
+      "type": 1
+    },
+    {
+      "title": "Travel App API",
+      "description": "Go API for Travel App",
+      "tags": ["API", "Travel App", "AI"],
+      "icon": "gears",
+      "image": null,
+      "video_url": "https://www.youtube.com/embed/ppR_QhxqgEE?si=JJzBV-tGC7HXIfzj",
+      "github_url": "https://github.com/Jamalfox85/travel-app-api",
+      "live_url": null,
+      "skills": [13, 21, 33, 44],
+      "type": 2
+    },
+    {
+      "title": "Fusion Editor",
+      "description": "Full stack app for authoring and editor digital content.",
+      "tags": ["Full Stack Application", "Authoring Tool", "Company Project"],
+      "icon": "building",
+      "image": null,
+      "role": "Full Stack Developer Full Stack Developer Full Stack Developer Full Stack Developer Full Stack Developer",
+      "video_url": "https://www.youtube.com/embed/ppR_QhxqgEE?si=JJzBV-tGC7HXIfzj",
+      "github_url": "https://github.com/Jamalfox85/travel-app-api",
+      "live_url": null,
+      "skills": [13, 21, 33, 44],
+      "type": 3
+    },
     {
       "title": "Gemini Dev AI",
       "description": "A web application that uses GPT-3.5 to help developers plan, elaborate on and organize their projects. This tool lets users enter their ideas for potential titles, project descriptions, features, etc. to consolidate their research, and then also provides ai-based assistance building upon and expanding their ideas.",
@@ -21,7 +58,7 @@
     },
     {
       "title": "Wander Wise Frontend",
-      "description": "A web application for helping travels plan vacations by offering a platform to organize their itinerary and receive ai recommendations using GPT-3.5. Users can organize multiple vacation dates, desired restaurants, interesting activities, and use helpful suggestions to plan their trip.",
+      "description": "A web application for helping travelers plan vacations by offering a platform to organize their itinerary and receive ai recommendations using GPT-3.5. Users can organize multiple vacation dates, desired restaurants, interesting activities, and use helpful suggestions to plan their trip.",
       "image": null,
       "video_url": "https://www.youtube.com/embed/78gab1P637k?si=UgAi0k5goMj3su_k",
       "github_url": "https://github.com/Jamalfox85/itinerary-planner",

@@ -42,10 +42,10 @@
         <h1>Jamal Fox</h1>
         <p>Welcome to my portfolio! Take a look around!</p>
       </div>
-      <div class="home-video" ref="homeMainRight">
+      <div class="" ref="homeMainRight">
         <iframe
           v-if="mode == 0"
-          class="iframe"
+          class="iframe home-video"
           src="https://www.youtube.com/embed/RIch8f194ek?si=ui5gBf8pHtRPg6y-"
           title="YouTube video player"
           frameborder="0"
@@ -274,11 +274,7 @@ export default {
     .home-text {
       display: flex;
       flex-direction: column;
-      flex-grow: 1;
-      margin: 0 1em 2em 2em;
-      transition: 0.3s ease-in;
-      position: relative;
-      top: 40%;
+      margin: 2em;
       h1 {
         color: #f0e6d2;
         font-size: 4em;
@@ -287,12 +283,6 @@ export default {
       p {
         font-size: 1.15em;
         color: #a09b8c;
-      }
-      &.about-view {
-        top: 0%;
-      }
-      &.experience-view {
-        top: 80%;
       }
     }
     .home-video {
@@ -309,6 +299,7 @@ export default {
         background-color: #091428;
         padding: 1em;
         overflow-y: scroll;
+
         h2,
         p {
           margin-bottom: 1em;
@@ -444,6 +435,28 @@ export default {
 @media screen and (max-width: 400px) {
   .resume-button-group {
     display: none !important;
+  }
+  .about-wrapper {
+    max-height: 400px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #32281e;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #c89b3c;
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #785a28;
+    }
+  }
+  .home-video {
+    margin: auto;
+    width: 100% !important;
+    height: 300px;
   }
 }
 </style>

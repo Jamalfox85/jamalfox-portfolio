@@ -11,35 +11,35 @@
           "status": "Online"
         },
         {
-          "id": 11,
+          "id": 2,
           "name": "Vue",
           "type": "Technical",
           "img": "vue",
           "status": "Online"
         },
         {
-          "id": 12,
+          "id": 3,
           "name": "Nuxt",
           "type": "Technical",
           "img": "nuxt",
           "status": "Online"
         },
         {
-          "id": 12,
+          "id": 4,
           "name": "React",
           "type": "Technical",
           "img": "react",
           "status": "Online"
         },
         {
-          "id": 12,
+          "id": 5,
           "name": "React Native",
           "type": "Technical",
           "img": "react",
           "status": "Online"
         },
         {
-          "id": 12,
+          "id": 6,
           "name": "HTMx",
           "type": "Technical",
           "img": "htmx",
@@ -51,28 +51,28 @@
       "name": "Back-End",
       "skills": [
         {
-          "id": 2,
+          "id": 11,
           "name": "PHP",
           "type": "Technical",
           "img": "php",
           "status": "Online"
         },
         {
-          "id": 13,
+          "id": 12,
           "name": "Laravel",
           "type": "Technical",
           "img": "laravel",
           "status": "Online"
         },
         {
-          "id": 3,
+          "id": 13,
           "name": "Go",
           "type": "Technical",
           "img": "golang",
           "status": "Online"
         },
         {
-          "id": 16,
+          "id": 14,
           "name": "Node.js",
           "type": "Technical",
           "img": "node",
@@ -84,28 +84,28 @@
       "name": "Database",
       "skills": [
         {
-          "id": 4,
+          "id": 21,
           "name": "MySQL",
           "type": "Technical",
           "img": "mysql",
           "status": "Online"
         },
         {
-          "id": 4,
+          "id": 22,
           "name": "Redis",
           "type": "Technical",
           "img": "redis",
           "status": "Online"
         },
         {
-          "id": 4,
+          "id": 23,
           "name": "Supabase",
           "type": "Technical",
           "img": "supabase",
           "status": "Online"
         },
         {
-          "id": 21,
+          "id": 24,
           "name": "MongoDB",
           "type": "Technical",
           "img": "mongodb",
@@ -143,35 +143,35 @@
       "name": "Other",
       "skills": [
         {
-          "id": 31,
+          "id": 41,
           "name": "Web Accessibility",
           "type": "Technical",
           "img": "w3c",
           "status": "Online"
         },
         {
-          "id": 32,
+          "id": 42,
           "name": "HTML",
           "type": "Technical",
           "img": "html",
           "status": "Online"
         },
         {
-          "id": 33,
+          "id": 43,
           "name": "CSS",
           "type": "Technical",
           "img": "css",
           "status": "Online"
         },
         {
-          "id": 22,
+          "id": 44,
           "name": "Git",
           "type": "Technical",
           "img": "git",
           "status": "Online"
         },
         {
-          "id": 23,
+          "id": 45,
           "name": "Figma",
           "type": "Technical",
           "img": "figma",
