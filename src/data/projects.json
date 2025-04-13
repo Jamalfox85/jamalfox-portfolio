@@ -1,78 +1,164 @@
 {
-  "projectData": [
-    {
-      "title": "Travel App",
-      "description": "React native and Go based mobile application for helping travelers plan vacations by offering a platform to organize their itinerary and receive ai recommendations using GPT-3.5. Users can organize multiple vacation dates, desired restaurants, interesting activities, and use helpful suggestions to plan their trip.",
-      "tags": ["Mobile App", "Travel App", "AI"],
-      "icon": "mobile-screen-button",
-      "image": null,
-      "video_url": "https://www.youtube.com/embed/ppR_QhxqgEE?si=JJzBV-tGC7HXIfzj",
-      "github_url": "https://github.com/Jamalfox85/travel-app-mobile",
-      "live_url": null,
-      "skills": [5, 1, 13, 21, 33, 44],
-      "type": 1
-    },
-    {
-      "title": "Travel App API",
-      "description": "Go API for Travel App",
-      "tags": ["API", "Travel App", "AI"],
-      "icon": "gears",
-      "image": null,
-      "video_url": "https://www.youtube.com/embed/ppR_QhxqgEE?si=JJzBV-tGC7HXIfzj",
-      "github_url": "https://github.com/Jamalfox85/travel-app-api",
-      "live_url": null,
-      "skills": [13, 21, 33, 44],
-      "type": 2
-    },
-    {
-      "title": "Fusion Editor",
-      "description": "Full stack app for authoring and editor digital content.",
-      "tags": ["Full Stack Application", "Authoring Tool", "Company Project"],
-      "icon": "building",
-      "image": null,
-      "role": "Full Stack Developer Full Stack Developer Full Stack Developer Full Stack Developer Full Stack Developer",
-      "video_url": "https://www.youtube.com/embed/ppR_QhxqgEE?si=JJzBV-tGC7HXIfzj",
-      "github_url": "https://github.com/Jamalfox85/travel-app-api",
-      "live_url": null,
-      "skills": [13, 21, 33, 44],
-      "type": 3
-    },
-    {
-      "title": "Gemini Dev AI",
-      "description": "A web application that uses GPT-3.5 to help developers plan, elaborate on and organize their projects. This tool lets users enter their ideas for potential titles, project descriptions, features, etc. to consolidate their research, and then also provides ai-based assistance building upon and expanding their ideas.",
-      "image": null,
-      "video_url": "https://www.youtube.com/embed/CdITcm2Xpsw?si=zoypoGeOx6RPxKtX",
-      "github_url": "https://github.com/Jamalfox85/ProjectPlanner",
-      "live_url": "https://main.d3prkqqm69uwli.amplifyapp.com/",
-      "skills": [1, 11, 14, 15, 21, 22, 32, 33],
-      "status": "Completed"
-    },
-    {
-      "title": "Ixie AI",
-      "description": "A web application that uses GPT-3.5 to help developers analyze and improve code quality. Users are able to upload a code sample with a description and receive feedback from other developers as well as generated feedback from GPT.",
-      "image": null,
-      "video_url": "https://www.youtube.com/embed/wSVc-YV2MS0?si=N75id63fONJISLRQ",
-      "github_url": "https://github.com/Jamalfox85/CodeReview",
-      "skills": [1, 11, 14, 22, 32, 33],
-      "status": "Completed"
-    },
-    {
-      "title": "Wander Wise Frontend",
-      "description": "A web application for helping travelers plan vacations by offering a platform to organize their itinerary and receive ai recommendations using GPT-3.5. Users can organize multiple vacation dates, desired restaurants, interesting activities, and use helpful suggestions to plan their trip.",
-      "image": null,
-      "video_url": "https://www.youtube.com/embed/78gab1P637k?si=UgAi0k5goMj3su_k",
-      "github_url": "https://github.com/Jamalfox85/itinerary-planner",
-      "skills": [1, 11, 14, 15, 21, 22, 32, 33],
-      "status": "Completed"
-    },
-    {
-      "title": "Wander Wise API",
-      "description": "RESTful API service built on node.js for providing backend services to the Wander Wise Frontend application. This API provides endpoints for user authentication, itinerary creation, and itinerary recommendations.",
-      "image": null,
-      "video_url": "https://www.youtube.com/embed/78gab1P637k?si=UgAi0k5goMj3su_k",
-      "github_url": "https://github.com/Jamalfox85/Itinerary-Planner_api",
-      "skills": [1, 16, 22],
-      "status": "Completed"
-    }
-  ]
+    "projectData": [
+        {
+            "title": "Gemini Dev AI",
+            "description": "An AI-powered web application that helps developers brainstorm, plan, and organize software projects. By entering initial project ideas—such as titles, descriptions, and features—users receive intelligent suggestions and elaborations via GPT-3.5 to expand their concepts and build more structured project plans.",
+            "features": [
+                "Streamlined project planning interface for capturing titles, descriptions, and feature lists.",
+                "GPT-3.5 integration that provides real-time suggestions, enhancements, and elaborations based on user input.",
+                "Ideal for early-stage ideation and consolidating scattered notes into actionable project outlines."
+            ],
+            "tags": [
+                "AI-Powered Planning Tool",
+                "Vue + Supabase",
+                "GPT-3.5 Integration"
+            ],
+            "icon": "desktop",
+            "image": null,
+            "video_url": "https://www.youtube.com/embed/CdITcm2Xpsw?si=zoypoGeOx6RPxKtX",
+            "github_url": "https://github.com/Jamalfox85/ProjectPlanner",
+            "live_url": "https://main.d3prkqqm69uwli.amplifyapp.com/",
+            "skills": [1, 2, 23],
+            "type": 1
+        },
+        {
+            "title": "ARC Core Fusion",
+            "description": "Full stack app for authoring and editor digital content.",
+            "features": [
+                "Developed a digital platform that modernized a print-based reading and writing curriculum for K–12 classrooms.",
+                "Built tools for teachers to view authored lesson plans, assign student work, and track progress throughout the school year.",
+                "Designed and implemented a curriculum network tailored to district needs, including support for user roles, permissions, and standards-based customization.",
+                "Created intuitive dashboards for educators to monitor student engagement, performance, and assignment completion.",
+                "Ensured seamless integration between curriculum content, student assessments, and classroom planning tools."
+            ],
+            "tags": [
+                "Curriculum and Classroom Management Platform",
+                "Full Stack Application - Vue + Laravel",
+                "Company Sponsored Project"
+            ],
+            "icon": "building",
+            "image": null,
+            "role": "Primary front-end developer on a team of three. Responsible for building and maintaining core interfaces for lesson planning, assignment management, and curriculum navigation. Also contributed significantly to the back-end by developing reusable API endpoints and supporting data structures.",
+            "skills": [1, 2, 11, 12, 21, 31, 32, 44],
+            "type": 3
+        },
+        {
+            "title": "Fusion Editor",
+            "description": "A full-stack authoring environment used to digitize and manage curriculum content for ARC Core Fusion. Built to support curriculum writers in creating and editing lessons, assignments, and resources in both English and Spanish.",
+            "tags": [
+                "Authoring Environment for ARC Core Fusion",
+                "Full Stack Application - HTMx + Golang",
+                "Company Sponsored Project"
+            ],
+            "features": [
+                "Developed an authoring environment for creating and managing digital curriculum content, lesson plans, and assignments across multiple languages.",
+                "Implemented granular editing tools allowing content authors to control lesson structure, wording, and instructional metadata based on language and state standards.",
+                "Built assignment management tools supporting detailed configurations for student tasks, teacher guidance, grading rubrics, and resource linking.",
+                "Integrated file and asset management features with Azure, including file uploads, thumbnail generation, and downloadable attachments.",
+                "Designed database models and RESTful endpoints to power live content editing and version control features within the authoring workflow."
+            ],
+            "icon": "building",
+            "image": null,
+            "role": "Solo full-stack developer for the majority of the project’s lifecycle. Led development across front-end and back-end using Go and HTMx, collaborating with curriculum stakeholders and supporting later developer onboarding as the platform grew.",
+            "skills": [1, 6, 13, 21, 31, 32],
+            "type": 3
+        },
+        {
+            "title": "Writing Rubrics",
+            "description": "A full-stack application for teachers to view and grade student writing samples. This application allows teachers to view student work, grade it using a rubric, and provide feedback to students.",
+            "tags": [
+                "Grading and Feedback Platform for Student Writing",
+                "Full Stack Application - Vue + Laravel",
+                "Company Sponsored Project"
+            ],
+            "features": [
+                "Designed and built a rubric-based grading interface that allowed teachers to evaluate student writing against lesson-specific criteria.",
+                "Enabled teachers to leave structured feedback and comments directly within the platform, streamlining the grading workflow.",
+                "Developed intuitive views for browsing student submissions by class, assignment, and rubric category.",
+                "Collaborated on secure authentication and role-based access to ensure student data privacy and teacher-specific permissions."
+            ],
+            "icon": "building",
+            "image": null,
+            "role": "Primary front-end developer in charge of building and maintaining the grading interface. Collaborated with back-end developers to ensure seamless integration of grading features and designers to prioritize usability and aesthetic integrity.",
+            "skills": [1, 2, 11, 12, 21, 31, 32],
+            "type": 3
+        },
+        {
+            "title": "Kia Sterling",
+            "description": "A sleek, professionally designed Webflow website for Kia Sterling, a renowned hair stylist and educator. The site highlights her portfolio, credentials, press features, and booking/contact information.",
+            "tags": ["Portfolio Website", "Webflow", "Freelance Project"],
+            "features": [
+                "Showcases professional hair styling portfolio with high-resolution imagery and press features.",
+                "Responsive layout optimized for mobile and desktop users.",
+                "Custom sections for biography, services, and contact details with social media integration."
+            ],
+            "icon": "user",
+            "images": [
+                "https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/project-screenshots/ks-1.png",
+                "https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/project-screenshots/ks-2.png",
+                "https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/project-screenshots/ks-3.png",
+                "https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/project-screenshots/ks-4.png"
+            ],
+            "live_url": "https://www.kiasterling.com/",
+            "skills": [45, 46],
+            "type": 4
+        },
+        {
+            "title": "Magic Makers LLC",
+            "description": "A vibrant and engaging Webflow website for a party entertainment company, designed to showcase services, client testimonials, and booking information for events.",
+            "tags": ["Business Website", "Webflow", "Freelance Project"],
+            "features": [
+                "Promotes entertainment services with colorful visuals and dynamic service descriptions.",
+                "Includes testimonials and past event highlights to establish trust and credibility.",
+                "Features a contact and inquiry form for booking parties and requesting information."
+            ],
+            "icon": "user",
+            "images": [
+                "https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/project-screenshots/mm-1.png",
+                "https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/project-screenshots/mm-2.png",
+                "https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/project-screenshots/mm-3.png"
+            ],
+            "live_url": "https://www.magicmakersco.com/",
+            "skills": [45, 46],
+            "type": 4
+        },
+        {
+            "title": "Travel App",
+            "description": "Built a cross-platform mobile application using React Native to help travelers organize and plan vacations with ease.",
+            "features": [
+                "User-friendly interface for managing multiple trips, restaurants, and activities",
+                "Seamless AI-powered recommendations via GPT-3.5 for restaurants and itinerary planning",
+                "Emphasis on user flow, interaction, and intuitive trip creation"
+            ],
+            "tags": [
+                "Vacation Planner Mobile App",
+                "React Native",
+                "GPT-3.5 Integration"
+            ],
+            "icon": "mobile-screen-button",
+            "image": null,
+            "github_url": "https://github.com/Jamalfox85/travel-app-mobile",
+            "live_url": null,
+            "skills": [5, 1, 13, 21, 33, 44],
+            "type": 1
+        },
+        {
+            "title": "Travel App API",
+            "description": "Developed a performant backend API to power a mobile travel planning app.",
+            "features": [
+                "RESTful endpoints for handling user accounts, trips, restaurants, and activity data",
+                "Integrated GPT-3.5 to generate personalized travel suggestions based on user input",
+                "Utilized AWS RDS for secure, cloud-hosted data storage and management",
+                "Implemented authentication and session control through Google SSO for a secure experience",
+                "Modular, maintainable codebase designed for future feature expansion"
+            ],
+            "tags": ["Vacation Planner API", "Golang", "RESTful API"],
+            "icon": "gears",
+            "image": null,
+            "github_url": "https://github.com/Jamalfox85/travel-app-api",
+            "live_url": null,
+            "skills": [13, 21, 33, 44],
+            "type": 2
+        }
+    ]
 }
