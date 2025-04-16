@@ -1,445 +1,450 @@
 <template lang="">
-  <div class="header_wrapper">
-    <nav class="header-left">
-      <div class="contact-button-group">
-        <img
-          class="lol-header-icon"
-          src="@images/desktop-icons/league-icon.png"
-          alt="League of Legends Icon"
+    <div class="header_wrapper">
+        <nav class="header-left">
+            <div class="contact-button-group">
+                <img
+                    class="lol-header-icon"
+                    src="@images/desktop-icons/league-icon.png"
+                    alt="League of Legends Icon"
+                />
+                <div
+                    @click="showContactDrawer = true"
+                    class="contact-bttn custom-cursor-active"
+                    role="button"
+                >
+                    <div class="inside-border">
+                        <p>Contact</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <div
+                    class="nav-link-container custom-cursor-active"
+                    :class="{ activeLink: currentPath === '/' }"
+                >
+                    <RouterLink to="/" class="nav-link">Home</RouterLink>
+                </div>
+                <div
+                    class="nav-link-container custom-cursor-active"
+                    :class="{ activeLink: currentPath === '/projects' }"
+                >
+                    <RouterLink to="/projects" class="nav-link"
+                        >Projects</RouterLink
+                    >
+                </div>
+                <!-- <div class="nav-link-container" :class="{ activeLink: currentPath === '/skills' }"><RouterLink to="/skills" class="nav-link">Skills</RouterLink></div> -->
+            </div>
+        </nav>
+        <div class="heading-icons">
+            <div class="heading-icon">
+                <a
+                    class="social-link-tag"
+                    href="https://www.linkedin.com/in/jamalfox1/"
+                    target="_blank"
+                >
+                    <font-awesome-icon :icon="['fab', 'linkedin']" />
+                </a>
+            </div>
+            <div class="heading-icon">
+                <a
+                    class="social-link-tag"
+                    href="https://github.com/Jamalfox85"
+                    target="_blank"
+                >
+                    <font-awesome-icon :icon="['fab', 'github']" />
+                </a>
+            </div>
+            <div class="heading-icon">
+                <a
+                    class="social-link-tag"
+                    href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity"
+                    target="_blank"
+                >
+                    <font-awesome-icon :icon="['fas', 'envelope']" />
+                </a>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="riot-points-wrapper">
+                <div class="point-group">
+                    <img
+                        class="point-img"
+                        src="@images/design-icons/RP_icon.png"
+                    />
+                    <p class="points">0407</p>
+                </div>
+                <div class="point-group">
+                    <img
+                        class="point-img"
+                        id="blue-essence-img"
+                        src="@images/design-icons/blue_essence.png"
+                    />
+                    <p class="points">2025</p>
+                </div>
+            </div>
+
+            <div class="profile-image-wrapper">
+                <div class="inside-img">
+                    <img src="@images/bitmoji-avatar.png" alt="profile" />
+                </div>
+                <div class="level-group">
+                    <img
+                        src="@images/profile-level.svg"
+                        alt="profile-level"
+                        class="profile-level"
+                    />
+                    <p class="level-text">444</p>
+                </div>
+            </div>
+
+            <div class="profile-name-wrapper">
+                <p class="name"><b>Jamal Fox</b></p>
+                <div class="status">
+                    <div class="status-bubble"></div>
+                    <p class="status-text">Full Stack Developer</p>
+                </div>
+            </div>
+
+            <div class="client-controls-wrapper">
+                <font-awesome-icon :icon="['fas', 'question']" />
+                <font-awesome-icon :icon="['fas', 'window-minimize']" />
+                <font-awesome-icon :icon="['fas', 'gear']" />
+                <font-awesome-icon
+                    :icon="['fas', 'xmark']"
+                    @click="openExitModal"
+                    role="button"
+                />
+            </div>
+            <!-- MOBILE ONLY -->
+            <div class="menu-icon-wrapper">
+                <font-awesome-icon
+                    :icon="['fas', 'bars']"
+                    class="menu-icon text-white"
+                    @click="showMobileMenu = !showMobileMenu"
+                />
+                <mobile-menu-drawer
+                    :show="showMobileMenu"
+                    @close="showMobileMenu = false"
+                />
+            </div>
+        </div>
+
+        <contact-drawer
+            :show="showContactDrawer"
+            @close="showContactDrawer = false"
         />
-        <div
-          @click="toggleContactModal(true)"
-          class="contact-bttn custom-cursor-active"
-          role="button"
-        >
-          <div class="inside-border">
-            <p>Contact</p>
-          </div>
-        </div>
-      </div>
-      <div class="nav-links">
-        <div
-          class="nav-link-container custom-cursor-active"
-          :class="{ activeLink: currentPath === '/' }"
-        >
-          <RouterLink to="/" class="nav-link">Home</RouterLink>
-        </div>
-        <div
-          class="nav-link-container custom-cursor-active"
-          :class="{ activeLink: currentPath === '/projects' }"
-        >
-          <RouterLink to="/projects" class="nav-link">Projects</RouterLink>
-        </div>
-        <!-- <div class="nav-link-container" :class="{ activeLink: currentPath === '/skills' }"><RouterLink to="/skills" class="nav-link">Skills</RouterLink></div> -->
-      </div>
-    </nav>
-    <div class="heading-icons">
-      <div class="heading-icon">
-        <a
-          class="social-link-tag"
-          href="https://www.linkedin.com/in/jamalfox1/"
-          target="_blank"
-        >
-          <font-awesome-icon :icon="['fab', 'linkedin']" />
-        </a>
-      </div>
-      <div class="heading-icon">
-        <a
-          class="social-link-tag"
-          href="https://github.com/Jamalfox85"
-          target="_blank"
-        >
-          <font-awesome-icon :icon="['fab', 'github']" />
-        </a>
-      </div>
-      <div class="heading-icon">
-        <a
-          class="social-link-tag"
-          href="mailto:Fox.Jamal@outlook.com?Subject=Web%20Development%20Opportunity"
-          target="_blank"
-        >
-          <font-awesome-icon :icon="['fas', 'envelope']" />
-        </a>
-      </div>
     </div>
-
-    <div class="header-right">
-      <div class="riot-points-wrapper">
-        <div class="point-group">
-          <img class="point-img" src="@images/design-icons/RP_icon.png" />
-          <p class="points">0407</p>
-        </div>
-        <div class="point-group">
-          <img
-            class="point-img"
-            id="blue-essence-img"
-            src="@images/design-icons/blue_essence.png"
-          />
-          <p class="points">2025</p>
-        </div>
-      </div>
-
-      <div class="profile-image-wrapper">
-        <div class="inside-img">
-          <img src="@images/bitmoji-avatar.png" alt="profile" />
-        </div>
-        <div class="level-group">
-          <img
-            src="@images/profile-level.svg"
-            alt="profile-level"
-            class="profile-level"
-          />
-          <p class="level-text">444</p>
-        </div>
-      </div>
-
-      <div class="profile-name-wrapper">
-        <p class="name"><b>Jamal Fox</b></p>
-        <div class="status">
-          <div class="status-bubble"></div>
-          <p class="status-text">Full Stack Developer</p>
-        </div>
-      </div>
-
-      <div class="client-controls-wrapper">
-        <font-awesome-icon :icon="['fas', 'question']" />
-        <font-awesome-icon :icon="['fas', 'window-minimize']" />
-        <font-awesome-icon :icon="['fas', 'gear']" />
-        <font-awesome-icon
-          :icon="['fas', 'xmark']"
-          @click="openExitModal"
-          role="button"
-        />
-      </div>
-      <!-- MOBILE ONLY -->
-      <div class="menu-icon-wrapper">
-        <font-awesome-icon
-          :icon="['fas', 'bars']"
-          class="menu-icon text-white"
-          @click="showMobileMenu = !showMobileMenu"
-        />
-        <mobile-menu-drawer
-          :show="showMobileMenu"
-          @close="showMobileMenu = false"
-        />
-      </div>
-    </div>
-
-    <contact-modal
-      :isOpen="showContactModal"
-      @closeModal="toggleContactModal(false)"
-    />
-  </div>
 </template>
 <script>
-import ContactModal from "../components/Modals/ContactModal.vue";
+import ContactDrawer from "../components/Modals/ContactDrawer.vue";
 import ExitModal from "../components/Modals/ExitModal.vue";
 import { markRaw } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import MobileMenuDrawer from "./Modals/MobileMenuDrawer.vue";
 
 export default {
-  components: { ContactModal, ExitModal, MobileMenuDrawer },
-  data() {
-    return {
-      showMobileMenu: false,
-      currentPath: null,
-      showContactModal: false,
-    };
-  },
-  watch: {
-    $route: {
-      handler(newValue) {
-        this.currentPath = newValue.path;
-      },
-      immediate: true,
+    components: { ContactDrawer, ExitModal, MobileMenuDrawer },
+    data() {
+        return {
+            showMobileMenu: false,
+            currentPath: null,
+            showContactDrawer: false,
+        };
     },
-  },
-  methods: {
-    toggleContactModal(state) {
-      this.showContactModal = state;
+    watch: {
+        $route: {
+            handler(newValue) {
+                this.currentPath = newValue.path;
+            },
+            immediate: true,
+        },
     },
-    openExitModal() {
-      this.modal.component.value = markRaw(ExitModal);
-      this.modal.showModal();
+    methods: {
+        toggleContactModal(state) {
+            this.showContactDrawer = state;
+        },
+        openExitModal() {
+            this.modal.component.value = markRaw(ExitModal);
+            this.modal.showModal();
+        },
     },
-  },
 };
 </script>
 <style lang="scss">
 .header_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 4px 0.5em 0 1em;
-  background-color: rgb(21, 30, 36);
-  .header-left {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    margin-right: auto;
-    // margin-bottom: 1em;
-
-    .nav-links {
-      display: flex;
-
-      .nav-link-container {
-        padding: 1em;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        &.activeLink {
-          font-weight: bold;
-        }
-        &.activeLink,
-        &:hover {
-          cursor: url("@/assets/link.cur"), pointer;
-          transition: 0.1s ease-in-out;
-          .nav-link {
-            color: rgb(240, 230, 210);
-          }
-        }
-        &.activeLink::before {
-          content: url("@images/design-icons/active-link-arrow.svg");
-          position: absolute;
-          top: -75%;
-          transform: scale(0.8);
-        }
-        &.activeLink::after {
-          content: "";
-          height: 90%;
-          width: 100%;
-          position: absolute;
-          background: linear-gradient(
-            to bottom,
-            rgba(0, 0, 0, 0.1) 45%,
-            rgba(255, 255, 255, 0.2) 90%
-          );
-        }
-        .nav-link {
-          color: #c89b3c;
-          overflow: hidden;
-          text-decoration: none;
-          font-size: 1.15em;
-          display: flex;
-          position: relative;
-          z-index: 2;
-          cursor: url("@/assets/link.cur"), pointer;
-        }
-      }
-    }
-  }
-  .heading-icons {
-    font-size: 1.5em;
-    display: flex;
-    align-items: center;
-    color: rgb(240, 230, 210);
-    display: flex;
-    position: relative;
-    border-width: 0;
-    // border-right: 1px;
-    border-style: solid;
-    border-image: linear-gradient(
-        rgba(0, 0, 0, 1) 0%,
-        rgba(200, 155, 60, 1) 48%,
-        rgba(0, 0, 0, 1) 100%
-      )
-      1;
-    margin: 0 1em 0 auto;
-    padding-right: 1em;
-    // flex-grow: 1;
-    .heading-icon {
-      display: flex;
-      align-items: center;
-      padding: 0.5em;
-      height: 120%;
-      color: RGB(200, 170, 110);
-      &:hover {
-        cursor: url("@/assets/link.cur"), pointer;
-        color: rgb(240, 230, 210);
-        transition: 0.1s ease-in-out;
-        background: linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.1) 45%,
-          rgba(255, 255, 255, 0.2) 90%
-        );
-      }
-      .social-link-tag,
-      .social-link-tag:visited {
-        color: RGB(200, 170, 110);
-        &:hover {
-          cursor: url("@/assets/link.cur"), pointer;
-          color: rgb(240, 230, 210);
-          transition: 0.1s ease-in-out;
-        }
-      }
-    }
-  }
-
-  .header-right {
-    font-size: 1em;
-    color: rgb(240, 230, 210);
-    display: flex;
-    position: relative;
-
-    .riot-points-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 0.5em;
-      margin-right: 1em;
-      .point-group {
-        display: flex;
-        margin-bottom: 8px;
-        .point-img {
-          height: 1em;
-          &#blue-essence-img {
-            height: 1.25em;
-          }
-        }
-        .points {
-          margin-left: 0.5em;
-        }
-      }
-    }
-
-    .profile-image-wrapper {
-      height: 65px;
-      width: 65px;
-      border-radius: 50%;
-      border: solid 2px #c89b3c;
-      background: rgb(0, 90, 130);
-      background: linear-gradient(
-        339deg,
-        rgba(0, 90, 130, 1) 0%,
-        rgba(10, 200, 185, 1) 58%
-      );
-      margin: auto 1em auto 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      .inside-img {
-        height: 90%;
-        width: 90%;
-        border-radius: 50%;
-        border: solid 2px #c89b3c;
-        overflow: hidden;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        img {
-          width: 115%;
-        }
-      }
-      .level-group {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        bottom: 4px;
-        color: rgb(170, 160, 140);
-        .profile-level {
-          width: 30px;
-          position: absolute;
-        }
-        .level-text {
-          position: absolute;
-          font-size: 0.5em;
-        }
-      }
-    }
-
-    .client-controls-wrapper {
-      margin-bottom: 1em;
-      display: flex;
-      justify-content: space-evenly;
-      color: rgb(170, 160, 140);
-      position: absolute;
-      top: 2px;
-      right: 0px;
-      width: 125px;
-      align-self: flex-end;
-      & > * {
-        font-size: 16px;
-        &:hover {
-          color: rgb(240, 230, 210);
-          transition: 0.1s ease-in-out;
-          cursor: url("@/assets/link.cur"), pointer;
-        }
-      }
-    }
-    .profile-name-wrapper {
-      margin-right: 2em;
-      position: relative;
-      bottom: 4px;
-      align-self: flex-end;
-      .name {
-        letter-spacing: 2px;
-        margin-bottom: 4px;
-      }
-      .status {
-        display: flex;
-        align-items: center;
-        .status-bubble {
-          height: 12px;
-          width: 12px;
-          border-radius: 50%;
-          background: rgb(9, 166, 70);
-          border: solid 2px rgb(102, 248, 160);
-          margin-right: 0.5em;
-        }
-        .status-text {
-          opacity: 0.75;
-          font-size: 0.85em;
-          color: rgb(9, 166, 70);
-        }
-      }
-    }
-    .menu-icon-wrapper {
-      display: none;
-    }
-  }
-}
-@media screen and (max-width: 660px) {
-  .header_wrapper {
-    padding: 8px;
-    & > * {
-      margin: auto !important;
-      overflow: hidden;
-      width: 100%;
-    }
+    padding: 4px 0.5em 0 1em;
+    background-color: rgb(21, 30, 36);
     .header-left {
-      .activeLink::before {
-        top: 50% !important;
-        transform: scale(0.6) rotate(180deg) !important;
-      }
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+        // margin-bottom: 1em;
+
+        .nav-links {
+            display: flex;
+
+            .nav-link-container {
+                padding: 1em;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                &.activeLink {
+                    font-weight: bold;
+                }
+                &.activeLink,
+                &:hover {
+                    cursor: url("@/assets/link.cur"), pointer;
+                    transition: 0.1s ease-in-out;
+                    .nav-link {
+                        color: rgb(240, 230, 210);
+                    }
+                }
+                &.activeLink::before {
+                    content: url("@images/design-icons/active-link-arrow.svg");
+                    position: absolute;
+                    top: -75%;
+                    transform: scale(0.8);
+                }
+                &.activeLink::after {
+                    content: "";
+                    height: 90%;
+                    width: 100%;
+                    position: absolute;
+                    background: linear-gradient(
+                        to bottom,
+                        rgba(0, 0, 0, 0.1) 45%,
+                        rgba(255, 255, 255, 0.2) 90%
+                    );
+                }
+                .nav-link {
+                    color: #c89b3c;
+                    overflow: hidden;
+                    text-decoration: none;
+                    font-size: 1.15em;
+                    display: flex;
+                    position: relative;
+                    z-index: 2;
+                    cursor: url("@/assets/link.cur"), pointer;
+                }
+            }
+        }
     }
     .heading-icons {
-      display: none;
-      justify-content: space-evenly;
+        font-size: 1.5em;
+        display: flex;
+        align-items: center;
+        color: rgb(240, 230, 210);
+        display: flex;
+        position: relative;
+        border-width: 0;
+        // border-right: 1px;
+        border-style: solid;
+        border-image: linear-gradient(
+                rgba(0, 0, 0, 1) 0%,
+                rgba(200, 155, 60, 1) 48%,
+                rgba(0, 0, 0, 1) 100%
+            )
+            1;
+        margin: 0 1em 0 auto;
+        padding-right: 1em;
+        // flex-grow: 1;
+        .heading-icon {
+            display: flex;
+            align-items: center;
+            padding: 0.5em;
+            height: 120%;
+            color: RGB(200, 170, 110);
+            &:hover {
+                cursor: url("@/assets/link.cur"), pointer;
+                color: rgb(240, 230, 210);
+                transition: 0.1s ease-in-out;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0.1) 45%,
+                    rgba(255, 255, 255, 0.2) 90%
+                );
+            }
+            .social-link-tag,
+            .social-link-tag:visited {
+                color: RGB(200, 170, 110);
+                &:hover {
+                    cursor: url("@/assets/link.cur"), pointer;
+                    color: rgb(240, 230, 210);
+                    transition: 0.1s ease-in-out;
+                }
+            }
+        }
     }
-  }
+
+    .header-right {
+        font-size: 1em;
+        color: rgb(240, 230, 210);
+        display: flex;
+        position: relative;
+
+        .riot-points-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5em;
+            margin-right: 1em;
+            .point-group {
+                display: flex;
+                margin-bottom: 8px;
+                .point-img {
+                    height: 1em;
+                    &#blue-essence-img {
+                        height: 1.25em;
+                    }
+                }
+                .points {
+                    margin-left: 0.5em;
+                }
+            }
+        }
+
+        .profile-image-wrapper {
+            height: 65px;
+            width: 65px;
+            border-radius: 50%;
+            border: solid 2px #c89b3c;
+            background: rgb(0, 90, 130);
+            background: linear-gradient(
+                339deg,
+                rgba(0, 90, 130, 1) 0%,
+                rgba(10, 200, 185, 1) 58%
+            );
+            margin: auto 1em auto 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            .inside-img {
+                height: 90%;
+                width: 90%;
+                border-radius: 50%;
+                border: solid 2px #c89b3c;
+                overflow: hidden;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                img {
+                    width: 115%;
+                }
+            }
+            .level-group {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                bottom: 4px;
+                color: rgb(170, 160, 140);
+                .profile-level {
+                    width: 30px;
+                    position: absolute;
+                }
+                .level-text {
+                    position: absolute;
+                    font-size: 0.5em;
+                }
+            }
+        }
+
+        .client-controls-wrapper {
+            margin-bottom: 1em;
+            display: flex;
+            justify-content: space-evenly;
+            color: rgb(170, 160, 140);
+            position: absolute;
+            top: 2px;
+            right: 0px;
+            width: 125px;
+            align-self: flex-end;
+            & > * {
+                font-size: 16px;
+                &:hover {
+                    color: rgb(240, 230, 210);
+                    transition: 0.1s ease-in-out;
+                    cursor: url("@/assets/link.cur"), pointer;
+                }
+            }
+        }
+        .profile-name-wrapper {
+            margin-right: 2em;
+            position: relative;
+            bottom: 4px;
+            align-self: flex-end;
+            .name {
+                letter-spacing: 2px;
+                margin-bottom: 4px;
+            }
+            .status {
+                display: flex;
+                align-items: center;
+                .status-bubble {
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 50%;
+                    background: rgb(9, 166, 70);
+                    border: solid 2px rgb(102, 248, 160);
+                    margin-right: 0.5em;
+                }
+                .status-text {
+                    opacity: 0.75;
+                    font-size: 0.85em;
+                    color: rgb(9, 166, 70);
+                }
+            }
+        }
+        .menu-icon-wrapper {
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 660px) {
+    .header_wrapper {
+        padding: 8px;
+        & > * {
+            margin: auto !important;
+            overflow: hidden;
+            width: 100%;
+        }
+        .header-left {
+            .activeLink::before {
+                top: 50% !important;
+                transform: scale(0.6) rotate(180deg) !important;
+            }
+        }
+        .heading-icons {
+            display: none;
+            justify-content: space-evenly;
+        }
+    }
 }
 @media screen and (max-width: 400px) {
-  .header-left {
-    display: none !important;
-  }
-  .riot-points-wrapper {
-    display: none !important;
-  }
-  .header-right {
-    .client-controls-wrapper {
-      display: none !important;
+    .header-left {
+        display: none !important;
     }
-    .menu-icon-wrapper {
-      margin-left: auto;
-      padding: 8px;
-      display: block !important;
-      .menu-icon {
-        font-size: 2em;
-      }
+    .riot-points-wrapper {
+        display: none !important;
     }
-  }
+    .header-right {
+        .client-controls-wrapper {
+            display: none !important;
+        }
+        .menu-icon-wrapper {
+            margin-left: auto;
+            padding: 8px;
+            display: block !important;
+            .menu-icon {
+                font-size: 2em;
+            }
+        }
+    }
 }
 </style>
