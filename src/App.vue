@@ -1,10 +1,5 @@
 <template>
     <div class="main_wrapper">
-        <img
-            class="bg"
-            src="https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/design-assets/default-mac-bg.jpg"
-            alt="background"
-        />
         <div class="desktop_wrapper">
             <desktop-view />
         </div>
@@ -15,7 +10,7 @@
         >
             <img
                 class="bg"
-                src="/images/gameflow-background.jpg"
+                src="https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/design-assets/gameflow-bg.png"
                 alt="background"
             />
             <top-bar />
@@ -65,6 +60,7 @@ export default {
     display: flex;
     background-color: black;
     position: relative;
+    background-image: url("https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/design-assets/default-mac-bg.jpg");
     .bg {
         position: absolute;
         width: 100%;
@@ -150,6 +146,12 @@ export default {
 @media screen and (max-width: 900px) {
     .client-main {
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main_wrapper {
+        background-image: url("https://jamalfox-portfolio-resources.s3.us-east-1.amazonaws.com/design-assets/default-iphone-bg.jpg");
     }
 }
 </style>

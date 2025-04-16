@@ -31,3 +31,9 @@ npm run build
 ### Resources
 
 https://interfaceingame.com/games/league-of-legends/
+
+https://github.com/communitydragon/docs/blob/master/assets.md
+
+https://brand.riotgames.com/en-us/league-of-legends/downloads/
+
+https://developer.riotgames.com/docs/lol#data-dragon

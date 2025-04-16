@@ -72,7 +72,7 @@
                         class="point-img"
                         src="@images/design-icons/RP_icon.png"
                     />
-                    <p class="points">0407</p>
+                    <p class="points">0416</p>
                 </div>
                 <div class="point-group">
                     <img
